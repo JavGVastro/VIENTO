@@ -2,7 +2,7 @@
 
 ## Turbulent parameters archive
 
-| Region | Instrument/Telescope or Observatory | Emission line     | $\sigma_\text{POS}$ [km/s] | $r_0$ [pc] | $m$ [-]| Citation |
+| Region | Inst. / Telescope (Obs.) | Emission line     | $\sigma_\text{POS}$ [km/s] | $r_0$ [pc] | $m$ [-]| Citation |
 | ------ | -------------------- | ----------------- | ------------------- | --- | ----- | --- |
 | Orion (M 42) - EON      |     FP/OHL              | $\text{H} \alpha$   |    $5.0(0.6)$       | $0.5(0.2)$     |  $1.0$   | 1 |
 |               |                  | $\text{[NII]}$  |           |      |     |
