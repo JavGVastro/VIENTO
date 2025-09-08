@@ -10,7 +10,9 @@
 |        |                      | $\text{[SII]}$    |                     |     |       | |
 | M 42   | MUSE/VLT             | $\text{H} \alpha$ |                     |     |       | |
 |        |                      | $\text{[OIII]}$   |                     |     |       | |
-|        |                      | $\text{[SII]}$    |                     |     |       | |
+|               |                  | $\text{[NII]}$  |           |      |     |
+|        |                      | $\text{[SIII]}$    |                     |     |       | |
+|        |                      | $\text{[ArIII]}$    |                     |     |       | |
 |        | Echelle/KPNO         | $\text{H} \alpha$ |    $13(1)$          |   $0.068(0.006)$  |    $1.07(0.04)$   | 1 |
 |        |                      | $\text{[OIII]}$   |                     |     |       | |
 |        |                      | $\text{[SII]}$    |                     |     |       | |
