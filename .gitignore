@@ -26,6 +26,7 @@ fake_cube_sigE2_finite_m355_r32_N512.fits
 
 # Workspace layout & UI state (personal, machine-specific)
 .obsidian/app.json
+.obsidian/bookmarks.json
 .obsidian/core-plugins.json
 .obsidian/workspace.json
 .obsidian/appearance.json
