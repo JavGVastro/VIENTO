@@ -1,0 +1,30 @@
+
+# Ignore Jupyter Notebook checkpoints
+**/.ipynb_checkpoints/
+
+# Ignore Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# Ignore system files
+.DS_Store
+Thumbs.db
+*.log
+
+# Ignore large data files (optional)
+#*.json
+
+# Ignore all deprecated folders
+**/deprecated/
+
+# =========================
+# Obsidian-specific files
+# =========================
+
+# Workspace layout & UI state (personal, machine-specific)
+.obsidian/app.json
+.obsidian/core-plugins.json
+.obsidian/workspace.json
+.obsidian/appearance.json
+# .obsidian/snippets/
