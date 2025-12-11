@@ -8,7 +8,7 @@
 - Dr. Will's original [Jupyter file](https://github.com/JavGVastro/PhD.Paper/blob/main/Fake-Maps/fake-maps-seeing.ipynb) with the first comment about the mod from PhD  repository.
 - For the fake maps experiments:
 	- I decided to only work with the 3D case using sigE = 0,1,2 cases, eliminating the need of working with 2D maps.
-	- Since cubes are used a lot of kb for storage, the moment0 and moment1 are going to be exported to a fits file with all the parameters in the header. (see pipeline X).
+	- Since cubes are used a lot of kb for storage, the [moment0 and moment1](https://spectral-cube.readthedocs.io/en/latest/api/spectral_cube.SpectralCube.html#spectral_cube.SpectralCube.moment) are going to be exported to a fits file with all the parameters in the header. (see pipeline X).
 	- In the phd we didn't elaborate on analyzing the fitting and the recovers parameters of the synthetic structure functions. So as first approach we elaborate on that.
 # To-Do
 

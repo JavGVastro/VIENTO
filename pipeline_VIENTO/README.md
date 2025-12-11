@@ -1,4 +1,7 @@
 
+# To-Do
+
+- [ ] Integrate $B(r)$ table with .fits file (now it exported as an numpy array into a .json file)
 # 1. Purpose and Scope
 
 The VIENTO pipeline aims to provide a reproducible, modular workflow to:
