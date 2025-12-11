@@ -3,7 +3,7 @@
 
 The VIENTO pipeline aims to provide a reproducible, modular workflow to:
 
-- Compute the observational second-order structure function of the velocity field of an H II region from astronomical observations (typically in FITS format).
+- Compute the observational second-order structure function of the velocity field of an H II region from astronomical observations (typically in [FITS](https://docs.astropy.org/en/stable/io/fits/index.html) format).
 - Fit a parametric model to the observational structure function:
   - Either a 5-parameter “proposed” model, or
   - A 3-parameter “ideal” model.

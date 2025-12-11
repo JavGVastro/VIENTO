@@ -1,30 +1,45 @@
-- Here we explore the current state of the synthetic maps (a.k.a. fake maps) created using the turbustat package. 
-- We review how they are created, which modifications are made to the original code and  analyze the results of the structure function and the process of recovering of turbulent parameters through the fit.
-- We take as a starting point what was done in my phd, and our goal to develop more accurate ways to represent real observations through the synthetic maps with the end to use them as our laboratory.
-- [ ] Finish current state of the art of our modifications (phd stuff, no-small / large-effects)
-- [ ] Upload Fake maps to Git
-- [ ] Add Git link
-- [ ] noise
-- [ ] seeing
-- [ ] finite box effects
+- The onjective is to develop a more accurate way to represent real observations, from our prespective, through synthetic maps with the end to use them as our laboratory.
+- Here we explore the current state of the synthetic maps (a.k.a. fake maps) created using the [turbustat](https://turbustat.readthedocs.io/en/latest/index.html) Python package. 
+- We review our initial modification for the [[#2D-case mod|2D-case]] and 3D-case to:
+	- `make_extended`[1](https://turbustat.readthedocs.io/en/latest/api/turbustat.simulator.make_extended.html#turbustat.simulator.make_extended) and
+	- `make_3dfield`[2](https://turbustat.readthedocs.io/en/latest/api/turbustat.simulator.make_3dfield.html#make-3dfield)
+- The modification add a tapered behavior to the structure function through adding the parameter `r0`, so the *original code* and results would be referred as **non-tapered**.
+-  Mod: $$e^{-\dfrac{1}{2 \pi k r_0}} .$$
+- Dr. Will's original [Jupyter file](https://github.com/JavGVastro/PhD.Paper/blob/main/Fake-Maps/fake-maps-seeing.ipynb) with the first comment about the mod from PhD  repository.
+- For the fake maps experiments:
+	- I decided to only work with the 3D case using sigE = 0,1,2 cases, eliminating the need of working with 2D maps.
+	- Since cubes are used a lot of kb for storage, the moment0 and moment1 are going to be exported to a fits file with all the parameters in the header. (see pipeline X).
+	- In the phd we didn't elaborate on analyzing the fitting and the recovers parameters of the synthetic structure functions. So as first approach we elaborate on that.
+# To-Do
+
+- [ ] Redo in the new pipeline/project (phd stuff, seeing, large-effects)
+	- [ ] Emissivity fluctuations (review the way I originally compute them since I think is wrong - create issue)
+	- [ ] seeing
+	- [ ] finite box effects
+- [ ] Add Discussion to Git: State of the art
+- [ ] Poisson Noise
 
 
+# Power law law's for fake maps
 
-- Dr. Will's original Jupyter file from PhD [repository](https://github.com/JavGVastro/PhD.Paper/blob/main/Fake-Maps/fake-maps-seeing.ipynb):
-- The modification is done to the function `make_extended`[1](https://turbustat.readthedocs.io/en/latest/api/turbustat.simulator.make_extended.html#turbustat.simulator.make_extended) and `make_3dfield`[2](https://turbustat.readthedocs.io/en/latest/api/turbustat.simulator.make_3dfield.html#make-3dfield) adding to the code that the curve follows the behavior of: $$e^{-\dfrac{1}{2 \pi k r_0}} .$$
-- The modification add a tapered behavior to the structure function so the *original code* and results would be referred as **non-tapered**.
+- Since fake maps are created using the spectral exponent $\kappa$ it is necessary to consider all the necessary stuff to recover the slope of the structure function $m$.
 
-# Power law law's
+From: https://github.com/JavGVastro/PhD.Paper/issues/18
+
+As suggestion from somewhere, the power spectra is in terms of numbers of dimensions (ND) and the N-dimensional slope structure function.
+
+$$\kappa = \text{ND} + m_\text{ND}$$
 
 ``` python
 # Physical parameters
 m_obs = 1.0    # The projected slope of the structure function we measure
-m2D   = 0.85   # for recovering m as 1.00 in the projected field (k = 2D + m2D) non emissivity fluctuation case
-m3D_1 = 0.30   # for recovering m as 1.00 in the projected field (k = 3D + m3D) light fluctuations
-m3D_2 = 0.55   # for recovering m as 1.00 in the projected field (k = 3D + m3D) heavy fluctuations
+m2D   = 0.85   # for recovering m as 1.00 in the projected field (k = 2 + m2D) non emissivity fluctuation case
+m3D   = 0   # for recovering m as 1.00 in the projected field (k = 3 + m3D) non emissivity fluctuation case
+m3D = 0.30   # for recovering m as 1.00 in the projected field (k = 3 + m3D) light fluctuations
+m3D = 0.55   # for recovering m as 1.00 in the projected field (k = 3 + m3D) heavy fluctuations
 ```
-# 2D case
-## Modification
+
+# 2D-case mod 
 
 ``` python
     if ellip < 1:
@@ -56,3 +71,7 @@ m3D_2 = 0.55   # for recovering m as 1.00 in the projected field (k = 3D + m3D) 
         # rcirc is spatial frequency: 1 / r, measured in pixels <-----------
         output *= np.exp(-1.0 / (2 * np.pi * rcirc * correlation_length)) <-----------
 ```
+
+# Current State
+
+- 
