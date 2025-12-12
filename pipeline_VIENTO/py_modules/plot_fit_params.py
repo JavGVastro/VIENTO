@@ -5,7 +5,8 @@ Created on Tue Dec  9 07:09:49 2025
 @author: ZAINTEL2
 """
 
-
+import numpy as np
+from matplotlib import pyplot as plt
 
 def plot_param_comp(*dicts, labels=None, decimals=4):
     """
