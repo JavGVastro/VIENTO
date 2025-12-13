@@ -6,8 +6,10 @@
 
 
 
+
+
 For an **homogeneous spherical shell** we have the following **rectangular profile**,
-![[homogeneous shell.png|500]]
+<img src="Figs/homogeneous_shell.png" alt="Image one" width="500">
 
 Therefore, using $$M_k = \int_{-v}^v u^n I(u) du $$
 - Zero-moment
