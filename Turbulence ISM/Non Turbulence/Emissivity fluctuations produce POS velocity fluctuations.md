@@ -48,7 +48,7 @@ Considering $\mu$ "velocity fluctuations" and $\varepsilon$ emissivity fluctuati
 
 $$E_R + E_B = 2$$
 
-$$\overline{u} = \frac{E_R u_R + E_B u_B}{E_R + E_B}= \frac{1}{2} \mu v(\varepsilon-1)+\frac{1}{2} \mu v(\varepsilon+1) = \varepsilon \mu v \tag1$$
+$$\overline{u} = \frac{E_R u_R + E_B u_B}{E_R + E_B}= \frac{1}{2} \mu v(\varepsilon-1)+\frac{1}{2} \mu v(\varepsilon+1) = \varepsilon \mu v$$
 
 $$\sigma^2_{\text{los}} = \frac{1}{2} \left\{  \left(u_R - \overline{u}\right)^2 (1+\epsilon) + \left(u_B - \overline{u}\right)^2 (1-\epsilon) \right\} = v^2 \mu^2 (1-\varepsilon^2)  \tag2$$
 
