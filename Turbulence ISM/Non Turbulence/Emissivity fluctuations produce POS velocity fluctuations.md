@@ -32,7 +32,10 @@ Now, considering the shell is clumpy, in this case at any given position the red
 <img src="Figs/emissivity fluctuations shell.png" alt="Image one" width="400">
 
 
-Therefore $$\overline{u}=\frac{v \cos \theta}{2}[1 + \epsilon -1 + \epsilon] = v \cos \theta \varepsilon$$ Using the expression  $$\overline{\cos \theta}= \frac{1}{2}$$ we have $$\overline{u}=\frac{1}{2}v \varepsilon = \varepsilon  \sigma_\text{LOS}$$
+Therefore 
+$$\overline{u}=\frac{v \cos \theta}{2}[1 + \epsilon -1 + \epsilon] = v \cos \theta \varepsilon$$ Using the expression  
+$$\overline{\cos \theta}= \frac{1}{2}$$ we have 
+$$\overline{u}=\frac{1}{2}v \varepsilon = \varepsilon  \sigma_\text{LOS}$$
  So, if $\varepsilon_\text{RMS}$ is the variation in $\varepsilon$, then
 $$\sigma_\text{POS}=\varepsilon_\text{RMS} \sigma_\text{LOS}$$
 
