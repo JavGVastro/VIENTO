@@ -35,6 +35,7 @@ Now, considering the shell is clumpy, in this case at any given position the red
 Therefore 
 
 $$\overline{u}=\frac{v \cos \theta}{2}[1 + \epsilon -1 + \epsilon] = v \cos \theta \varepsilon$$
+
 Using the expression  
 
 $$\overline{\cos \theta}= \frac{1}{2}$$
