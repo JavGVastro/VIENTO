@@ -38,6 +38,7 @@ $$\sigma_\text{POS}=\varepsilon_\text{RMS} \sigma_\text{LOS}$$
 $$  \therefore \boxed{ \frac{\sigma_\text{POS}}{\sigma_\text{LOS}}= \varepsilon_\text{RMS}}$$
 From observations $$ \frac{\sigma_\text{POS}}{\sigma_\text{LOS}}=0.5  = \frac{1}{2} =\varepsilon_\text{RMS} $$
 The term $\varepsilon_\text{RMS}$ be determined after binning up the small scales (since $\sigma(E)$ is at the scale of the shell) as to the PDF of the emissivity: $$\varepsilon_\text{RMS} = \frac{\sigma(E)}{E}$$
+
 ## Velocity fluctuations and emissivity fluctuations relation
 
 
@@ -48,27 +49,42 @@ Considering $\mu$ "velocity fluctuations" and $\varepsilon$ emissivity fluctuati
 
 $$E_R + E_B = 2$$
 
-$$\overline{u} = \frac{E_R u_R + E_B u_B}{E_R + E_B}= \frac{1}{2} \mu v(\varepsilon-1)+\frac{1}{2} \mu v(\varepsilon+1) = \varepsilon \mu v$$
+$$\overline{u} = \frac{E_R u_R + E_B u_B}{E_R + E_B}= \frac{1}{2} \mu v(\varepsilon-1)+\frac{1}{2} \mu v(\varepsilon+1) = \varepsilon \mu v \tag1$$
 
-$$\sigma^2_{\text{los}} = \frac{1}{2} \left\{  \left(u_R - \overline{u}\right)^2 (1+\epsilon) + \left(u_B - \overline{u}\right)^2 (1-\epsilon) \right\} = v^2 \mu^2 (1-\varepsilon^2)  $$
+$$\sigma^2_{\text{los}} = \frac{1}{2} \left( \left( u_R - \overline{u}\right)^2 (1+\epsilon) + \left( u_B - \overline{u}\right)^2 (1-\epsilon) \right) = v^2 \mu^2 (1-\varepsilon^2) \tag2$$
 
 So, computing the weighted average: 
-$$\langle \sigma^2_{\text{los}}   \rangle_\text{pos} = \frac{\int_0 ^1  \sigma^2_{\text{los}} d \mu}{\int_0 ^1 d\mu} = \frac{v^2}{3}  (1-\varepsilon^2) $$ $$ \therefore v^2 = 3 \langle \sigma^2_{\text{los}}   \rangle_\text{pos} (1-\varepsilon^2)^{-1} \tag3$$
+$$\langle \sigma^2_{\text{los}}  \rangle_\text{pos} = \frac{\int_0 ^1  \sigma^2_{\text{los}} d \mu}{\int_0 ^1 d\mu} = \frac{v^2}{3}  (1-\varepsilon^2)$$ 
+
+$$\therefore v^2 = 3 \langle \sigma^2_{\text{los}}   \rangle_\text{pos} (1-\varepsilon^2)^{-1} \tag3$$
  and $$\langle \overline{u}   \rangle_\text{pos} =\frac{ v \varepsilon\int_0 ^1  \mu d \mu}{\int_0 ^1 d\mu} = \frac{1}{2} v \varepsilon \ . \tag4$$
-Now we write $\sigma_\text{los} = \sqrt{ \langle \sigma^2_{\text{los}}   \rangle_\text{pos}}$ as the RMS average over the $\text{pos}$: $$ \sigma_\text{los} =  \frac{v}{\sqrt{3}}  \sqrt{(1-\varepsilon_\text{rms}^2)} \tag5$$
+ 
+Now we write $\sigma_\text{los} = \sqrt{ \langle \sigma^2_{\text{los}}   \rangle_\text{pos}}$ as the RMS average over the $\text{pos}$: 
+
+$$\sigma_\text{los} =  \frac{v}{\sqrt{3}}  \sqrt{(1-\varepsilon_\text{rms}^2)} \tag5$$
+
 Squaring (4) and substituting (3) and (5):
 
-$$ \sigma^2_\text{pos} ( \overline{u})   = \frac{1}{4} v^2 \varepsilon_\text{rms}^2 \ = \frac{3}{4} ( \langle \sigma^2_{\text{los}}   \rangle_\text{pos} )\frac{\varepsilon_\text{rms}^2}{(1-\varepsilon_\text{rms}^2)}$$
-$$ \boxed{\sigma^2_\text{pos} ( \overline{u})   = \frac{3}{4} \frac{\varepsilon_\text{rms}^2}{(1-\varepsilon_\text{rms}^2)} \sigma_\text{los}^2 \ . }$$ Now we assume $x = \sigma_\text{pos} /\sigma_\text{los}$:
+$$\sigma^2_\text{pos} ( \overline{u})   = \frac{1}{4} v^2 \varepsilon_\text{rms}^2 \ = \frac{3}{4} ( \langle \sigma^2_{\text{los}}   \rangle_\text{pos} )\frac{\varepsilon_\text{rms}^2}{(1-\varepsilon_\text{rms}^2)}$$
 
-$$ x^2 = \frac{3}{4} \frac{\varepsilon_\text{rms}^2}{(1-\varepsilon_\text{rms}^2)}$$
+$$\boxed{\sigma^2_\text{pos} ( \overline{u})   = \frac{3}{4} \frac{\varepsilon_\text{rms}^2}{(1-\varepsilon_\text{rms}^2)} \sigma_\text{los}^2 \ . }$$
+
+Now we assume $x = \sigma_\text{pos} /\sigma_\text{los}$:
+
+$$x^2 = \frac{3}{4} \frac{\varepsilon_\text{rms}^2}{(1-\varepsilon_\text{rms}^2)}$$
+
 $$ x^2 (1-\varepsilon_\text{rms}^2)= \frac{3}{4}\varepsilon_\text{rms}^2 \ \therefore \ x^2-x^2\varepsilon_\text{rms}^2 -\frac{3}{4}\varepsilon_\text{rms}^2 =0$$
+
 $$ \varepsilon_\text{rms}^2 \left(-x^2  - 3/4\right)  =-x^2$$
+
 $$\boxed{ \varepsilon_\text{rms} = \left( \frac{x^2}{x^2  + 3/4} \right)^{1/2} }$$
+
 With  $x =1/2$ we have $\varepsilon_\text{rms} =1/2$.
 
-Alternatively, ditch the $1/(1-\varepsilon_\text{rms}^2)$  term since the will be outer fluctuations too: $$ \varepsilon_\text{rms} \sim \frac{2}{\sqrt{3}}x\sim 1.15 \frac{ \sigma_\text{pos}}{\sigma_\text{los}}$$
-# Toy model
+Alternatively, ditch the $1/(1-\varepsilon_\text{rms}^2)$  term since the will be outer fluctuations too:
 
+$$ \varepsilon_\text{rms} \sim \frac{2}{\sqrt{3}}x\sim 1.15 \frac{ \sigma_\text{pos}}{\sigma_\text{los}}$$
+
+# Toy model
 
 <img src="Figs/toy model fluctuactions.png" alt="Image one" width="500">
