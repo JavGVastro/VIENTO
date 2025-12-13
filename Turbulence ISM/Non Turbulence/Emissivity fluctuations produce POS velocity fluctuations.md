@@ -27,7 +27,8 @@ $$ \therefore \sigma_\text{LOS}=\frac{v}{\sqrt3}$$
 
 ---
 
-Now, considering the shell is clumpy, in this case at any given position the red hemisphere has a brightness $S(1 + \varepsilon)$ and the blue hemisphere has a brightness $S(1 - \varepsilon)$,:
+Now, considering the shell is clumpy, in this case at any given position the red hemisphere has a brightness $S(1 + \varepsilon)$ and the blue hemisphere has a brightness $S(1 - \varepsilon)$:
+
 <img src="Figs/emissivity fluctuations shell.png" alt="Image one" width="400">
 
 
