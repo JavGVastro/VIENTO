@@ -5,9 +5,6 @@
 - Taken from [Dr. Will notes](https://lights-cheat-n2s.craft.me/po4iajL37TL3jE) on the emissivity fluctuations. 
 
 
-
-
-
 For an **homogeneous spherical shell** we have the following **rectangular profile**,
 <img src="Figs/homogeneous_shell.png" alt="Image one" width="500">
 
@@ -31,8 +28,8 @@ $$ \therefore \sigma_\text{LOS}=\frac{v}{\sqrt3}$$
 ---
 
 Now, considering the shell is clumpy, in this case at any given position the red hemisphere has a brightness $S(1 + \varepsilon)$ and the blue hemisphere has a brightness $S(1 - \varepsilon)$,:
+<img src="Figs/emissivity fluctuations shell.png" alt="Image one" width="400">
 
-![[emissivity fluctuations shell.png|400]]
 
 Therefore $$\overline{u}=\frac{v \cos \theta}{2}[1 + \epsilon -1 + \epsilon] = v \cos \theta \varepsilon$$ Using the expression  $$\overline{\cos \theta}= \frac{1}{2}$$ we have $$\overline{u}=\frac{1}{2}v \varepsilon = \varepsilon  \sigma_\text{LOS}$$
  So, if $\varepsilon_\text{RMS}$ is the variation in $\varepsilon$, then
@@ -40,7 +37,7 @@ $$\sigma_\text{POS}=\varepsilon_\text{RMS} \sigma_\text{LOS}$$
 
 $$  \therefore \boxed{ \frac{\sigma_\text{POS}}{\sigma_\text{LOS}}= \varepsilon_\text{RMS}}$$
 From observations $$ \frac{\sigma_\text{POS}}{\sigma_\text{LOS}}=0.5  = \frac{1}{2} =\varepsilon_\text{RMS} $$
-The term $\varepsilon_\text{RMS}$ be determined after binning up the small scales (since $\sigma(E)$ is at the scale of the shell) as to ==the PDF of the emissivity==: $$\varepsilon_\text{RMS} = \frac{\sigma(E)}{E}$$
+The term $\varepsilon_\text{RMS}$ be determined after binning up the small scales (since $\sigma(E)$ is at the scale of the shell) as to the PDF of the emissivity: $$\varepsilon_\text{RMS} = \frac{\sigma(E)}{E}$$
 ## Velocity fluctuations and emissivity fluctuations relation
 
 
@@ -73,4 +70,5 @@ With  $x =1/2$ we have $\varepsilon_\text{rms} =1/2$.
 Alternatively, ditch the $1/(1-\varepsilon_\text{rms}^2)$  term since the will be outer fluctuations too: $$ \varepsilon_\text{rms} \sim \frac{2}{\sqrt{3}}x\sim 1.15 \frac{ \sigma_\text{pos}}{\sigma_\text{los}}$$
 # Toy model
 
-![[toy model fluctuactions.png|500]]
+
+<img src="Figs/toy model fluctuactions.png" alt="Image one" width="500">
