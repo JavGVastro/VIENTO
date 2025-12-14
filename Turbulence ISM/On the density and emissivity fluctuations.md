@@ -13,7 +13,11 @@
 - Substituting ec. $(3)$ in $(2)$ and solving for $\sigma_S$:
  
 	 $$\frac{\sigma_S}{R^{1/2}} =\sigma_E= 2 \sigma_\rho $$
+	 
 	$$\frac{\sigma_S}{0.2^{1/2}} = 2 \sigma_\rho $$
+	
 	$$\frac{\sigma_S}{0.447} = 2 \sigma_\rho $$
+	
 	$$\sigma_S = 0.894 \sigma_\rho$$
+	
 $$\boxed{\sigma_S \approx \sigma_\rho} \quad \text{Q.E.D} \tag4$$
