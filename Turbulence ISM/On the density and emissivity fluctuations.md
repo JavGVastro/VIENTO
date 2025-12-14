@@ -9,7 +9,8 @@
 - We calculate $\langle \delta S^2  \rangle / S_0$ by fitting a log-normal function to the probability distribution function of the surface brightness map after filtering out fluctuations on scales smaller than the velocity correlation length.
 - The relative fluctuations in surface brightness, $\sigma_{S / S_0} \equiv \langle \delta S^2  \rangle / S_0 ,$ and density, $\sigma_{\rho / \rho_0} \equiv \langle \delta \rho^2  \rangle / \rho_0$, are equal $$\sigma_{S/S_0} \approx \sigma_{\rho / \rho_0} , \tag1$$which is a result of the cancellation between two effects:
 	1. That the volumetric $\text{H}\alpha$ emissivity $E$ is proportional to density squared, so that,  $$\sigma_{E/E_0} = 2 \sigma_{\rho / \rho_0} . \tag2$$
-	2. Second, that fluctuations in surface brightness $S$ are related to those in emissivity by $$\sigma_{S/S_0} = R^{1/2} \sigma_{E/E_0}, \tag3$$where $R$ is the 2D-to-3D variance ratio [Brunt, Federrath & Price 2010](https://academic.oup.com/mnras/article/403/3/1507/1050035) .  For an emissivity power spectrum  $P(k) \sim k^{-3}$ and assuming a ratio of map size to correlation length of $L/r_0 = 10$, we have $R \approx 0.2$ and hence: 
+	2. Second, that fluctuations in surface brightness $S$ are related to those in emissivity by 
+	$$\sigma_{S/S_0} = R^{1/2} \sigma_{E/E_0}, \tag3$$where $R$ is the 2D-to-3D variance ratio [Brunt, Federrath & Price 2010](https://academic.oup.com/mnras/article/403/3/1507/1050035) .  For an emissivity power spectrum  $P(k) \sim k^{-3}$ and assuming a ratio of map size to correlation length of $L/r_0 = 10$, we have $R \approx 0.2$ and hence: 
 	$$\sigma_{S/S_0} \approx \sigma_{\rho / \rho_0}$$ 
 - Substituting ec. $(3)$ in $(2)$ and solving for $\sigma_S$:
  
