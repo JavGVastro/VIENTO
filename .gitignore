@@ -2,6 +2,9 @@
 # Ignore Jupyter Notebook checkpoints
 **/.ipynb_checkpoints/
 
+# Ignore all deprecated folders
+**/deprecated/
+
 # Ignore Python cache files
 __pycache__/
 *.pyc
@@ -17,17 +20,26 @@ Thumbs.db
 fake_cube_sigE1_finite_m330_r32_N512.fits
 fake_cube_sigE2_finite_m355_r32_N512.fits
 
-# Ignore all deprecated folders
-**/deprecated/
 
 # =========================
 # Obsidian-specific files
 # =========================
-
 # Workspace layout & UI state (personal, machine-specific)
+# =========================
+
+# Ignore Obsidian files
 .obsidian/app.json
-.obsidian/bookmarks.json
-.obsidian/core-plugins.json
-.obsidian/workspace.json
 .obsidian/appearance.json
-# .obsidian/snippets/
+.obsidian/bookmarks.json
+.obsidian/community-plugins.json
+.obsidian/core-plugins.json
+.obsidian/types.json
+.obsidian/workspace.json
+
+# Ignore Obsidian folders
+.obsidian/snippets/
+.obsidian/plugins/
+
+# Completely ignore local-only notes, scratch files, etc.
+_local/
+
