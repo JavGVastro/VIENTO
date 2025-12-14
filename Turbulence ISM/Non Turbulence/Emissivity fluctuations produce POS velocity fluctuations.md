@@ -39,6 +39,7 @@ $$\overline{u}=\frac{v \cos \theta}{2}[1 + \epsilon -1 + \epsilon] = v \cos \the
 Using the expression  
 
 $$\overline{\cos \theta}= \frac{1}{2}$$
+
 we have 
 
 $$\overline{u}=\frac{1}{2}v \varepsilon = \varepsilon  \sigma_\text{LOS}$$
