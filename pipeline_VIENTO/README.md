@@ -2,6 +2,7 @@
 # To-Do
 
 - [ ] Integrate $B(r)$ table with .fits file (now it exported as an numpy array into a .json file)
+- [ ] Elaborate on Papermill on make_file inject parameters and run stuff
 # 1. Purpose and Scope
 
 The VIENTO pipeline aims to provide a reproducible, modular workflow to:
@@ -381,6 +382,18 @@ These dependencies should be consolidated later into a `requirements.txt` or `en
 
 # 9. Project Folder Structure (Current Working Model)
 
+```
+- pipeline_VIENTO (Folder outline, general)
+	- fits_ready (.fits files ready for observations. NOTE: Matrix/Scatter, SB True/False, ideal True/False)
+	- results_fit
+	- results_Br
+	- py_modules
+	- Imgs
+	- computations.ipynb (run using Make_file or all samples)
+	- res_compilation.ipynb (Manual)  
+```
+
+
 The precise structure will be refined, but the pipeline currently assumes or is compatible with a layout similar to:
 
 - `observations/`  
@@ -405,7 +418,7 @@ The precise structure will be refined, but the pipeline currently assumes or is 
   Custom Python modules:
   - `strucfunc`, `bfunc`, `bplot`, and utility modules.
 
-- `notebooks/` (optional)  
+- `notebooks/`
   Jupyter notebooks:
   - Stage 1 preparation notebook.
   - `pipeline_computations` (Stage 2).
@@ -413,7 +426,20 @@ The precise structure will be refined, but the pipeline currently assumes or is 
 
 This layout will be adjusted and formalized as part of the first stable Git version.
 
----
+## Folder structure Fake Maps Experiments
+
+```
+- pipeline_fake (Fake Maps Experiments)
+	- fits_ready (Fits files ready for the pipeline and .txt files with names of all files) 
+		  Fake maps batch test: (Matrix, SB: True, ideal: True)
+	- Imgs
+	- py_modules
+	- results_fit
+	- results_Br
+	- pipeline_computations.ipynb (run using Make_file or all samples)
+	- pipeline_results_compiling.ipynb (Manual)  
+	- pipeline_config.py (Pahts and folders for the current runt) - TO MODIFY INITIALLY!!
+```
 
 # 10. Known Limitations and To-Do List
 

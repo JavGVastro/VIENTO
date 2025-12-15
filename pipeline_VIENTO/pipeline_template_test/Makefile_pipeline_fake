@@ -1,0 +1,99 @@
+# ----------------------------
+# Core config
+# ----------------------------
+PYTHON := python
+
+# Notebooks (templates)
+NOTEBOOK_MOD := pipeline_computations_fake_mod.ipynb
+NOTEBOOK_NON := pipeline_computations_fake_non.ipynb
+
+# File lists (one ID per line; blank lines and #comments allowed)
+LIST_MOD := fits_ready/filelist_mod.txt
+LIST_NON := fits_ready/filelist_non.txt
+
+# Output root for executed notebooks
+EXEC_ROOT := executed_notebooks
+
+# ----------------------------
+# Helper: read list file -> space-separated IDs
+# ----------------------------
+define read_list
+$(shell $(PYTHON) -c "import pathlib; p=pathlib.Path('$(1)'); \
+t=p.read_text(encoding='utf-8').splitlines(); \
+ids=[l.strip() for l in t if l.strip() and not l.strip().startswith('#')]; \
+print(' '.join(ids))")
+endef
+
+FILE_IDS_MOD := $(call read_list,$(LIST_MOD))
+FILE_IDS_NON := $(call read_list,$(LIST_NON))
+
+EXEC_NBS_MOD := $(addprefix $(EXEC_ROOT)/mod/,$(addsuffix _exec.ipynb,$(FILE_IDS_MOD)))
+EXEC_NBS_NON := $(addprefix $(EXEC_ROOT)/non/,$(addsuffix _exec.ipynb,$(FILE_IDS_NON)))
+
+# ----------------------------
+# Targets
+# ----------------------------
+.PHONY: help list_mod list_non mod non all one_mod one_non clean
+
+help:
+	@echo Targets:
+	@echo "  make list_mod                # show IDs from $(LIST_MOD)"
+	@echo "  make list_non                # show IDs from $(LIST_NON)"
+	@echo "  make mod                     # run MOD list through $(NOTEBOOK_MOD)"
+	@echo "  make non                     # run NON list through $(NOTEBOOK_NON)"
+	@echo "  make all                     # run both"
+	@echo "  make one_mod NAME=<ID>       # run a single MOD ID"
+	@echo "  make one_non NAME=<ID>       # run a single NON ID"
+	@echo "  make clean                   # delete executed notebooks"
+
+list_mod:
+	@echo $(FILE_IDS_MOD)
+
+list_non:
+	@echo $(FILE_IDS_NON)
+
+mod: $(EXEC_NBS_MOD)
+	@echo "Done MOD. Outputs in: $(EXEC_ROOT)/mod"
+
+non: $(EXEC_NBS_NON)
+	@echo "Done NON. Outputs in: $(EXEC_ROOT)/non"
+
+all: mod non
+
+# Pattern rule: MOD
+$(EXEC_ROOT)/mod/%_exec.ipynb: $(NOTEBOOK_MOD) $(LIST_MOD) pipeline_config.py
+	@$(PYTHON) -c "import os; os.makedirs('$(EXEC_ROOT)/mod', exist_ok=True)"
+	@echo "Running MOD notebook for ID: $*"
+	@$(PYTHON) -m papermill "$(NOTEBOOK_MOD)" "$@" \
+		-p name "$*" \
+		-p fits_path "fits_ready/$*.fits"
+
+# Pattern rule: NON
+$(EXEC_ROOT)/non/%_exec.ipynb: $(NOTEBOOK_NON) $(LIST_NON) pipeline_config.py
+	@$(PYTHON) -c "import os; os.makedirs('$(EXEC_ROOT)/non', exist_ok=True)"
+	@echo "Running NON notebook for ID: $*"
+	@$(PYTHON) -m papermill "$(NOTEBOOK_NON)" "$@" \
+		-p name "$*" \
+		-p fits_path "fits_ready/$*.fits"
+
+# Single-run MOD (no bash needed; works well on Windows)
+one_mod:
+	$(if $(NAME),,$(error Provide NAME=<ID>))
+	@$(PYTHON) -c "import os; os.makedirs('$(EXEC_ROOT)/mod', exist_ok=True)"
+	@echo "Running MOD notebook for ID: $(NAME)"
+	@$(PYTHON) -m papermill "$(NOTEBOOK_MOD)" "$(EXEC_ROOT)/mod/$(NAME)_exec.ipynb" \
+		-p name "$(NAME)" \
+		-p fits_path "fits_ready/$(NAME).fits"
+
+# Single-run NON
+one_non:
+	$(if $(NAME),,$(error Provide NAME=<ID>))
+	@$(PYTHON) -c "import os; os.makedirs('$(EXEC_ROOT)/non', exist_ok=True)"
+	@echo "Running NON notebook for ID: $(NAME)"
+	@$(PYTHON) -m papermill "$(NOTEBOOK_NON)" "$(EXEC_ROOT)/non/$(NAME)_exec.ipynb" \
+		-p name "$(NAME)" \
+		-p fits_path "fits_ready/$(NAME).fits"
+
+clean:
+	@$(PYTHON) -c "import shutil, pathlib; p=pathlib.Path('$(EXEC_ROOT)'); \
+shutil.rmtree(p, ignore_errors=True); print('Removed', p)"
