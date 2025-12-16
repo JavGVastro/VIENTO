@@ -9,9 +9,9 @@ Two pillars:
 
 Scientific goals:
 - Measure, for each region/line/map version:
-- Velocity dispersion (plane-of-sky)
-- Correlation length 
-- Power-law index
+	- Velocity dispersion (plane-of-sky)
+	- Correlation length 
+	- Power-law index
 - Compare methods (e.g., structure function vs. power spectrum vs. SCF/VCA/VCS/Δ-variance) and quantify consistency, biases, and uncertainty.
 
 # Project Overview
