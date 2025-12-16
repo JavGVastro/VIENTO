@@ -32,7 +32,7 @@
 	- [!] Emissivity fluctuations (review the way I originally compute them since I think is wrong - create issue)
 	- [ ] seeing
 	- [ ] finite box effects
-- [/] Add Discussion to Git: State of the art
+- [x] Add Discussion to Git: State of the art ✅ 2025-12-16
 - [ ] Poisson Noise
 - [ ] Add init and experimental notebook version
 
