@@ -41,13 +41,15 @@ $$\ell_c^2  \approx \boxed{ 1.808 r_0} $$
 
 
 
+VIENTO 
 
-- Values
-	- VIENTO 
-		$$C(r_0) = \frac{1}{2} =0.5 \tag3$$
-	-  [[Miville-Deschenes et al. 1995]]: 
-		$$C(r_0) = e^{-1} \sim 0.36 \tag4$$
-	- Total decorrelation length [[Lagrois and Joncas 2011]]: 
-		$$C(\tau_0) = 0 \tag5$$
+$$C(r_0) = \frac{1}{2} =0.5$$
+ [[Miville-Deschenes et al. 1995]]:
+
+$$C(r_0) = e^{-1} \sim 0.36$$
+
+ [[Lagrois and Joncas 2011]] (*Total decorrelation length*): 
+
+$$C(\tau_0) = 0$$
 
  
