@@ -14,14 +14,16 @@ $$\ell_c^2 = \frac{1}{4} \int C(r) \, d^2 r= \frac{\pi}{2} \int_0^\infty r C(r) 
 
 
 Using the model proposed in the project: 
+
 $$ C_{\text{mod}}(r;\ r_0, m) = 2^{- \left( r/r_0 \right)^m} =e^{[- \ln2 (r/r_0)^m]}$$
 
 the solution for the Pope definition of the correlation length is:
+
 $$ \mathcal{L}\equiv \int_0^\infty C(r)\ dr =\int_0^\infty e^{[- \ln2 (r/r_0)]^m} \ dr = \boxed{ \frac{\Gamma \left( \frac{1}{m} \right)}{m(\ln 2)^{1/m}} r_0} $$
 
 with a particular solution for $m =1$: 
-$$ \mathcal{L}\equiv \int_0^\infty C(r)\ dr =\int_0^\infty 2^{- \left( r/r_0 \right)} \ dr \approx \boxed{1.44 r_0 }$$
 
+$$ \mathcal{L}\equiv \int_0^\infty C(r)\ dr =\int_0^\infty 2^{- \left( r/r_0 \right)} \ dr \approx \boxed{1.44 r_0 }$$
 
 
 The solution for the Jaupart and Chabrier 2022 definition of the correlation length is:
