@@ -23,7 +23,7 @@ $$ \mathcal{L}\equiv \int_0^\infty C(r)\ dr =\int_0^\infty e^{[- \ln2 (r/r_0)]^m
 
 with a particular solution for $m =1$: 
 
-$$ \mathcal{L}\equiv \int_0^\infty C(r)\ dr =\int_0^\infty 2^{- \left( r/r_0 \right)} \ dr \approx \boxed{1.44 r_0 }$$
+$$ \mathcal{L}\approx \boxed{1.44 r_0 }$$
 
 
 The solution for the Jaupart and Chabrier 2022 definition of the correlation length is:
@@ -33,7 +33,7 @@ $$\ell_c^2 = \frac{\pi}{2} \int_0^\infty r C(r) \, dr  =\frac{\pi}{2}\int_0^\inf
 
 with a particular solution for $m =1$:  
 
-$$\ell_c^2 = \frac{\pi}{2} \int_0^\infty r C(r) \, dr  =\int_0^\infty re^{[- \ln2 (r/r_0)]} \ dr \approx \boxed{ 1.808 r_0} $$
+$$\ell_c^2  \approx \boxed{ 1.808 r_0} $$
 
 
 
