@@ -44,4 +44,5 @@ fake_cube_sigE2_finite_m355_r32_N512.fits
 
 # Completely ignore local-only notes, scratch files, etc.
 _local/
+_Class/
 
