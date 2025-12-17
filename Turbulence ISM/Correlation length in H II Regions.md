@@ -44,11 +44,12 @@ $$\ell_c^2  \approx \boxed{ 1.808 r_0} $$
 VIENTO 
 
 $$C(r_0) = \frac{1}{2} =0.5$$
- [[Miville-Deschenes et al. 1995]]:
+
+ [Miville-Deschenes et al. 1995](https://ui.adsabs.harvard.edu/abs/1995ApJ...454..316M/abstract):
 
 $$C(r_0) = e^{-1} \sim 0.36$$
 
- [[Lagrois and Joncas 2011]] (*Total decorrelation length*): 
+ [Lagrois and Joncas 2011](https://ui.adsabs.harvard.edu/abs/2011MNRAS.413..721L/abstract) (*Total decorrelation length*): 
 
 $$C(\tau_0) = 0$$
 
