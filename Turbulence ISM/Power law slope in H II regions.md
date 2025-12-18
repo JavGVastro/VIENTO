@@ -2,7 +2,7 @@
 - Here we review the literature regarding the index of the observational structure function.
 - We address some problems regarding the observational  power law index of the structure function (two-dimensional and projected), and its relation to its three-dimensional counterpart, and with index of the power and energy spectrum. 
 - Relevant when using simulations and synthetic maps  [1](https://github.com/JavGVastro/VIENTO/tree/main/fake_maps) .
-- The results are for:
+- Relationship between power spectra and observed structure function indexes results:
 	- non-emissivity fluctuations: $\kappa_{3\text{D}} =  m_{2\text{D}}  + 2$ and for
 	- strong emissivity fluctuations: $\kappa_{3\text{D}} =  m_{2\text{D}}  + 3$
 
@@ -58,7 +58,9 @@ where $\kappa_{N\text{D}}$ is the power spectrum spectral index in $N$ dimension
 
 For homogeneous turbulence the relation between the $N-\text{dimensional}$ second-order structure function index  $m_{N\text{D}}$ and the $N-\text{dimensional}$ power spectrum index $\kappa_{N\text{D}}$ is ([Medina et al 2014](https://ui.adsabs.harvard.edu/abs/2014MNRAS.445.1797M)): 
 
-$$ \kappa_{N\text{D}} = m_{N\text{D}} + N . $$ 
+$$ \kappa_{N\text{D}} = m_{N\text{D}} + N . $$
+
+
  So, for $N=3$: 
  
  $$ \kappa_{3\text{D}} = m_{3\text{D}} + 3 \therefore  m_{3\text{D}} = \kappa_{3\text{D}}  - 3$$
@@ -81,7 +83,11 @@ The relation between the two-dimensional second order structure function index a
 
 $$ m_{2\text{D}} = m_{3\text{D}} + 1 + \delta \kappa . \tag2$$
 
-Solving for $m_{3\text{D}}$ and substituting with eq. of criteria II: $$m_{3\text{D}} = m_{2\text{D}}  - 1 - \delta \kappa$$ $$\kappa_{3\text{D}}  - 3 = m_{2\text{D}}  - 1 - \delta \kappa .$$ Now solving for $\kappa_{3\text{D}}$ we have and considering none $\delta \kappa = 0$ and strong emissivity fluctuations $\delta \kappa = -1$: $$\boxed{\kappa_{3\text{D}} = m_{2\text{D}} +3-1-0 = m_{2\text{D}}  + 2 \quad \quad  \text{non-emissivity fluctuations case}}$$ $$\boxed{ \kappa_{3\text{D}} =+3-1 - (-1) = m_{2\text{D}}  + 3 \quad \quad  \text{emissivity fluctuations case}.}$$
+Solving for $m_{3\text{D}}$ and substituting with eq. of criteria II: $$m_{3\text{D}} = m_{2\text{D}}  - 1 - \delta \kappa$$ $$\kappa_{3\text{D}}  - 3 = m_{2\text{D}}  - 1 - \delta \kappa .$$ Now solving for $\kappa_{3\text{D}}$ we have and considering none $\delta \kappa = 0$ and strong emissivity fluctuations $\delta \kappa = -1$: 
+
+$$\boxed{\kappa_{3\text{D}} = m_{2\text{D}} +3-1-0 = m_{2\text{D}}  + 2 \quad \quad  \text{non-emissivity fluctuations case}}$$
+
+$$\boxed{ \kappa_{3\text{D}} =+3-1 - (-1) = m_{2\text{D}}  + 3 \quad \quad  \text{emissivity fluctuations case}.}$$
 
 
 
