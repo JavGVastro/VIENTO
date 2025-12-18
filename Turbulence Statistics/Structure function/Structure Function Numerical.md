@@ -92,15 +92,22 @@ $$[\vec{f}]-\vec{f}  = \begin{bmatrix}  [f_0-f_0,f_0-f_1,f_0-f_2, \dots,f_0-f_n
 
 Applying the lower triangular matrix and squaring each velocity difference we have the matrix:
 
-$$([\vec{f}]-\vec{f})^2  =  \begin{bmatrix} (f_0-f_0)^2 & 0 & 0 & 0  \\(f_1-f_0)^2 & (f_1-f_1)^2 & \dots  \\ (f_2-f_0)^2 & (f_2-f_1)^2 & (f_2-f_2)^2 & \vdots \\ \vdots   \\ (f_n-f_0)^2 & (f_n-f_1)^2& \dots & (f_n-f_n)^2 \end{bmatrix}$$ which is the same result as matrix $B$.
+$$([\vec{f}]-\vec{f})^2  =  \begin{bmatrix} (f_0-f_0)^2 & 0 & 0 & 0  \\(f_1-f_0)^2 & (f_1-f_1)^2 & \dots  \\ (f_2-f_0)^2 & (f_2-f_1)^2 & (f_2-f_2)^2 & \vdots \\ \vdots   \\ (f_n-f_0)^2 & (f_n-f_1)^2& \dots & (f_n-f_n)^2 \end{bmatrix}$$
+
+which is the same result as matrix $B$.
 
 **Lags:**
 
 
 Having the  vector $\vec{x}$:
+
 $$\vec{x} = [x_0, x_1, x_2, \dots, x_n ] ,$$
+
+
 the following vectorized operation is performed:
-$$[\vec{x}]-\vec{x}$$ which implies the operations $$[x_0]-[x_0, x_1, x_2, \dots, x_n ] ,$$$$[x_1]-[x_0, x_1, x_2, \dots, x_n ],$$ $$\dots ,$$ $$[x_n]-[x_0, x_1, x_2, \dots, x_n ]$$
+
+$$[\vec{x}]-\vec{x}$$
+which implies the operations $$[x_0]-[x_0, x_1, x_2, \dots, x_n ] ,$$$$[x_1]-[x_0, x_1, x_2, \dots, x_n ],$$ $$\dots ,$$ $$[x_n]-[x_0, x_1, x_2, \dots, x_n ]$$
 
 
 
@@ -109,7 +116,7 @@ $$[\vec{x}]-\vec{x}$$ which implies the operations $$[x_0]-[x_0, x_1, x_2, \dots
 
 Creation and arrange of matrix $C$ that contains the results form matrix $A$, $(\Delta V^2)$, and matrix $B$, $r$, applying the condition $\text{Mat } A, \text{ Mat } B > 0$.  Also, logarithmic values are added: 
 
-$$C =\{\Delta V^2, r, \log \Delta V^2, \log r\}  = \begin{bmatrix} a_{00} & b_{00} & \log a_{00} & \log b_{00}  \\  a_{10} & b_{10} &  \log a_{10} & \log b_{10}  \\  b_{20} & b_{20} &  \log a_{20} & \log b_{20}  \\  a_{21} & b_{21} &  \log a_{21} & \log b_{21}   \\ \vdots & \vdots & \vdots & \vdots  \\ a_{nn} & b_{nn} & \log a_{nn} & \log b_{nn}  \end{bmatrix}$$
+$$C =\{\Delta V^2, r, \log \Delta V^2, \log r\}  = \begin{matrix} a_{00} & b_{00} & \log a_{00} & \log b_{00}  \\  a_{10} & b_{10} &  \log a_{10} & \log b_{10}  \\  b_{20} & b_{20} &  \log a_{20} & \log b_{20}  \\  a_{21} & b_{21} &  \log a_{21} & \log b_{21}   \\ \vdots & \vdots & \vdots & \vdots  \\ a_{nn} & b_{nn} & \log a_{nn} & \log b_{nn}  \end{matrix}$$
 
 
 ## Logarithmic binning
