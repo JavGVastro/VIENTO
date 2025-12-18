@@ -17,10 +17,15 @@
 
 The input data are: $x$, $y$, and $f$, in which the first two are coordinates and a physical property or value $f$, which is the value to correlate with itself. In the context of [[Turbulence]]  $f$ would be velocity or density. 
 
-Input data as a list: $$\{x,y,f\}  = \begin{bmatrix} x_0 & y_0  & f_0 \\  x_1 & y_1  & f_1 \\  x_2 & y_2  & f_2 \\ \vdots & \vdots & \vdots \\ x_n & y_n & f_n  \end{bmatrix} \tag1$$ ^input-data-list-phd
+Input data as a list: 
+
+$$\{x,y,f\}  = \begin{bmatrix} x_0 & y_0  & f_0 \\  x_1 & y_1  & f_1 \\  x_2 & y_2  & f_2 \\ \vdots & \vdots & \vdots \\ x_n & y_n & f_n  \end{bmatrix} \tag1$$
  
-Input data as matrix: $$\{x,y,f\}  = \begin{bmatrix} f_{11} & f_{12}  & \dots \\  f_{21} & f_{22}  & \dots \\  f_{31} & f_{32}  & \dots \\ \vdots & \vdots & \ddots \\ f_{n1} & f_{n2} & f_{nn}  \end{bmatrix} \tag2$$ 
-where the columns would be the $x$ coordinate and the rows the $y$ coordinate in relation to expression $1$. ^input-data-matrix-phd
+Input data as matrix: 
+
+$$\{x,y,f\}  = \begin{bmatrix} f_{11} & f_{12}  & \dots \\  f_{21} & f_{22}  & \dots \\  f_{31} & f_{32}  & \dots \\ \vdots & \vdots & \ddots \\ f_{n1} & f_{n2} & f_{nn}  \end{bmatrix} \tag2$$
+
+where the columns would be the $x$ coordinate and the rows the $y$ coordinate in relation to expression $1$.
 
 # Correlations computations
 
@@ -33,12 +38,16 @@ Computations of the **squared velocity difference** for the  [[Structure Functio
 
 $$b_{ij}=(f_i-f_j)^2 \quad \forall  \quad i>j \tag3$$
 
-$$B  = \begin{bmatrix} (f_{0}-f_{0})^2 & 0 & 0 & 0 & 0 \\ (f_{1}-f_{0})^2 & (f_{1}-f_{1})^2 & 0 & 0 & 0 \\ (f_{2}-f_{0})^2 & (f_{2}-f_{1})^2 & (f_{2}-f_{2})^2 & 0 & 0 \\ \vdots &  \vdots &  \vdots & \ddots & \vdots \\ (f_{n}-f_{0})^2 & (f_{n}-f_{1})^2 & (f_{n}-f_{2})^2 & \cdots & (f_{n}-f_{n})^2 \end{bmatrix} \tag{3.1}$$or computations of the **products** for the [[Autocorrelation Function]]: 
+
+$$B  = \begin{bmatrix} (f_{0}-f_{0})^2 & 0 & 0 & 0 & 0 \\ (f_{1}-f_{0})^2 & (f_{1}-f_{1})^2 & 0 & 0 & 0 \\ (f_{2}-f_{0})^2 & (f_{2}-f_{1})^2 & (f_{2}-f_{2})^2 & 0 & 0 \\ \vdots &  \vdots &  \vdots & \ddots & \vdots \\ (f_{n}-f_{0})^2 & (f_{n}-f_{1})^2 & (f_{n}-f_{2})^2 & \cdots & (f_{n}-f_{n})^2 \end{bmatrix} \tag{3.1}$$
+
+or computations of the **products** for the [[Autocorrelation Function]]: 
+
 
 $$c_{ij}=f_i \cdot f_j \quad \forall  \quad i>j \tag4$$
 
-$$C  = \begin{bmatrix} (f_{0}f_{0}) & 0 & 0 & 0 & 0 \\ (f_{1}f_{0}) & (f_{1}f_{1}) & 0 & 0 & 0 \\ (f_{2}f_{0}) & (f_{2}f_{1}) & (f_{2}f_{2}) & 0 & 0 \\ \vdots &  \vdots &  \vdots & \ddots & \vdots \\ (f_{n}f_{0}) & (f_{n}f_{1}) & (f_{n}f_{2}) & \cdots & (f_{n}f_{n}) \end{bmatrix} \tag{4.1}$$
 
+$$C  = \begin{bmatrix} (f_{0}f_{0}) & 0 & 0 & 0 & 0 \\ (f_{1}f_{0}) & (f_{1}f_{1}) & 0 & 0 & 0 \\ (f_{2}f_{0}) & (f_{2}f_{1}) & (f_{2}f_{2}) & 0 & 0 \\ \vdots &  \vdots &  \vdots & \ddots & \vdots \\ (f_{n}f_{0}) & (f_{n}f_{1}) & (f_{n}f_{2}) & \cdots & (f_{n}f_{n}) \end{bmatrix} \tag{4.1}$$
 
 
 
@@ -55,6 +64,7 @@ $$l_{ij}=\sqrt{ (x_i-x_j)^2+(y_i-y_j)^2 } = \sqrt{\Delta x_{ij}^2 - \Delta y_{ij
 where matrix $L$ is the matrix having al the lags values: 
 
 $$A  = \begin{bmatrix} \sqrt{\Delta x_{00}^2 - \Delta y_{00}^2} & 0 & 0 & 0 & 0 \\ \sqrt{\Delta x_{10}^2 - \Delta y_{10}^2} & \sqrt{\Delta x_{11}^2 - \Delta y_{11}^2} & 0 & 0 & 0 \\ \sqrt{\Delta x_{20}^2 - \Delta y_{20}^2} & \sqrt{\Delta x_{21}^2 - \Delta y_{21}^2} & \sqrt{\Delta x_{22}^2 - \Delta y_{22}^2} & 0 & 0 \\ \vdots &  \vdots &  \vdots & \ddots & \vdots \\ \sqrt{\Delta x_{n0}^2 - \Delta y_{n0}^2} & \sqrt{\Delta x_{n1}^2 - \Delta y_{n1}^2} & \sqrt{\Delta x_{n2}^2 - \Delta y_{n2}^2}  & \cdots & \sqrt{\Delta x_{nn}^2 - \Delta y_{nn}^2} \end{bmatrix} \tag{5.1}$$
+
 
 ## Production model (Vectorization)
 
