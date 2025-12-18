@@ -7,7 +7,6 @@
 	- strong emissivity fluctuations: $\kappa_{3\text{D}} =  m_{2\text{D}}  + 3$
 
  
- 
 # Structure function turbulence index values
  
 
@@ -17,7 +16,6 @@
 	- $m_{3D} = 0.80 = 4/5$ 
 - Supersonic compressible flow
 	- $m_{3D} = 1.00$      
-
 
 
 # Index relationships
@@ -89,8 +87,7 @@ $$\boxed{\kappa_{3\text{D}} = m_{2\text{D}} +3-1-0 = m_{2\text{D}}  + 2 \quad \q
 
 $$\boxed{ \kappa_{3\text{D}} =+3-1 - (-1) = m_{2\text{D}}  + 3 \quad \quad  \text{emissivity fluctuations case}.}$$
 
-
-
+NOTE: In simulation the intensity of the fluctuations must be accounted, e.g., sigE = 0,1,2
 # On the constancy of the index
 
 #TBD 
