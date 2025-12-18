@@ -49,15 +49,21 @@ The seeing acts on each $v$-slice of the velocity cube (Even though $I_0 (x)$ is
 $$ \hat{I} (x,v) = I(x,v) \otimes K*(x, s_0) $$
 
 where $\otimes$ means the convolution operation and $K(x, s_0)$ is the seeing profile with width $s_0$:
+
 $$ K(x, s_0) = \frac{1}{\sqrt{2 \pi s_0}}\exp (-x^2/2s_0^2)$$
+
+
 with $\text{FWHM} \approx 2.3 s_0$.
 
 ==Two spatial points:==  If only tow points exist: 
+
 $$x = \{ 0 , \delta \}$$
+
 
 then the convolution is just a sum: 
 
 $$\widetilde{I}(0, v) = I(0, v) K(0, s_0) + I(\delta, v) K(\delta, s_0)$$
+
 
 $$\widetilde{I}(\delta, v) = I(\delta, v) K(0, s_0) + I(0, v) K(\delta, s_0) $$
 
@@ -93,7 +99,10 @@ Using the substitution
 
 $$ \tanh x = \frac{e^{2x} - 1 }{ e^{2x} + 1} $$
 
-Rewriting the expression: $$  \left[ \frac{1-\exp(-\delta^2/2s_0^2)}{1+\exp(-\delta^2/2s_0^2)} \right]^2 $$
+Rewriting the expression: 
+
+$$  \left[ \frac{1-\exp(-\delta^2/2s_0^2)}{1+\exp(-\delta^2/2s_0^2)} \right]^2 $$
+
 
 $$  -\left[ \frac{\exp(-\delta^2/2s_0^2)-1}{\exp(-\delta^2/2s_0^2)+1} \right]^2 $$
 
@@ -101,7 +110,7 @@ $$  -\left[ \frac{\exp(-\delta^2/2s_0^2)-1}{\exp(-\delta^2/2s_0^2)+1} \right]^2 
 $$ \therefore \boxed{ ( \widetilde{\Delta v} )^2 = \tanh^2 \left[ \left( \frac{\delta}{2s_0}\right)^2 \right]  ( \Delta v)^2 }$$
 
 
-==Limit of small separations:== $\delta / s_0 \rightarrow 0$
+**Limit of small separations:** $\delta / s_0 \rightarrow 0$
 
 
 $$\Rightarrow \exp(- \delta^2 / 2s^2_0) \simeq 1-\frac{\delta ^2}{2s_0^2} $$
@@ -113,9 +122,9 @@ $$\Rightarrow [...]^2 \simeq \left[ \frac{1}{2} \frac{\delta^2}{2s_0^2} \right] 
 <img src="Figs/seeing_03.png" alt="Image one" width="600">
 
 
-==Application to structure function:== In reality, there are mote than two points. But given that $\Delta v (\Delta x)$ increases with $\Delta x$, we can assume that blurring of scales smaller than $\Delta x$ has a negligible effect of $\Delta x \rightarrow \widetilde{\Delta x}$. *Need rigorously proof*
+- **Application to structure function:** In reality, there are mote than two points. But given that $\Delta v (\Delta x)$ increases with $\Delta x$, we can assume that blurring of scales smaller than $\Delta x$ has a negligible effect of $\Delta x \rightarrow \widetilde{\Delta x}$. *Need rigorously proof*
 
-==The assumption of constant $I_0$ can be justified as follows:== The spatial variation in $I$ have largest amplitude for scales $> l_0$. So long as $s_0 << l_0$ then the variations in $I$ on scales affected by seeing should be small.
+- The assumption of constant $I_0$ can be justified as follows: The spatial variation in $I$ have largest amplitude for scales $> l_0$. So long as $s_0 << l_0$ then the variations in $I$ on scales affected by seeing should be small.
 
 So, if we have an ideal structure function $B(r)$ then the effects of seeing will give a corrected
 

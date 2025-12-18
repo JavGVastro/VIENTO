@@ -1,8 +1,8 @@
-- [ ] Finish / Review
+
 - Here we review the literature regarding the index of the observational structure function.
 - We address some problems regarding the observational  power law index of the structure function (two-dimensional and projected), and its relation to its three-dimensional counterpart, and with index of the power and energy spectrum. 
 - Relevant when using simulations and synthetic maps  [1](https://github.com/JavGVastro/VIENTO/tree/main/fake_maps) .
-- Relationship between power spectra and observed structure function indexes results:
+- **Relationship between power spectra and observed structure function indexes** results (see below):
 	- non-emissivity fluctuations: $\kappa_{3\text{D}} =  m_{2\text{D}}  + 2$ and for
 	- strong emissivity fluctuations: $\kappa_{3\text{D}} =  m_{2\text{D}}  + 3$
 
@@ -67,14 +67,14 @@ $$ \kappa_{N\text{D}} = m_{N\text{D}} + N . $$
 
 ## Criteria III 
 
-Considering **projection smoothing/smearing** from $3$ to $2$ dimensions we have ([Medina et al 2014](https://ui.adsabs.harvard.edu/abs/2014MNRAS.445.1797M)):
+Considering **projection smoothing/smearing** from $3$ to $2$ dimensions we have:
 
 $$m_{2\text{D}} = m_{3\text{D}} + 1$$
 
 ## Criteria IV
 
 - The **change in the index is supposed to be caused by** 
-	- projection smearing term and/or (Criteria III)
+	- projection smearing term and/or (Criteria III) "$+1$"
 	- emissivity/density fluctuations, $\delta \kappa$: 
 
 The relation between the two-dimensional second order structure function index and its three-dimensional counterpart is given by 
