@@ -170,8 +170,20 @@ From a single pipeline-ready velocity map FITS, Stage 2 produces:
 - Weighted structure function:
   - Formalize how a surface brightness or emission map is used as a weight in the structure function computation and document the required inputs.
 
----
+## Fit and confidence interval details
 
+### Prior
+
+| Parameter          | Lower                         | Upper                      |
+| ------------------ | ----------------------------- | -------------------------- |
+| $\sigma^2$         | $0.25$ max $[B_{\text{obs}}]$ | $2$ max $[B_{\text{obs}}]$ |
+| $r_0$              | $0.01 L$                      | $2 L$                      |
+| $m$                | $0.5$                         | $2.0$                      |
+| $s_0$              | $0.1$ arcsec                  | $1.5$ arcsec               |
+| $B_{\text{noise}}$ | $0$                           | $3$ min $[B_{\text{obs}}]$ |
+|                    |                               |                            |
+**Note**: max $[B_{\text{obs}}]$ and min $[B_{\text{obs}}]$ are over all bins in the observed structure function with $r < L/2$.
+**Note**: Mayores incertidumbres a los primeros puntos (antes de la relación lineal)
 # 5. Stage 3 – Results Compilation and Visualization
 
 ## 5.1 Objective
