@@ -19,11 +19,29 @@ The input data are: $x$, $y$, and $f$, in which the first two are coordinates an
 
 Input data as a list: 
 
-$$\{x,y,f\}  = \begin{bmatrix} x_0 & y_0  & f_0 \\  x_1 & y_1  & f_1 \\  x_2 & y_2  & f_2 \\ \vdots & \vdots & \vdots \\ x_n & y_n & f_n  \end{bmatrix} \tag1$$
+$$
+\{x,y,f\}  =
+\begin{bmatrix} 
+x_0 & y_0  & f_0 \\ 
+x_1 & y_1  & f_1 \\ 
+x_2 & y_2  & f_2 \\ 
+\vdots & \vdots & \vdots \\
+x_n & y_n & f_n  
+\end{bmatrix} 
+$$
  
 Input data as matrix: 
 
-$$\{x,y,f\}  = \begin{bmatrix} f_{11} & f_{12}  & \dots \\  f_{21} & f_{22}  & \dots \\  f_{31} & f_{32}  & \dots \\ \vdots & \vdots & \ddots \\ f_{n1} & f_{n2} & f_{nn}  \end{bmatrix} \tag2$$
+$$
+\{x,y,f\}  = 
+\begin{bmatrix}
+f_{11} & f_{12}  & \dots \\  
+f_{21} & f_{22}  & \dots \\  
+f_{31} & f_{32}  & \dots \\ 
+\vdots & \vdots & \ddots \\ 
+f_{n1} & f_{n2} & f_{nn}  
+\end{bmatrix}
+$$
 
 where the columns would be the $x$ coordinate and the rows the $y$ coordinate in relation to expression $1$.
 
@@ -34,20 +52,37 @@ where the columns would be the $x$ coordinate and the rows the $y$ coordinate in
 - They "toy model" is the numerical approach where each correlation value is computed independently, making it good as a didactic tool but impractical for research purposes. For an efficient case the algorithm use the Pythonic option to  vectorize an operation to an entire array.
 - This algorithm uses for loops and list comprehension methods.
 
-Computations of the **squared velocity difference** for the  [[Structure Function#Second-order structure function|Second-order structure function]]: 
+Computations of the **squared velocity difference** for the  Second-order structure function: 
 
 $$b_{ij}=(f_i-f_j)^2 \quad \forall  \quad i>j \tag3$$
 
 
-$$B  = \begin{bmatrix} (f_{0}-f_{0})^2 & 0 & 0 & 0 & 0 \\ (f_{1}-f_{0})^2 & (f_{1}-f_{1})^2 & 0 & 0 & 0 \\ (f_{2}-f_{0})^2 & (f_{2}-f_{1})^2 & (f_{2}-f_{2})^2 & 0 & 0 \\ \vdots &  \vdots &  \vdots & \ddots & \vdots \\ (f_{n}-f_{0})^2 & (f_{n}-f_{1})^2 & (f_{n}-f_{2})^2 & \cdots & (f_{n}-f_{n})^2 \end{bmatrix} \tag{3.1}$$
+$$
+B  = 
+\begin{bmatrix} 
+(f_{0}-f_{0})^2 & 0 & 0 & 0 & 0 \\ 
+(f_{1}-f_{0})^2 & (f_{1}-f_{1})^2 & 0 & 0 & 0 \\ 
+(f_{2}-f_{0})^2 & (f_{2}-f_{1})^2 & (f_{2}-f_{2})^2 & 0 & 0 \\ 
+\vdots &  \vdots &  \vdots & \ddots & \vdots \\ 
+(f_{n}-f_{0})^2 & (f_{n}-f_{1})^2 & (f_{n}-f_{2})^2 & \cdots & (f_{n}-f_{n})^2 
+\end{bmatrix}$$
 
-or computations of the **products** for the [[Autocorrelation Function]]: 
+or computations of the **products** for the Autocorrelation Function: 
 
 
 $$c_{ij}=f_i \cdot f_j \quad \forall  \quad i>j \tag4$$
 
 
-$$C  = \begin{bmatrix} (f_{0}f_{0}) & 0 & 0 & 0 & 0 \\ (f_{1}f_{0}) & (f_{1}f_{1}) & 0 & 0 & 0 \\ (f_{2}f_{0}) & (f_{2}f_{1}) & (f_{2}f_{2}) & 0 & 0 \\ \vdots &  \vdots &  \vdots & \ddots & \vdots \\ (f_{n}f_{0}) & (f_{n}f_{1}) & (f_{n}f_{2}) & \cdots & (f_{n}f_{n}) \end{bmatrix} \tag{4.1}$$
+$$
+C  = 
+\begin{bmatrix} 
+(f_{0}f_{0}) & 0 & 0 & 0 & 0 \\ 
+(f_{1}f_{0}) & (f_{1}f_{1}) & 0 & 0 & 0 \\ 
+(f_{2}f_{0}) & (f_{2}f_{1}) & (f_{2}f_{2}) & 0 & 0 \\ 
+\vdots &  \vdots &  \vdots & \ddots & \vdots \\
+(f_{n}f_{0}) & (f_{n}f_{1}) & (f_{n}f_{2}) & \cdots & (f_{n}f_{n}) 
+\end{bmatrix}
+$$
 
 
 
@@ -63,7 +98,16 @@ $$l_{ij}=\sqrt{ (x_i-x_j)^2+(y_i-y_j)^2 } = \sqrt{\Delta x_{ij}^2 - \Delta y_{ij
 
 where matrix $L$ is the matrix having al the lags values: 
 
-$$A  = \begin{bmatrix} \sqrt{\Delta x_{00}^2 - \Delta y_{00}^2} & 0 & 0 & 0 & 0 \\ \sqrt{\Delta x_{10}^2 - \Delta y_{10}^2} & \sqrt{\Delta x_{11}^2 - \Delta y_{11}^2} & 0 & 0 & 0 \\ \sqrt{\Delta x_{20}^2 - \Delta y_{20}^2} & \sqrt{\Delta x_{21}^2 - \Delta y_{21}^2} & \sqrt{\Delta x_{22}^2 - \Delta y_{22}^2} & 0 & 0 \\ \vdots &  \vdots &  \vdots & \ddots & \vdots \\ \sqrt{\Delta x_{n0}^2 - \Delta y_{n0}^2} & \sqrt{\Delta x_{n1}^2 - \Delta y_{n1}^2} & \sqrt{\Delta x_{n2}^2 - \Delta y_{n2}^2}  & \cdots & \sqrt{\Delta x_{nn}^2 - \Delta y_{nn}^2} \end{bmatrix} \tag{5.1}$$
+$$
+A  =
+\begin{bmatrix} 
+\sqrt{\Delta x_{00}^2 - \Delta y_{00}^2} & 0 & 0 & 0 & 0 \\ 
+\sqrt{\Delta x_{10}^2 - \Delta y_{10}^2} & \sqrt{\Delta x_{11}^2 - \Delta y_{11}^2} & 0 & 0 & 0 \\ 
+\sqrt{\Delta x_{20}^2 - \Delta y_{20}^2} & \sqrt{\Delta x_{21}^2 - \Delta y_{21}^2} & \sqrt{\Delta x_{22}^2 - \Delta y_{22}^2} & 0 & 0 \\ 
+\vdots &  \vdots &  \vdots & \ddots & \vdots \\ 
+\sqrt{\Delta x_{n0}^2 - \Delta y_{n0}^2} & \sqrt{\Delta x_{n1}^2 - \Delta y_{n1}^2} & \sqrt{\Delta x_{n2}^2 - \Delta y_{n2}^2}  & \cdots & \sqrt{\Delta x_{nn}^2 - \Delta y_{nn}^2} 
+\end{bmatrix}
+$$
 
 
 ## Production model (Vectorization)
@@ -77,6 +121,7 @@ $$\vec{f} = [f_0, f_1, f_2, \dots, f_n ] ,$$
 the following vectorized operation is performed:
 
 $$[\vec{f}]-\vec{f}$$
+
 which implies the operations 
 
 $$[f_0]-[f_0, f_1, f_2, \dots, f_n ] ,$$
@@ -84,20 +129,37 @@ $$[f_0]-[f_0, f_1, f_2, \dots, f_n ] ,$$
 $$[f_1]-[f_0, f_1, f_2, \dots, f_n ],$$
 
 $$\dots ,$$
+
 $$[f_n]-[f_0, f_1, f_2, \dots, f_n ]$$
 
 are performed at the same time. The results is:
 
-$$[\vec{f}]-\vec{f}  = \begin{bmatrix}  [f_0-f_0,f_0-f_1,f_0-f_2, \dots,f_0-f_n] \\  [f_1-f_0,f_1-f_1,f_1-f_2, \dots,f_1-f_n] \\  [f_2-f_0,f_2-f_1,f_2-f_2, \dots,f_2-f_n]  \\ [f_3-f_0,f_3-f_1,f_3-f_2, \dots,f_3-f_n]  \\ \vdots \\  [f_n-f_0,f_n-f_1,f_n-f_2, \dots,f_n-f_n]   \end{bmatrix}$$
+$$
+[\vec{f}]-\vec{f}  = 
+\begin{bmatrix}  
+[f_0-f_0,f_0-f_1,f_0-f_2, \dots,f_0-f_n] \\ 
+[f_1-f_0,f_1-f_1,f_1-f_2, \dots,f_1-f_n] \\ 
+[f_2-f_0,f_2-f_1,f_2-f_2, \dots,f_2-f_n]  \\ 
+[f_3-f_0,f_3-f_1,f_3-f_2, \dots,f_3-f_n]  \\ 
+\vdots \\  
+[f_n-f_0,f_n-f_1,f_n-f_2, \dots,f_n-f_n]  
+\end{bmatrix}$$
 
 Applying the lower triangular matrix and squaring each velocity difference we have the matrix:
 
-$$([\vec{f}]-\vec{f})^2  =  \begin{bmatrix} (f_0-f_0)^2 & 0 & 0 & 0  \\(f_1-f_0)^2 & (f_1-f_1)^2 & \dots  \\ (f_2-f_0)^2 & (f_2-f_1)^2 & (f_2-f_2)^2 & \vdots \\ \vdots   \\ (f_n-f_0)^2 & (f_n-f_1)^2& \dots & (f_n-f_n)^2 \end{bmatrix}$$
+$$
+([\vec{f}]-\vec{f})^2  =  
+\begin{bmatrix} 
+(f_0-f_0)^2 & 0 & 0 & 0  \\
+(f_1-f_0)^2 & (f_1-f_1)^2 & \dots  \\
+(f_2-f_0)^2 & (f_2-f_1)^2 & (f_2-f_2)^2 & \vdots \\ 
+\vdots   \\
+(f_n-f_0)^2 & (f_n-f_1)^2& \dots & (f_n-f_n)^2
+\end{bmatrix}$$
 
 which is the same result as matrix $B$.
 
 **Lags:**
-
 
 Having the  vector $\vec{x}$:
 
@@ -107,16 +169,31 @@ $$\vec{x} = [x_0, x_1, x_2, \dots, x_n ] ,$$
 the following vectorized operation is performed:
 
 $$[\vec{x}]-\vec{x}$$
-which implies the operations $$[x_0]-[x_0, x_1, x_2, \dots, x_n ] ,$$$$[x_1]-[x_0, x_1, x_2, \dots, x_n ],$$ $$\dots ,$$ $$[x_n]-[x_0, x_1, x_2, \dots, x_n ]$$
 
+which implies the operations 
 
+$$[x_0]-[x_0, x_1, x_2, \dots, x_n ] ,$$
+
+$$[x_1]-[x_0, x_1, x_2, \dots, x_n ],$$ 
+
+$$\dots ,$$ 
+
+$$[x_n]-[x_0, x_1, x_2, \dots, x_n ]$$
 
 # Grouping, binning and descriptive statistics of the correlations and lags
 
-
 Creation and arrange of matrix $C$ that contains the results form matrix $A$, $(\Delta V^2)$, and matrix $B$, $r$, applying the condition $\text{Mat } A, \text{ Mat } B > 0$.  Also, logarithmic values are added: 
 
-$$C =\{\Delta V^2, r, \log \Delta V^2, \log r\}  = \begin{bmatrix} a_{00} & b_{00} & \log a_{00} & \log b_{00}  \\  a_{10} & b_{10} &  \log a_{10} & \log b_{10}  \\  b_{20} & b_{20} &  \log a_{20} & \log b_{20}  \\  a_{21} & b_{21} &  \log a_{21} & \log b_{21}   \\ \vdots & \vdots & \vdots & \vdots  \\ a_{nn} & b_{nn} & \log a_{nn} & \log b_{nn}  \end{bmatrix}$$
+$$
+C =
+\{\Delta V^2, r, \log \Delta V^2, \log r\}  =
+\begin{bmatrix} a_{00} & b_{00} & \log a_{00} & \log b_{00}  \\ 
+a_{10} & b_{10} &  \log a_{10} & \log b_{10}  \\  
+b_{20} & b_{20} &  \log a_{20} & \log b_{20}  \\ 
+a_{21} & b_{21} &  \log a_{21} & \log b_{21}   \\ 
+\vdots & \vdots & \vdots & \vdots  \\ 
+a_{nn} & b_{nn} & \log a_{nn} & \log b_{nn} 
+\end{bmatrix}$$
 
 
 ## Logarithmic binning
