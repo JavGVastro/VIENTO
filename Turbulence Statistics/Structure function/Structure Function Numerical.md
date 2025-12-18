@@ -116,14 +116,21 @@ which implies the operations $$[x_0]-[x_0, x_1, x_2, \dots, x_n ] ,$$$$[x_1]-[x_
 
 Creation and arrange of matrix $C$ that contains the results form matrix $A$, $(\Delta V^2)$, and matrix $B$, $r$, applying the condition $\text{Mat } A, \text{ Mat } B > 0$.  Also, logarithmic values are added: 
 
-$$C =\{\Delta V^2, r, \log \Delta V^2, \log r\}  = \begin{matrix} a_{00} & b_{00} & \log a_{00} & \log b_{00}  \\  a_{10} & b_{10} &  \log a_{10} & \log b_{10}  \\  b_{20} & b_{20} &  \log a_{20} & \log b_{20}  \\  a_{21} & b_{21} &  \log a_{21} & \log b_{21}   \\ \vdots & \vdots & \vdots & \vdots  \\ a_{nn} & b_{nn} & \log a_{nn} & \log b_{nn}  \end{matrix}$$
+$$C =\{\Delta V^2, r, \log \Delta V^2, \log r\}  = \begin{bmatrix} a_{00} & b_{00} & \log a_{00} & \log b_{00}  \\  a_{10} & b_{10} &  \log a_{10} & \log b_{10}  \\  b_{20} & b_{20} &  \log a_{20} & \log b_{20}  \\  a_{21} & b_{21} &  \log a_{21} & \log b_{21}   \\ \vdots & \vdots & \vdots & \vdots  \\ a_{nn} & b_{nn} & \log a_{nn} & \log b_{nn}  \end{bmatrix}$$
 
 
 ## Logarithmic binning
 
 - Defining a Dex of: $\text{dlogs} = 0.1 = 10^{0.1}$
-- The number of bins is obtained as: $$ \text{number bins} (i) = \text{int} \left( \frac{b_\text{max} - b_\text{min}}{\text{dlogs}} + \frac{1}{2 \cdot \text{dlogs}} \right)$$
-- Therefore, the range of each bin is obtained as $$0 + i \cdot \text{dlogs} \quad , \quad i \cdot \text{dlogs} +i \cdot \text{dlogs} $$
+- The number of bins is obtained as: 
+
+$$ \text{number bins} (i) = \text{int} \left( \frac{b_\text{max} - b_\text{min}}{\text{dlogs}} + \frac{1}{2 \cdot \text{dlogs}} \right)$$
+
+
+- Therefore, the range of each bin is obtained as 
+
+$$0 + i \cdot \text{dlogs} \quad , \quad i \cdot \text{dlogs} +i \cdot \text{dlogs} $$
+
 - The outcome is a like dictionary where each entry are the lags and velocity differences (indexes along their logarithmic values) between the specified values (keys).
 
 # Structure Function Numba (Dr. Will Henney script)
