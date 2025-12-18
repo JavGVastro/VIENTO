@@ -1,0 +1,4 @@
+- The statistical functions are computed using our algorithm in Python and different packages are used to fit the observational results with a theoretical model and obtain the confidence interval. 
+- Second-order structure function
+- Power spectra
+- Others

@@ -21,6 +21,7 @@ Scientific goals:
 	- Velocity dispersion - Luminosity, $\sigma_\text{POS} \ \text{vs} \ I$
 - Analyze the [Non-turbulent](<Turbulence ISM/Non Turbulence/Emissivity fluctuations produce POS velocity fluctuations.md>) option for the observed velocity fluctuations.
 - Muti-scale studies of inhomogeneous turbulence in star forming regions. Such as the fact that the turbulent intensity in Orion seems to be larger in the center than in the outskirts.
+- Gas and stars kinematics.
 - Compare methods (e.g., structure function vs. power spectrum vs. SCF/VCA/VCS/Δ-variance) and quantify consistency, biases, and uncertainty.
 
 # Project Overview
