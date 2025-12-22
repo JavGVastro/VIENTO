@@ -15,7 +15,7 @@
 
 # Loading data
 
-The input data are: $x$, $y$, and $f$, in which the first two are coordinates and a physical property or value $f$, which is the value to correlate with itself. In the context of [[Turbulence]]  $f$ would be velocity or density. 
+The input data are: $x$, $y$, and $f$, in which the first two are coordinates and a physical property or value $f$, which is the value to correlate with itself. In the context of [[Bibliography/Books/Turbulence]]  $f$ would be velocity or density. 
 
 Input data as a list: 
 

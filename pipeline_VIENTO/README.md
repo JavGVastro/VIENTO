@@ -306,6 +306,20 @@ From the inputs of Stages 1 and 2, Stage 3 produces:
 
 # 7. Custom Python Modules (Current and Planned)
 
+- Personal Python packages created specifically for the VIENTO project.
+
+``` python
+
+# Modification on Turbustat synthethic velocity fields
+from turb_utils import make_extended, make_3dfield
+
+import strucfunc
+import bfunc
+import bplot
+import ci_results_compiler
+
+```
+
 ## 7.1 `strucfunc` (Structure Function Library)
 
 Purpose:

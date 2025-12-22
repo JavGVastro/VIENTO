@@ -61,3 +61,8 @@ $$p_3(k) \propto k^{-\frac{11}{3}}$$$$E_3(k) \propto k^2 k^{-\frac{11}{3}}$$$$E_
 
 $$S_{xx}(\omega) = \lim_{T \to \infty} E\left[ \frac{|X_T(\omega)|^2}{2T} \right]
 $$
+
+- [ ] [What is Power Spectral Density (PSD)?](https://www.youtube.com/watch?v=DoSLMEEo1Y0)
+- [ ] [What is power spectral density psd (the concept)](https://www.youtube.com/watch?v=p4_Fbz-5VgE) 
+	 - Divide the random process in small process, obtain the sinusoidal components of each one then average it. 
+	 - Particular portion to build the complete signal.

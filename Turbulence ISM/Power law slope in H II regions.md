@@ -90,4 +90,8 @@ $$\boxed{ \kappa_{3\text{D}} =+3-1 - (-1) = m_{2\text{D}}  + 3 \quad \quad  \tex
 NOTE: In simulation the intensity of the fluctuations must be accounted, e.g., sigE = 0,1,2
 # On the constancy of the index
 
-#TBD 
+Lets consider the option where the power-law slope is constant for all the H II regions
+
+- From [[Garcia Vazquez et al 2023]]:
+	- The slope $m$ of the power-law portion of the structure function shows no significant correlation with any other parameter, with a weighted mean value of $m = 1.03$ and a $\sigma = 0.21$ [[Garcia Vazquez et al 2023#The constancy of the power law slope|1]]. 
+	- It argues that the lack of correlation between  $m_\text{3D}-\sigma^2$ is not seen because the increase in the amplitude of the velocity fluctuations (due to transition from subsonic to supersonic turbulence ) is offset by a decrease in $\delta\kappa$  if the amplitude of the density fluctuations (and hence emissivity fluctuations) increases along with the velocity fluctuations [[Projection smearing|1]].
