@@ -1,7 +1,4 @@
----
-cssclasses:
-Note: To create Wiki entrance in Git
----
+
 # Classic theory
 
 - It is assumed that a driving force is present in a gaseous object with a dimension comparable to that of the largest dimension of the system. the ratio of dimensions to coefficient of viscosity, as expressed by the Reynolds number, is so large that the flow of gas is turbulent and not laminar. The energy of the mas motion at the largest scale, characterized by $\varepsilon$, the rate of energy input per unit mass, is  transferred without loss to a succession of progressively smaller mass elements. At the smallest scale one finally reaches a point where the Reynolds number becomes less than about unity and the flow stops being turbulent and the energy that has come down through the eddies of various sizes is deposited in the gas by thermal heating (viscous dissipation). 
