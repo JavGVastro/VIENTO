@@ -1,3 +1,6 @@
+
+# Fake maps (Synthetic maps)
+
 - The objective is to develop a more accurate way to represent real observations, from our perspective, through synthetic maps with the end to use them as our laboratory.
 - Here we explore the current state of the synthetic maps (a.k.a. fake maps) created using the [Turbustat](https://turbustat.readthedocs.io/en/latest/index.html) Python package. 
 - We review our initial modification for the [[#2D-case mod|2D-case]] and 3D-case to:

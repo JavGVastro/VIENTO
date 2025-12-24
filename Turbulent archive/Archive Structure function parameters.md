@@ -16,6 +16,10 @@
 | Castañeda 1988                                                                       |            | $\text{[OIII]}$                   |                            |                          |               |       |
 | Munch 1958                                                                           |            | $\text{[OIII]}$                   | $7.4$                      |                          | 2/3           |       |
 | von Hoerner 1951                                                                     |            | $\text{[OIII]}$                   | -                          | -                        | 2/3           |       |
+|                                                                                      |            |                                   |                            |                          |               |       |
+
+<img src="state_of_the_art/plots/functions_orion.png" alt="Image one" width="800">
+
 # Compact to normal H II regions
 
 | Article                                                                                          | Region   | Sub region | Emission line    | $\sigma_\text{POS}$ [km/s] | Correlation length $r_0$ | $m$ [-]    | Notes                                                                                                       |
@@ -31,7 +35,12 @@
 | [Roy and Joncas 1985](https://ui.adsabs.harvard.edu/abs/1985ApJ...288..142R/abstract)            | S142     |            | $\text{H}\alpha$ |                            |                          | 1          | correlation scale: 1.6 - 9 pc<br>Fabry-Perot 1.60-m OmM                                                     |
 | [Louise & Monnet 1970](https://ui.adsabs.harvard.edu/abs/1970A%26A.....8..486L/abstract)         | M 8      |            | $\text{H}\alpha$ |                            |                          | 2/3-2      | Observations from \citet{1960AnAp...23..115C} with \num{10000} points.                                      |
 |                                                                                                  |          |            |                  |                            |                          |            |                                                                                                             |
+
+
+<img src="state_of_the_art/plots/functions_ghr.png" alt="Image one" width="800">
+
 # Giant H II regions
+
 
 
 | Article                                                                                 | Region           | Sub region | Emission line    | $\sigma_\text{POS}$ [km/s] | Correlation length $r_0$ | $m$ [-]           | Notes                                                                                         |
@@ -46,3 +55,4 @@
 
 
 
+<img src="state_of_the_art/plots/functions_gehr.png" alt="Image one" width="800">

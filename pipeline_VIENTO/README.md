@@ -3,6 +3,13 @@
 
 - [ ] Integrate $B(r)$ table with .fits file (now it exported as an numpy array into a .json file)
 - [ ] Elaborate on Papermill on make_file inject parameters and run stuff
+
+```
+Matrix: True / False # Velocity field is in a matrix array or scatter array
+SB:     True / False # We want to considere the instensity / surface brightness map for weighted analysis
+ideal:  True / False # We use the 3-model (ideal) or 5-model (real) parameter for the fit
+```
+
 # 1. Purpose and Scope
 
 The VIENTO pipeline aims to provide a reproducible, modular workflow to:
