@@ -15,7 +15,7 @@ Scientific goals:
 	- [Power-law index](<Turbulence ISM/Power law slope in H II regions.md>), $m$
 - Our analysis will yield robust correlations between turbulence properties and physical parameters (e.g., luminosity, diameter, and line-of-sight velocity dispersion) of numerous H II regions.
 	- [Projection effects](<Turbulence ISM/Projection smearing.md>) and compressibility:
-		- $\sigma_\text{POS}$ vs $\sigma \rho$ [1](<Turbulence ISM/Compressibility in H II regions.md>)
+		- $\sigma_\text{POS}$ vs $\sigma_\rho$ [1](<Turbulence ISM/Compressibility in H II regions.md>)
 		- $\sigma_\text{POS}$ vs $\sigma_\text{LOS}$
 		- $r_0 \ \text{vs} \ \text{Diam}$
 	- Theoretical vs observed power law index

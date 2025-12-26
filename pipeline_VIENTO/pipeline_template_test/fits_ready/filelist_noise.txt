@@ -1,0 +1,4 @@
+fake_cube_mod_finite_noise_sigE0_m300_r8_N128
+fake_cube_mod_finite_noise_sigE1_m330_r8_N128
+fake_cube_mod_finite_noise_sigE2_m355_r8_N128
+

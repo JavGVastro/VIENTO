@@ -8,7 +8,7 @@ NOTEBOOK_MOD := pipeline_computations_fake_mod.ipynb
 NOTEBOOK_NON := pipeline_computations_fake_non.ipynb
 
 # File lists (one ID per line; blank lines and #comments allowed)
-LIST_MOD := fits_ready/filelist_mod.txt
+LIST_MOD := fits_ready/filelist_noise.txt
 LIST_NON := fits_ready/filelist_non.txt
 
 # Output root for executed notebooks
