@@ -33,10 +33,11 @@ $$
   C(r) = \frac{1}{\sigma^2}\left\langle
   \bigl[
   V_{c}(\boldsymbol{x}_j) \  V_{c}(\boldsymbol{x}_i)
- \bigr] \right \rangle_{ |{\boldsymbol{x}_j - \boldsymbol{x}_i\!} | \ \approx \ r} \ .
+ \bigr] \right \rangle_{ |{\boldsymbol{x}_j - \boldsymbol{x}_i} | \ \approx \ r} \ .
 $$
 
 ## Other definitions
+
 $$\text{ACF}(k) = \frac{\text{Cov}(X_t, X_{t-k})}{\text{Var}(X_t)}
 $$
 or 
