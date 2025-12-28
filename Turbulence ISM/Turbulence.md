@@ -1,6 +1,7 @@
 
-# Classic theory
+# Kolmogorov -5/3 law (Classic theory)
 
+- Based using the concept of cascade proposed by Richardson (1922).
 - It is assumed that a driving force is present in a gaseous object with a dimension comparable to that of the largest dimension of the system. the ratio of dimensions to coefficient of viscosity, as expressed by the Reynolds number, is so large that the flow of gas is turbulent and not laminar. The energy of the mas motion at the largest scale, characterized by $\varepsilon$, the rate of energy input per unit mass, is  transferred without loss to a succession of progressively smaller mass elements. At the smallest scale one finally reaches a point where the Reynolds number becomes less than about unity and the flow stops being turbulent and the energy that has come down through the eddies of various sizes is deposited in the gas by thermal heating (viscous dissipation). 
 - Kolmogorov showed that this process of loss-free-energy-cascade would lead to a relation between the root-mean-square velocity difference, $v$, of mass points of separation $r$ such that 
 
@@ -8,14 +9,16 @@ $$v^2 = (\varepsilon \times r)^{2/3}$$
 
 Energy Cascade Spectrum
 
-$$E(k, \epsilon) = C k^a \epsilon^b = C k^{-\frac{5}{3}} \epsilon^{\frac{2}{3}}$$
+$$E(k, \epsilon) = C k^a \epsilon^b = C k^{-\frac{5}{3}} \varepsilon^{\frac{2}{3}}$$
 
-$$E(k) \sim  k^{-\frac{5}{3}} \epsilon^{\frac{2}{3}}$$ 
+$$E(k) \sim  k^{-\frac{5}{3}} \varepsilon^{\frac{2}{3}}$$ 
 
 
 
 # Turbulence index
 
+
+## Real space
 
 - Subsonic incompressible flow (Kolmogorov theory)
 	- $m_{3D} = 0.66 = 2/3$ 
@@ -24,13 +27,31 @@ $$E(k) \sim  k^{-\frac{5}{3}} \epsilon^{\frac{2}{3}}$$
 - Supersonic compressible flow
 	- $m_{3D} = 1.00$      
 
-# Kolmogorov Scales
- 
- $$l_k = \left( \frac{\nu^3}{\epsilon} \right)^{\frac{1}{4}} = \frac{L}{\text{Re}^{\frac{3}{4}}}$$
- 
-$$u_k = \left( \nu \epsilon \right)^{\frac{1}{4}}$$
+# Scales of turbulence
 
-$$\tau_k = \left( \frac{\nu}{\epsilon} \right)^{\frac{1}{2}}$$
+## Large Scales 
+
+- Time
+
+$$T = \frac{k}{\varepsilon}$$
+- Length
+
+$$L =T \sqrt{k} = \frac{k^{3/2}}{\varepsilon}$$
+
+
+## Kolmogorov Scales (dissipative scales)
+
+- Kolmogorov law apply to the inertial range. The Kolmogorov scales apply to the smallest scales, *dissipation subrange*, on the cascade. From [Dubin](<../Bibliography/Books/Statistical Theory and modeling for Turbulent Flows.md>) the suggestion to refer as them as the dissipative scales.
+
+- Time
+
+ $$\tau_k = \left( \frac{\nu}{\varepsilon} \right)^{\frac{1}{2}} \sim \dfrac{l}{u \text{Re}^{1/2}}$$
+ - Length
+ 
+ $$l_k = \left( \frac{\nu^3}{\varepsilon} \right)^{\frac{1}{4}} \sim \frac{L}{\text{Re}^{\frac{3}{4}}}$$
+ - Velocity
+
+$$u_k = \left( \nu \varepsilon \right)^{\frac{1}{4}}\sim \dfrac{u}{\text{Re}^{1/4}}$$
 
 
 # On turbulence

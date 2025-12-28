@@ -29,7 +29,14 @@ $$\phi(L) = \frac{1}{N - 2L} \sum_{k=L}^{N-L} x'_k x'_{k+L} = \overline{x'_k x'_
 - The red noise (an auto regressive model ) is a signal-time series that has characteristics allowing its autocorrelation function to be modeled as an exponential and can be used to characterize velocity fluctuations in the context of turbulence.
 
 # Definitions
+$$
+  C(r) = \frac{1}{\sigma^2}\left\langle
+  \bigl[
+  V_{c}(\boldsymbol{x}_j) \  V_{c}(\boldsymbol{x}_i)
+ \bigr] \right \rangle_{ |{\boldsymbol{x}_j - \boldsymbol{x}_i\!} | \ \approx \ r} \ .
+$$
 
+## Other definitions
 $$\text{ACF}(k) = \frac{\text{Cov}(X_t, X_{t-k})}{\text{Var}(X_t)}
 $$
 or 
