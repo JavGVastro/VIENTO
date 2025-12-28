@@ -3,8 +3,11 @@
 
 
 
-  $$B(r) = \left\langle 
-  \bigl[ V_{c}(\boldsymbol{x}_j) - V_{c}(\boldsymbol{x}_i) \bigr]^{2} \right\rangle_{ | \boldsymbol{x}_j - \boldsymbol{x}_i | \ \approx \ r} \ .$$
+  $$
+  B(r) = \left\langle 
+  \bigl[ V_{c}(\boldsymbol{x}_j) - V_{c}(\boldsymbol{x}_i) 
+  \bigr]^{2} \right\rangle_{ | \boldsymbol{x}_j - \boldsymbol{x}_i | \ \approx \ r} \ .
+  $$
 
 
 - Relation with the autocorrelation function $C(r)$
