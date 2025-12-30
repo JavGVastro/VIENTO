@@ -53,7 +53,7 @@ $$B(r)\propto (\varepsilon r )^{2 / 3} $$
 # Heuristic model for H II regions
 
 
-A common property of **homogeneous fluctuating** (for inhomogeneous fluctuations see [here](<../../Turbulence ISM/Large scale effects on the structure function.md>) velocity fields is that neighboring points tend to have similar velocities ($C(r) \approx 1$ for small $r$), whereas points that are far apart may have very different velocities $(C(r) \ll 1$ for large $r)$.
+A common property of **homogeneous fluctuating** (for properties of inhomogeneous fluctuations see [here](<../../Turbulence ISM/Large scale effects on the structure function.md>)) velocity fields is that neighboring points tend to have similar velocities ($C(r) \approx 1$ for small $r$), whereas points that are far apart may have very different velocities $(C(r) \ll 1$ for large $r)$.
 The value of the separation that corresponds to the transition between these two regimes
 is called the [correlation length](<../../Turbulence ISM/Correlation length in H II Regions.md>), $r_0$.
 In the simplest case, two points separated by $r \gg r_0$ have totally uncorrelated velocities
