@@ -1,11 +1,12 @@
 # VIENTO
+
 Velocity and Ionization Examination in Nebular Turbulent Observations (*Velocidad e Ionización: Estudios en Nebulosa de la Turbulencia Observada*)
 
-A research initiative (IRyA-UNAM / Mexico) to characterize [turbulent](<Turbulence ISM/Turbulence.md>) velocity fields in [H II regions](<H II regions/README.md>) using emission-line observations and derived radial-velocity maps using the second-order structure function. We systematically measure key turbulent parameters such as velocity dispersion in the plane of the sky, the correlation length (energy injection scale), and the spectral slope characterizing the turbulence.
+A research initiative ([IRyA-UNAM / Mexico](https://www.irya.unam.mx/web/en/)) to characterize [turbulent](<Turbulence ISM/Turbulence.md>) velocity fields in [H II regions](<H II regions/README.md>) using emission-line observations and derived radial-velocity maps using the second-order structure function. We systematically measure key turbulent parameters such as velocity dispersion in the plane of the sky, the correlation length (energy injection scale), and the spectral slope characterizing the turbulence.
 
 Two pillars:
 - [Numerical methods](<Turbulence Statistics/README.md>) and [archive](<Turbulent archive/README.md>) that standardizes turbulent parameters across many regions.
-	- Using the [VIENTO pipeline](pipeline_VIENTO/README.md) we compute the structure function, fit a model and recover the turbulent parameters with their confidence intervals using Bayesian statistics.
+	- Using the [VIENTO pipeline](pipeline_VIENTO/README.md) we compute the structure function, fit an [heuristic model](<Turbulence Statistics/Structure function/README.md#Heuristic model for H II regions>) and recover the turbulent parameters with their confidence intervals using Bayesian statistics.
 - Follow-up analyses connecting [turbulence to H II region properties](<Turbulence ISM/Turbulence in H II regions.md>) (luminosity, size, line-of-sight σ, multi-phase gas, etc.).
 
 Scientific goals:

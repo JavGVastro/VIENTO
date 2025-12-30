@@ -1,4 +1,10 @@
 
+- Inhomogeneous Fluctuations
+
+<img src="Figs/inhomogenous-fluctuations.png" alt="Image one" width="500">
+
+
+
 # What causes a U shaped pattern in the spatial correlogram?
 
 - [What causes a U shaped pattern in the spatial correlogram?](https://stats.stackexchange.com/questions/100919/what-causes-a-u-shaped-pattern-in-the-spatial-correlogram)

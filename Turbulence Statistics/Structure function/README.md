@@ -11,7 +11,7 @@ V_{c}(\boldsymbol{x}_j) - V_{c}(\boldsymbol{x}_i)
 $$
 
 
-- Relation with the autocorrelation function $C(r)$
+- Relation with the [autocorrelation function](<Autocorrelation Function.md>) $C(r)$
 
 $$ B(r) = 2\sigma^2 \bigl[   1 - C(r)\bigr] .$$
 
@@ -53,4 +53,41 @@ $$B(r)\propto (\varepsilon r )^{2 / 3} $$
 # Heuristic model for H II regions
 
 
+A common property of **homogeneous fluctuating** (for inhomogeneous fluctuations see [here](<../../Turbulence ISM/Large scale effects on the structure function.md>) velocity fields is that neighboring points tend to have similar velocities ($C(r) \approx 1$ for small $r$), whereas points that are far apart may have very different velocities $(C(r) \ll 1$ for large $r)$.
+The value of the separation that corresponds to the transition between these two regimes
+is called the [correlation length](<../../Turbulence ISM/Correlation length in H II Regions.md>), $r_0$.
+In the simplest case, two points separated by $r \gg r_0$ have totally uncorrelated velocities
+in the sense that knowledge of the velocity at the first point is of no help in predicting the velocity at the second point.
+At scales smaller than $r_0$, the fluctuations often show a power-law behavior as a function of $r$.
 
+In order to capture these two behaviors, we therefore propose the following idealized 2-parameter model for the autocorrelation function:
+
+$$
+  C_\text{mod}(r;\ r_0, m) = 2^{- \left( r/r_0 \right)^m} 
+$$
+
+in which $r_{0}$ is the [correlation length](<../../Turbulence ISM/Correlation length in H II Regions.md#Correlation length values>) (see above) and $m$ is the power-law slope at small scales.
+This is constructed so that
+
+$$
+C_\text{mod}(r) = 1/2 \  \ \text{at} \ \ r = r_0\,
+$$
+
+while the exponential form ensures that $C(r)$ rapidly approaches zero for larger separations.
+We assume the validity of equation structurefunction-correlation relation to determine the structure function from this model autocorrelation function:
+
+$$
+  B_\text{mod}(r) = 2\sigma^2_\text{pos} \left[
+    1 - 2^{- \left( r/r_0 \right)^m} 
+  \right]
+$$
+
+
+This has the following properties:
+
+ 1. Small scales: $B_\text{mod}(r) \propto r^m$ for $r \ll r_0$;
+ 2. Correlation scale: $B_\text{mod}(r_0) = \sigma^2_\text{pos}$;
+ 3. Large scales: $B_\text{mod}(r) \to 2 \sigma^2_\text{pos}$ for $r \gg r_0$.
+
+
+<img src="Figs/model-strucfunc-annotated.png" alt="Image one" width="500">
