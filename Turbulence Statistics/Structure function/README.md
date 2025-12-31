@@ -69,12 +69,23 @@ We want to prove that:
 
 $$ B(r) = 2\sigma^2 \bigl[   1 - C(r)\bigr] .$$
 
-We have $F_{1} = a(x)$ y $F_{2} = a(x+r)$ (normalized functions indicated with an $*$), and we write:
+ Normalized functions indicated with an $*$:
 
+$$C(r)^*=\dfrac{\sum [a(x+r)\cdot a(x) ]}{\sigma^{2} N(r)}$$
+
+$$B(r)^*=\dfrac{\sum [a(x+r)-a(x) ]^{2}  }{\sigma^{2} N(r) }$$
+
+We have
+
+$$F_{1} = a(x)$$
+and 
+
+$$F_{2} = a(x+r)$$ We write:
 
 $$ 
 B(r)^*=\langle (F_{2}-F_{1})^{2} \rangle
 $$
+
 $$
 =\langle F_{2}^{2} \rangle -2\langle F_{2}F_{1}\rangle +\langle F_{1}^{2} \rangle $$
 
