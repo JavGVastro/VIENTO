@@ -4,6 +4,9 @@
 **TL;DR:** In this folder we develop the relevant topics related to the ISM, particularly H II regions, which come from the hypothesis the ionized gas is [turbulent](<Turbulence.md>) .
 
 # Turbulence in the interstellar medium
+
+The following delves into the physical concepts  which allow the interstellar medium to be regarded as a turbulent fluid.
+
 ## Continuous-medium hypothesis
 
 The idea of treating the interstellar medium—and, in our particular case, ionized regions—from the standpoint of fluid mechanics comes from considering this medium under the **continuous-medium hypothesis**. This hypothesis is validated using the **Knudsen number** \citep{Knudsen1935}, defined as:
