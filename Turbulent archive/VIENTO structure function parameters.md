@@ -45,7 +45,7 @@
 | Hubble X               | TAURUS-II/WHT            | $\text{H} \alpha$ [1](<../../H II regions/Hubble X/Hubble X.md#Structure Function#TAURUS#Ha>)                                               | $15(3)$                    | $4.0(0.5)$     | $1.02(0.23)$ | 1        |
 | Hubble V               | TAURUS-II/WHT            | $\text{H} \alpha$ [1](<../../H II regions/Hubble V/Hubble V.md#Structure Function#TAURUS#Ha>)                                               | $10(3)$                    | $3.6(1)$       | $0.81(0.28)$ | 1        |
 | NGC 595                | TAURUS-II/WHT            | $\text{H} \alpha$ [1](<../../H II regions/NGC 595/NGC 595.md#Structure Function#TAURUS#Ha>)                                                 | $53(5)$                    | $11(1)$        | $1.36(0.15)$ | 1        |
-| NGC 604                | TAURUS-II/WHT            | $\text{H} \alpha$ [1](<../../H II regions/NGC 604/NGC 604.md#Structure Function#TAURUS#Ha>) [1](<../../H II regions/NGC 604/NGC 604.md#ha>) | $84(22)$                   | $12(6)$        | $0.77(0.22)$ | 1        |
+| NGC 604                | TAURUS-II/WHT            | $\text{H} \alpha$ [1](<../../H II regions/NGC 604/NGC 604.md#Structure Function#TAURUS#ha>) [1](<../../H II regions/NGC 604/NGC 604.md#ha>) | $84(22)$                   | $12(6)$        | $0.77(0.22)$ | 1        |
 |                        |                          | $\text{[OIII]}$                                                                                                                             |                            |                |              |          |
 
 
