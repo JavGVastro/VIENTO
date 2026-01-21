@@ -60,12 +60,12 @@ def plot_param_comp(*dicts, labels=None, decimals=4):
     plt.grid(alpha=0.3)
     plt.show()
     
-import numpy as np
-import matplotlib.pyplot as plt
 
-def plot_param_comp_obs(*dicts, labels=None, decimals=4, obs=None):
+
+def plot_param_comp_obs(*dicts, labels=None, decimals=4, obs=None, obs_linestyle="--", obs_alpha=0.6):
     """
-    Plot parameter dictionaries with asymmetric error bars and optional observed/reference values.
+    Plot parameter dictionaries with asymmetric error bars.
+    Optionally plot one horizontal reference line per dictionary (obs).
 
     Parameters
     ----------
@@ -76,8 +76,12 @@ def plot_param_comp_obs(*dicts, labels=None, decimals=4, obs=None):
     decimals : int, optional
         Number of decimals to round values (default: 4).
     obs : array-like, optional
-        Reference values to plot as horizontal lines for each parameter.
-        Must have length == number of parameters, in the same order as dict keys.
+        One reference value per input dict. Must have length == number of dicts.
+        If provided, draws one horizontal line per dict at y = obs[idx].
+    obs_linestyle : str, optional
+        Linestyle for obs lines (default "--").
+    obs_alpha : float, optional
+        Alpha for obs lines (default 0.6).
     """
     n_sets = len(dicts)
     if n_sets == 0:
@@ -92,27 +96,20 @@ def plot_param_comp_obs(*dicts, labels=None, decimals=4, obs=None):
     if len(labels) != n_sets:
         raise ValueError(f"labels must have length {n_sets} (got {len(labels)}).")
 
-    x = np.arange(n_params)  # positions on x axis
-    width = 0.8 / n_sets     # marker cluster width per set
-
-    plt.figure(figsize=(max(6, n_params * 1.3), 5))
-
-    # --- Plot obs/reference horizontal lines (one per parameter) ---
+    # Validate obs: must match number of dicts (not number of parameters)
     if obs is not None:
         obs = np.asarray(obs, dtype=float)
-        if obs.ndim != 1 or len(obs) != n_params:
+        if obs.ndim != 1 or len(obs) != n_sets:
             raise ValueError(
-                f"obs must be 1D with length == {n_params} (got shape {obs.shape})."
+                f"obs must be 1D with length == number of sets ({n_sets}); got shape {obs.shape}."
             )
 
-        # span the full cluster for each parameter (from leftmost to rightmost set point)
-        x_left  = x - 0.4
-        x_right = x + 0.4
-        plt.hlines(obs, x_left, x_right, linewidth=2, alpha=0.8, label="obs")
+    x = np.arange(n_params)
+    width = 0.8 / n_sets
+    plt.figure(figsize=(max(6, n_params * 1.3), 5))
 
-    # --- Plot errorbar points for each set ---
     for idx, d in enumerate(dicts):
-        # (optional) sanity check: same keys
+        # (Optional but recommended) enforce same keys/order across dicts
         if list(d.keys()) != param_keys:
             raise ValueError("All dictionaries must have the same keys in the same order.")
 
@@ -122,19 +119,29 @@ def plot_param_comp_obs(*dicts, labels=None, decimals=4, obs=None):
 
         x_offset = x + (idx - n_sets/2) * width + width/2
 
-        plt.errorbar(
+        eb = plt.errorbar(
             x_offset,
             y,
             yerr=[yerr_lower, yerr_upper],
-            fmt='o',
+            fmt="o",
             label=labels[idx],
             capsize=5,
             elinewidth=2,
         )
 
+        # Draw one horizontal obs line for this set (if provided)
+        if obs is not None:
+            color = eb.lines[0].get_color()  # match marker color
+            plt.axhline(
+                obs[idx],
+                linestyle=obs_linestyle,
+                alpha=obs_alpha,
+                color=color,
+            )
+
     plt.xticks(x, param_keys, rotation=45)
-    plt.ylabel('Value')
-    plt.title('Parameter values with asymmetric uncertainties')
+    plt.ylabel("Value")
+    plt.title("Parameter values with asymmetric uncertainties")
     plt.legend()
     plt.tight_layout()
     plt.grid(alpha=0.3)

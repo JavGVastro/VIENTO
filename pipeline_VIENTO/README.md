@@ -423,7 +423,10 @@ These dependencies should be consolidated later into a `requirements.txt` or `en
 	- py_modules
 	- Imgs
 	- computations.ipynb (run using Make_file or all samples)
+		  - fake_mod (ideal, matrix)
+		  - fake_non (ideal, matrix)
 	- res_compilation.ipynb (Manual)  
+	- pipeline_config (Paths for reading and storing files)
 ```
 
 
