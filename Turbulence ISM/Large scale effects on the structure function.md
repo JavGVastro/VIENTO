@@ -16,3 +16,6 @@
 >- **What can be done** The correct way to proceed in such circumstances is to accept that the phenomenon is not stationary and to adopt a model that describes it in terms of some underlying _deterministic_ shape--a "drift" or "trend"--with additional fluctuations around that drift which may have spatial (and temporal) autocorrelation.
 >- *What would the spatial autocorrelation plot from a chessboard look like?* I wonder if it wouldn't be high at close distances (same square), low a little further out (different square), & then higher again.
 
+# To-Do
+
+- [ ] [2017arXiv171006901C](https://ui.adsabs.harvard.edu/abs/2017arXiv171006901C) presents an interesting way to apply the structure function that may be worth investigating. #WaitingList 

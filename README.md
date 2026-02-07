@@ -2,7 +2,7 @@
 
 Velocity and Ionization Examination in Nebular Turbulent Observations (*Velocidad e Ionización: Estudios en Nebulosa de la Turbulencia Observada*)
 
-A research initiative ([IRyA-UNAM / Mexico](https://www.irya.unam.mx/web/en/)) to characterize [turbulent](<Turbulence ISM/Turbulence.md>) velocity fields in [H II regions](<H II regions/README.md>) using emission-line observations and derived radial-velocity maps using the second-order structure function. We systematically measure key turbulent parameters such as velocity dispersion in the plane of the sky, the correlation length (energy injection scale), and the spectral slope characterizing the turbulence.
+A research initiative ([IRyA-UNAM / Mexico](https://www.irya.unam.mx/web/en/)) to characterize [turbulent](<Theory/Turbulence.md>) velocity fields in [H II regions](<H II regions/README.md>) using emission-line observations and derived radial-velocity maps using the second-order structure function. We systematically measure key turbulent parameters such as velocity dispersion in the plane of the sky, the correlation length (energy injection scale), and the spectral slope characterizing the turbulence.
 
 Two pillars:
 - [Numerical methods](<Turbulence Statistics/README.md>) and [archive](<Turbulent archive/README.md>) that standardizes turbulent parameters across many regions.
@@ -31,3 +31,9 @@ Scientific goals:
 # Published papers
 
 - https://ui.adsabs.harvard.edu/abs/2023MNRAS.523.4202G/abstract
+
+
+# Science talk / public talk (VIENTO related)
+
+- [La galaxia espumosa: burbujas esculpidas por estrellas 06-10-2025](https://www.youtube.com/watch?v=hpl5e3b__QU&ab_channel=elcolegionacionalmx)
+- [Turbulencia en regiones HII extragalácticas 13-06-2018](https://www.youtube.com/watch?v=Po4L51izU-4&ab_channel=ColoquiosIA)

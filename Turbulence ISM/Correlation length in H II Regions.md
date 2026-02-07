@@ -1,19 +1,4 @@
 
-# Correlation length definitions
-
-The correlation length, $\mathcal{L}$, (also called *integral length scale* [Pope](<../Bibliography/Books/Turbulent Flows.md>)) is defined in terms of the auto correlation function  $C(r)$: 
-
-$$\mathcal{L} \equiv \int_0^\infty C(r)\ dr . \tag1 $$
-
-
-[Tennekes and Lumley](<../Bibliography/Books/A First Course in Turbulence.md>) define the correlation length as:
-
-$$\Lambda_{t}=\dfrac{1}{C(0)} \int_{0}^{\infty} C(r) dr$$
-
-[Jaupart and Chabrier 2022](https://ui.adsabs.harvard.edu/abs/2022A%26A...663A.113J/abstract) define the correlation length as:
-
-$$\ell_c^2 = \frac{1}{4} \int C(r) \, d^2 r= \frac{\pi}{2} \int_0^\infty r C(r) \, dr \tag2$$
-# Correlation length in H II Regions
 
 
 
@@ -21,7 +6,9 @@ Using the model proposed in the project:
 
 $$ C_{\text{mod}}(r;\ r_0, m) = 2^{- \left( r/r_0 \right)^m} =e^{[- \ln2 (r/r_0)^m]}$$
 
-the solution for the Pope definition of the correlation length is:
+---
+
+The solution for the Pope definition of the correlation length is:
 
 $$ \mathcal{L}\equiv \int_0^\infty C(r)\ dr =\int_0^\infty e^{[- \ln2 (r/r_0)]^m} \ dr = \boxed{ \frac{\Gamma \left( \frac{1}{m} \right)}{m(\ln 2)^{1/m}} r_0} $$
 
@@ -29,6 +16,8 @@ with a particular solution for $m =1$:
 
 $$ \mathcal{L}\approx \boxed{1.44 r_0 }$$
 
+
+---
 
 The solution for the Jaupart and Chabrier 2022 definition of the correlation length is:
 

@@ -1,8 +1,13 @@
 
 # To-Do
 
-- [ ] Integrate $B(r)$ table with .fits file (now it exported as an numpy array into a .json file)
-- [ ] Elaborate on Papermill on make_file inject parameters and run stuff
+- [x] Integrate $B(r)$ table with .fits file (now it exported as an numpy array into a .json file) ✅ 2026-01-24
+- [x] Elaborate on Papermill on make_file inject parameters and run stuff ✅ 2026-01-24
+- [ ] Review pipeline notebooks 
+	- [ ] `pipeline_template_master/results_compiler.py` #ASAP #Pipeline 🔺
+	- [ ] noise
+	- [ ] list
+	- [ ] matrix
 
 ```
 Matrix: True / False # Velocity field is in a matrix array or scatter array
@@ -14,7 +19,9 @@ ideal:  True / False # We use the 3-model (ideal) or 5-model (real) parameter fo
 
 The VIENTO pipeline aims to provide a reproducible, modular workflow to:
 
-- Compute the observational second-order structure function of the velocity field of an H II region from astronomical observations (typically in [FITS](https://docs.astropy.org/en/stable/io/fits/index.html) format).
+- Compute the observational second-order structure function of the velocity field of an H II region from astronomical observations (typically in [FITS](https://docs.astropy.org/en/stable/io/fits/index.html) format). The array of the observational data can be as in:
+	- Matrix (ordered data)
+	- List (scatter data)
 - Fit a parametric model to the observational structure function:
   - Either a 5-parameter “proposed” model, or
   - A 3-parameter “ideal” model.
@@ -45,8 +52,9 @@ At a high level, the pipeline takes as input a velocity field (optionally accomp
 The pipeline is currently organized into three stages, each associated with a Jupyter notebook:
 
 1. Stage 1: Raw FITS → pipeline-ready velocity map FITS, with complete header metadata.
-2. Stage 2: Structure function computation and model fitting (including MCMC).
-3. Stage 3: Results compilation and visualization (plots, parameter summaries).
+2. Stage 2: Structure function computation
+3. Stage 3: Model fitting (including MCMC).
+4. Stage 4: Results compilation and visualization (plots, parameter summaries).
 
 The medium-term goal is to minimize interactive steps and run as much as possible through Python scripts orchestrated by a single Makefile, while retaining Jupyter notebooks only where interactive inspection is essential.
 
@@ -74,42 +82,77 @@ Convert reduced observational FITS data into a pipeline-ready velocity map FITS 
   - Extract or compute:
     - The velocity field.
     - Any additional map(s) (e.g. surface brightness/emission) that may later be used as weights.
-
+- Once a file is ready for the pipeline is moved to the folder `fits_ready/`
+- When all FITS files are ready, the name of each file should bee added (without extension) to the text text file `fits_ready/filelist.txt`.
 ## 3.3 Metadata in the Pipeline-Ready FITS Header
 
 The pipeline-ready FITS file contains the velocity map in the data array and several key header entries, for example:
 
-- AUTHOR: file creator.
-- m2D: exponent parameter related to the 2D structure function slope (k = 2D + m2D).
-- ra: artificial correlation length.
-- sig: standard deviation of the artificial map.
-- sig2: variance of the artificial map.
-- s0: atmospheric seeing.
-- noise: instrumental noise.
-- box_size: observational box size.
-- pc: parsec conversion (physical scale).
-- pix: pixel scale of the instrument.
-- LINE: emission line name (e.g. H_I-6563).
-- BINSIZE: spatial binning factor (0 for native resolution, 2, 4, 8, etc. for binned maps).
+```
+
+hdr = fits.Header()
+hdr["FILE"]        = (name_file, "Fits file name")
+hdr["NAME_ID"]     = (name_id, "pipeline identifier")
+hdr["REG"]        = (region, "Region name")
+hdr["REG_ID"]     = (reg_id, "Region identifier")
+hdr["DIST"]       = (dist, "Distance in parsecs")
+hdr["INSTR"]      = (inst, "Instrument")
+hdr["LINE"]       = (line, "Emission line name")
+hdr["LINE_ID"]    = (line_id, "Emission line identifier")
+hdr["sig"]        = (sig, "Standard deviation vel map")
+hdr["sig2"]       = (sig**2, "Vel Variance map")
+hdr["s0"]         = (s0, "Atmospheric seeing")
+hdr["box_size"]   = (N, "Observational box_size")
+hdr["pc"]         = (pc, "parsec convertion")
+hdr["pix"]        = (pix, "Instrument pixel scale")
+hdr["BINSIZE"]    = (bins, "Spatial binning factor")
+#hdr["noise"]     = (noise, "Instrumental noise")
+#hdr["m3D"]       = (m3D, "k = 3 + m3D")
+#hdr["ra"]          = (ra, "Artificial correlation length")
+#hdr["SEED1"]       = (randomseed_vv, "Random seed velocity")
+#hdr["SEED2"]       = (randomseed_sb, "Random seed surfavebrightness")
+hdr["AUTHOR"]     = (author, "File creator")
+```
+
 
 Notes:
 
 - These values are intended to be carried throughout the entire pipeline, particularly into the structure function and fitting stages.
 - Some keys (e.g. m2D, ra, sig, noise) may be specific to artificial or test maps, but the mechanism is the same for observational data.
+---
+- FILE name of the pipeline ready FITS file. Taken from `fits_ready/filelist.txt`.
+- NAME_ID name identifier for computations within the notebooks.
+- REG H II region name
+- REG_ID H II region name identifier 
+- DIST distance to object in parsecs.
+- INSTR instrument where the observations came from
+- [ ] INSTR_ID instrument identifier #Add
 - LINE specifies the emission line (e.g. H_I-6563).
+- LINE_ID line identifier
+- SIG Standard deviation of the velocity field. Observational sigma
+- SIG2 Variance of the velocity field. Observational sigma2
+- s0 Observational seeing
+- BOX_SIZE size of the observational box (FOV)
+- PC
+- PIX
 - BINSIZE indicates the spatial binning factor.
+- NOISE
+- M3D
+- RA
+- SEED1
+- SEED2
 
 ## 3.4 Output of Stage 1
 
 - A FITS file containing:
-  - The velocity field in the data array.
+  - The velocity field in the data array (Emission data, sigma data also if available).
   - All required metadata in the header.
 
 This file is referred to as the pipeline-ready velocity map FITS and is the standard input for Stage 2.
 
 ---
 
-# 4. Stage 2 – Structure Function and Model Fitting
+# 4. Stage 2 and 3 – Structure Function and Model Fitting
 
 ## 4.1 Objective
 
@@ -191,7 +234,7 @@ From a single pipeline-ready velocity map FITS, Stage 2 produces:
 |                    |                               |                            |
 **Note**: max $[B_{\text{obs}}]$ and min $[B_{\text{obs}}]$ are over all bins in the observed structure function with $r < L/2$.
 **Note**: Mayores incertidumbres a los primeros puntos (antes de la relación lineal)
-# 5. Stage 3 – Results Compilation and Visualization
+# 5. Stage 4 – Results Compilation and Visualization
 
 ## 5.1 Objective
 
@@ -309,7 +352,6 @@ From the inputs of Stages 1 and 2, Stage 3 produces:
 - Python:
   - Custom modules for structure function (`strucfunc`), models (`bfunc`), plotting (`bplot`), and utilities.
 
----
 
 # 7. Custom Python Modules (Current and Planned)
 
@@ -317,12 +359,11 @@ From the inputs of Stages 1 and 2, Stage 3 produces:
 
 ``` python
 
-# Modification on Turbustat synthethic velocity fields
-from turb_utils import make_extended, make_3dfield
 
-import strucfunc
-import bfunc
-import bplot
+from turb_utils import make_extended, make_3dfield # Modification on Turbustat synthethic velocity fields
+import strucfunc # Structure Function Libray
+import bfunc     # Structure Function Models
+import bplot     # Plotting Utilities
 import ci_results_compiler
 
 ```
@@ -372,7 +413,15 @@ To-do:
 
 - Extend to support the 3-parameter model.
 
-## 7.4 Utility Functions (Planned)
+## 7.4 `results_compiler`
+
+- Based on:
+	- `results_comp.py`
+		- ~~def load_line_bundle():~~ `def load_fits_bundle`
+	- ~~ci_results_compiler.py~~ `lmfit_results_compiler.py`
+		- ~~def ci_results_compiler():~~ `def lmfit_results_compiler ():`
+		- ~~def ci_results_compiler_ideal():~~ `def lmfit_results_compiler_ideal ():`
+## 7.X Utility Functions (Planned)
 
 Suggested utility functions to centralize repeated tasks:
 
@@ -415,20 +464,31 @@ These dependencies should be consolidated later into a `requirements.txt` or `en
 
 # 9. Project Folder Structure (Current Working Model)
 
-```
-- pipeline_VIENTO (Folder outline, general)
-	- fits_ready (.fits files ready for observations. NOTE: Matrix/Scatter, SB True/False, ideal True/False)
-	- results_fit
-	- results_Br
-	- py_modules
-	- Imgs
-	- computations.ipynb (run using Make_file or all samples)
-		  - fake_mod (ideal, matrix)
-		  - fake_non (ideal, matrix)
-	- res_compilation.ipynb (Manual)  
-	- pipeline_config (Paths for reading and storing files)
-```
+NOTE: To add: Matrix/Scatter, SB True/False, ideal True/False
 
+```
+pipeline_template_master (Folder outline, general)
+
+list_01_fits_create.ipynb
+list_02_correlation_computations.ipynb
+list_03_fit_parameters.ipynb
+list_04_results_compilation.ipynb
+matrix_01_fits_create.ipynb
+matrix_02_correlation_computations_obs.ipynb
+matrix_03_fit_parameters.ipynb
+matrix_04_results_compilation.ipynb
+fake_correlation_computations_mod.ipynb  # Dr. Will modification on the Turbustat 
+fake_correlation_computations_non.ipynb  # In this simulation doesn't consider correlation length
+fake_results_compilation.ipynb
+Makefile_pipeline                     # File: One for list one for matrix format
+pipeline_config.py                    # Python file which includes the WORKING directory  
+py_modules/                           # VIENTO modules   
+fits_ready/                           # VIENTO fits ready files coming from observations/
+Imgs/                                 # Structure function plot and corners pdf are stored here
+observations/                         # Files from observations.
+results_Br/                           # DEPRECATED: Br table is now added to OG .fits file
+results_fit/
+```
 
 The precise structure will be refined, but the pipeline currently assumes or is compatible with a layout similar to:
 
@@ -444,7 +504,7 @@ The precise structure will be refined, but the pipeline currently assumes or is 
 - `confidence_intervals/`  
   Saved `lmfit` deterministic and MCMC results, and possibly compiled CI dictionaries.
 
-- `results_files/`  
+- `results_fit/`  
   Aggregated results, summary tables, and master files combining multiple runs.
 
 - `figures/`  
@@ -566,3 +626,23 @@ The immediate next steps are to:
 - Prepare the codebase and documentation for a clean and coherent first upload to Git.
 
 This document serves as the initial reference for the repository and will be refined as the pipeline evolves.
+
+
+# Make file
+
+
+```
+make -f Makefile_pipeline_list all             # Apply ALL stages to a series of targets
+make -f Makefile_pipeline_matrix all
+
+make -f Makefile_pipeline_METHOD clean
+make -B -f Makefile_pipeline_METHOD all        # Force rebuilds
+make -n -f Makefile_pipeline_METHOD all        # dry-run: shows what would run
+make -d -f Makefile_pipeline_METHOD all        # heavy debug: explains why targets are up-to-date
+make --trace -f Makefile_pipeline_METHOD all   # concise trace of why rules run
+make -f Makefile_pipeline_METHOD sf            # Apply just one stage to a series of targets
+make -f Makefile_pipeline_METHOD fit           # Apply just one stage to a series of targets
+make -f Makefile_pipeline_METEHOD one_sf  NAME=Inst_ID-region_ID-line_ID  # Apply one stage to one target E.g. LVM-N7293-H
+make -f Makefile_pipeline_METEHOD one_fit NAME=Inst_ID-region_ID-line_ID  # Apply one stage to one target E.g. LVM-N7293-H
+```
+

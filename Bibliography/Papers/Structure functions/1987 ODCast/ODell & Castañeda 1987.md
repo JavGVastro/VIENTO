@@ -19,7 +19,7 @@
 
 - The aim is to interpret the data using existing theories and models, finding that they do not fully explain the observation.
 - The paper aims to guide the development of new theories and models for turbulence in H II regions, recognizing the significant role of turbulence in these regions
-- [[Turbulence#^theory-Kolmogorov|Turbulence Kolmogorov Theory]]
+- [[Theory/Turbulence#^theory-Kolmogorov|Turbulence Kolmogorov Theory]]
 - The expected one-third power dependence of the dispersion of velocities and the corresponding $2/3$ power dependence for the structure function are only points of reference.
 
 

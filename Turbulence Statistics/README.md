@@ -10,3 +10,13 @@
 | VCA                                                                | Intensity power spectrum vs channel width | 2D spatial in velocity slices | Separate velocity vs. density contributions              | Moderate                      | PPV-space power spectra             |
 | VCS                                                                | Spectral power along velocity axis        | 1D velocity                   | Turbulence characterization with poor spatial resolution | High                          | Line-of-sight velocity fluctuations |
 | Power Spectrum (`P(k)`)                                            | Variance distribution over scales `k`     | Fourier space                 | Scaling laws, energy injection, dissipation              | Requires careful windowing    | Related to all above via transforms |
+
+
+# To-Do
+
+
+- [ ] Structure function numerical #ASAP #Numerical
+	- [ ] Matrix 
+	- [ ] Scatter
+- [ ] Power spectra numerical [2004ApJ...616..943L](https://ui.adsabs.harvard.edu/abs/2004ApJ...616..943L/abstract)  #WaitingList 
+- [ ]  **Delta-variance** [2008A&A...485..917O](https://ui.adsabs.harvard.edu/abs/2008A%26A...485..917O/abstract) #Someday 

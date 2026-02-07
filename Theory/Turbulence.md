@@ -1,4 +1,59 @@
 
+- Kolmogorov spectrum 
+	- homogenous turbulence
+	- Incompressible turbulence: changes in the pressure do not produce density variations; they push fluir around and only alter the velocity field.
+- Features of turbulent flows
+- Scales of turbulence
+- One of the signatures on which we shall be relaying for the existence of turbulence is that there is a vorticity preset in the fluid..
+
+
+# The correlation tensors and representation of the flows
+
+From: [Shore - Astrophysical Hydrodynamics](<../Bibliography/Books/Astrophysical Hydrodynamics.md>)
+
+- "We imagine that the flow in the fluid has a field which is a touch chaotic. This is only because the material has been assumed to be in a flow which has a fixed direction, but in which there may be eddies and waves which are not necessarily parallel to the mean velocity of the material. I.e., one of the signatures on which we shall be relying for the existence of turbulence is that there is a vorticity present in the fluid, although the mean value of the vorticity may vanish. In fact, it is the fact that the rms value of the vorticity does not vanish that gives rise to the basic signature of wat is usually called fully developed turbulent flow."
+- Velocity field to have two basic components, a mean and a random component:
+
+$$v_i (\vec{x}) = U_i(\vec{x}) + u_i(\vec{x})$$
+where 
+
+	$$ \langle v_i \rangle = Ui \quad, \langle u_i \rangle = 0 \quad, \langle u^2 \rangle \neq 0 $$
+
+- "Here we have assumed that we have something stochastic which controls the fluctuations."
+- Now take the statistical average over two component $i$ and $j$:
+
+$$\langle v_i(\vec{x}) v_j(\vec{x'}) \rangle = Ui(\vec{x}) U_j(\vec{x'}) + R_{ij}(\vec{r})$$
+- "We have used this to introduce the correlation tensor for a displacement $\vec{x'} = \vec{x} \pm \vec{r}$. This is the **two-point correlation tensor** for the velocity. It remains to show that this is related to the energy density of the turbulent velocity field and that the information contained in the two-point function in the important measure of the transport properties of a turbulent flow." 
+- "We now define a quantity which is the correlation function averaged over the bulk of the fluid"
+
+$$R_{ij}(\vec{r}) \equiv \langle u_i (\vec{x}) u_j (\vec{x} + \vec{r}) \rangle$$
+
+- We define:
+
+$$\Phi_{ij} (\vec{k}) = \frac{1}{2 \pi^3} \int R_{ij} (\vec{r})e^{-i \vec{k} \cdot \vec{r}} d\vec{r}$$
+
+to be the Fourier transform of the correlation tensor.
+- 'Notice that if the correlation tensor can be normalized (and this is, at this stage, by no means certain) we have a way of determining the mean value of the separation between the correlated quantities, a characteristic length scale of the turbulence."
+
+
+$$ \Lambda \equiv \int R(r) dr $$
+- If the medium is isotropic:
+
+$$R_{ij} (\vec{r}) = R_{ij} (-\vec{r}) $$
+
+- The correlation tensor for zero lag is:
+
+$$R_{ij} (0) = \langle u_i u_j \rangle = \int \Phi_{ij} (\vec{k}) d\vec{k}$$
+
+ - Thus, since this is  a quantity which has the dimensions of an energy, we see that the energy is giben by:
+
+$$\int E(k)k^2dk = \int \Phi_{ii} (\vec{k}) d\vec{k}$$
+
+- As a consequence of isotropy we have $\langle u_i u_j \rangle = 3 \langle u \rangle^2$. Here $\langle u^2 \rangle^{1/2}$ is some velocity dispersion
+## Bibliography
+
+
+
 # Kolmogorov -5/3 law (Classic theory)
 
 - Based using the concept of cascade proposed by Richardson (1922).
@@ -81,6 +136,7 @@ $$u_k = \left( \nu \varepsilon \right)^{\frac{1}{4}}\sim \dfrac{u}{\text{Re}^{1/
 - [Batchelor - The Theory of Homogeneous Turbulence](<../Bibliography/Books/The Theory of Homogeneous Turbulence.md>)
 - [Frisch - Turbulence](<../Bibliography/Books/Turbulence.md>)
 - [Pope - Turbulent Flows](<../Bibliography/Books/Turbulent Flows.md>)
+- [Shore - Astrophysical Hydrodynamics](<../Bibliography/Books/Astrophysical Hydrodynamics.md>)
 
 
 ## Divulgation YT
