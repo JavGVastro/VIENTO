@@ -11,10 +11,14 @@
 # Images
 - [HST: H V](https://hubblesite.org/contents/media/images/2001/39/1126-Image.html)
 
-# Structure Function
 
-## TAURUS
 
-### Ha
+# TAURUS
+
+<img src="Figs/TAURUS.png" alt="Image one" width="500">
+
+## Ha
+
+<img src="Figs/TAURUS H VF.png" alt="Image one" width="500">
 
 <img src="Figs/TAURUS H SF.png" alt="Image one" width="800">
