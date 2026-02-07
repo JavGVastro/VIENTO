@@ -19,7 +19,7 @@ $$v_i (\vec{x}) = U_i(\vec{x}) + u_i(\vec{x})$$
 
 where 
 
-	$$ \langle v_i \rangle = Ui \quad, \langle u_i \rangle = 0 \quad, \langle u^2 \rangle \neq 0 $$
+$$ \langle v_i \rangle = Ui \quad, \langle u_i \rangle = 0 \quad, \langle u^2 \rangle \neq 0 $$
 
 - "Here we have assumed that we have something stochastic which controls the fluctuations."
 - Now take the statistical average over two component $i$ and $j$:
