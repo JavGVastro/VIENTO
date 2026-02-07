@@ -14,7 +14,9 @@ From: [Shore - Astrophysical Hydrodynamics](<../Bibliography/Books/Astrophysical
 - "We imagine that the flow in the fluid has a field which is a touch chaotic. This is only because the material has been assumed to be in a flow which has a fixed direction, but in which there may be eddies and waves which are not necessarily parallel to the mean velocity of the material. I.e., one of the signatures on which we shall be relying for the existence of turbulence is that there is a vorticity present in the fluid, although the mean value of the vorticity may vanish. In fact, it is the fact that the rms value of the vorticity does not vanish that gives rise to the basic signature of wat is usually called fully developed turbulent flow."
 - Velocity field to have two basic components, a mean and a random component:
 
+
 $$v_i (\vec{x}) = U_i(\vec{x}) + u_i(\vec{x})$$
+
 where 
 
 	$$ \langle v_i \rangle = Ui \quad, \langle u_i \rangle = 0 \quad, \langle u^2 \rangle \neq 0 $$
