@@ -3,7 +3,7 @@
 
 - [x] Integrate $B(r)$ table with .fits file (now it exported as an numpy array into a .json file) ✅ 2026-01-24
 - [x] Elaborate on Papermill on make_file inject parameters and run stuff ✅ 2026-01-24
-- [ ] Review pipeline notebooks 
+- [ ] Review pipeline notebooks
 	- [ ] `pipeline_template_master/results_compiler.py` #ASAP #Pipeline 🔺
 	- [ ] noise
 	- [ ] list

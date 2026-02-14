@@ -1,13 +1,70 @@
 
+- Statistics description of the flow
+- Empiric science
 - Kolmogorov spectrum 
 	- homogenous turbulence
 	- Incompressible turbulence: changes in the pressure do not produce density variations; they push fluir around and only alter the velocity field.
 - Features of turbulent flows
+	- Increase in drag and pressure loses
 - Scales of turbulence
-- One of the signatures on which we shall be relaying for the existence of turbulence is that there is a vorticity preset in the fluid..
+- One of the signatures on which we shall be relaying for the existence of turbulence is that there is a vorticity preset in the fluid.
+
+# 7 Flujo viscoso turbulento
+
+From: [Fay - Mecánica de fluidos](<../Bibliography/Books/Mecánica de fluidos.md>)
+
+## 7.2.2 Carácter aleatorio del flujo turbulento
+
+- $u \{ x,t \}$ puede considerarse como la suma del valor medio en un intervalo de tiempo, $u \{x\}$, y el incremento variable en el tiempo $u'\{x,t\}$, que por lo común es menor que el valor medio en un intervalo de tiempo:
+
+$$u\{ x,t \} = \overline{u \{ x \} } + u'\{ x,t \}$$
+
+- En este caso, el valor medio en un intervalo de tiempo, $u \{x,t \}$, que se denota por  $\overline{u \{ x \} }$, se define como la integra sobre el tiempo a lo largo de un intervalo de tiempo $T$, dividida entre el intervalo de tiempo:
+
+$$\overline{u \{ x \} }  \equiv \frac{1}{T} \int ^{t+T} _t u \{x,t' \} dt' $$
+
+$$\overline{u' \{ x \} }  = 0 $$
+
+- La componente aleatoria de velocidad, $u'\{x,t\}$, tiene algunas de las características de las señales aleatorias de ruido, como es el caso del ruido eléctrico en circuitos electrónicos.
+
+---
+- Si se descompone este registro de velocidad del flujo en un tubo en las frecuencias que lo componen, se encuentra que la mínima frecuencia es aproximada por $\overline{V}/D$, en tanto que la máxima es, en forma aproximada,  $(\text{Re})^{3/4} (\overline{V}/D)$, un intervalo de frecuencias que por lo común es superior a un factor de un ciento.
+---
+- El  valor medio de la **energía cinética** en un *intervalo de tiempo por unidad de masa de fluido* en un punto del flujo puede calcularse en términos de la velocidad media $\overline{\mathbf{V}}$   en un intervalo de tiempo y la velocidad fluctuante $\mathbf{v'}$ al expresar la velocidad $\overline{\mathbf{V}}$ como la suma $\overline{\mathbf{V}} + \mathbf{v'} :$
+
+$$\mathbf{V} \cdot \mathbf{V} = (\overline{\mathbf{V}} + \mathbf{v}') \cdot (\overline{\mathbf{V}} + \mathbf{v}') = \overline{\mathbf{V}} \cdot \overline{\mathbf{V}} + 2\overline{\mathbf{V}} \cdot \mathbf{v}' + \mathbf{v}' \cdot \mathbf{v}'$$
+
+y al obtener luego el valor medio en un intervalo de tiempo, notando que el valor medio en el tiempo del término que contiene $\mathbf{v}'$ a la primera potencia es cero:
+
+$$\overline{ \mathbf{V} \cdot \mathbf{V} } =  \overline{\mathbf{V}} \cdot \overline{\mathbf{V}} + \overline{ \mathbf{v}' \cdot \mathbf{v'} }$$
+
+$$ \frac{\overline{ | \mathbf{V} |^2 }}{2} =  \frac{ | \mathbf{\overline{V} |^2 }}{2}  + \frac{\overline{ | \mathbf{v'} |^2 }}{2} $$
+
+- El valor medio de la energía cinética en un intervalo de tiempo es , así, la suma de la energía cinética del flujo promedio más la energía cinética asociada con las fluctuaciones turbulentas, que se conoce como **energía cinética turbulenta**. 
+- En coordenadas cartesianas, la energía cinética turbulenta pueda expresarse como:
+
+$$ \frac{\overline{ | \mathbf{v'} |^2 }}{2} = \frac{\overline{(u')^2+(v')^2+(w')^2}}{2} $$
 
 
-# The correlation tensors and representation of the flows
+- La energía cinética turbulenta es una medida de la cantidad de energía cinética invertida en el movimiento aleatorio de la turbulencia del flujo. En general, esta energía representa sólo un pequeño porcentaje de la energía cinética del flujo promedio para un intervalo de tiempo. Aun así, el campo de velocidades aleatorias produce esfuerzos cortantes en el flujo que son mucho mayores que los que existirían si se tratara de flujo laminar.
+
+## 7.2.3 Descripción vorticial de un flujo turbulento 
+
+## 7.2.4 Espectro de energía turbulenta
+
+- Si se denota por $E\{k \}$ esta energía turbulenta por unidad de número de onda, la energía turbulenta es:
+
+$$\overline{ | \mathbf{v'} |^2 }= \int ^\infty _0 E\{k\} dk$$
+
+- La cantidad de energía turbulenta en un flujo está limitada por la pérdida de energía a causa de la disipación viscosa. Se puede calcular la rapidez o razón con la cual se pierde energía turbulenta con base en un conocimiento de las derivadas de la velocidad en la forma de la función de disipación $\Phi_i ,$ para un flujo incompresible. Cuando se promedia en un intervalo de tiempo, la rapidez o razón de pérdida de energía turbulenta, que se denota mediante $\epsilon$, puede expresarse en la forma:
+
+$$\epsilon = \frac{\overline{\Phi_i}}{\rho} = 2 \nu \int ^\infty_0 k^2 E \{k\} dk .$$
+
+- Adviértase que la principal contribución a la integral en el lado derecho proviene del extremo superior del número de onda del espectro, donde $k^2 E \{k\}$ alcanza su máximo. Por lo tanto, lo vórtices o remolinos más pequeños son los que contribuyen más a la disipación de energía, en tanto que los vórtices más grandes son los que generan la energía turbulenta.
+
+
+---
+# 3 The correlation tensors and representation of the flows
 
 From: [Shore - Astrophysical Hydrodynamics](<../Bibliography/Books/Astrophysical Hydrodynamics.md>)
 
@@ -47,14 +104,14 @@ $$R_{ij} (\vec{r}) = R_{ij} (-\vec{r}) $$
 
 $$R_{ij} (0) = \langle u_i u_j \rangle = \int \Phi_{ij} (\vec{k}) d\vec{k}$$
 
- - Thus, since this is  a quantity which has the dimensions of an energy, we see that the energy is giben by:
+ - Thus, since this is  a quantity which has the dimensions of an energy, we see that the energy is given by:
 
 $$\int E(k)k^2dk = \int \Phi_{ii} (\vec{k}) d\vec{k}$$
 
 - As a consequence of isotropy we have $\langle u_i u_j \rangle = 3 \langle u \rangle^2$. Here $\langle u^2 \rangle^{1/2}$ is some velocity dispersion
-## Bibliography
 
 
+---
 
 # Kolmogorov -5/3 law (Classic theory)
 
