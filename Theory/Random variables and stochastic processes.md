@@ -10,7 +10,10 @@ $$\{ x(0), x(1), x(2), \dots \} .$$
 - The random sequence with values $\{ x(n) \}$ is discrete with respect to sampling index $n$. Here we will assume that the random variable at any time $n$ is a continuous function, and therefore, it is a continuous rv at any time $n$. this type of sequence is also know as *time series*.
 - A particular rv, $X(n)$, is characterized by its *probability density function* (pdf), $f(x(n)) :$
 
+
 $$ f(x(n)) = \dfrac{\partial F (x(n))}{ \partial x(n)} $$
+
+
 and its *cumulative density function* (cfd), $F(x(n)) :$
 
 $$F(x(n)) =p(X(n) \leq x(n)) = \int^{x(n)}_{- \infty} f(y(n))dy(n) .$$
