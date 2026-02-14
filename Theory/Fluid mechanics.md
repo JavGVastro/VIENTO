@@ -3,6 +3,7 @@
 
 
 - Mass conservation:
+
 $$ \frac{\partial \rho}{ \partial t} + (\nabla \cdot \rho \vec{v} ) = 0 $$
 
 - Momentum conservation:
