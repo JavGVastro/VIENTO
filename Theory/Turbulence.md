@@ -61,7 +61,7 @@ $$\overline{ | \mathbf{v'} |^2 }= \int ^\infty _0 E\{k\} dk$$
 $$\epsilon = \frac{\overline{\Phi_i}}{\rho} = 2 \nu \int ^\infty_0 k^2 E \{k\} dk .$$
 
 - Adviértase que la principal contribución a la integral en el lado derecho proviene del extremo superior del número de onda del espectro, donde $k^2 E \{k\}$ alcanza su máximo. Por lo tanto, lo vórtices o remolinos más pequeños son los que contribuyen más a la disipación de energía, en tanto que los vórtices más grandes son los que generan la energía turbulenta.
-
+- Los vórtices más pequeños, son por consiguiente, varios órdenes de magnitud menores que los vórtices más grandes que contienen energía, puesto que el número de Reynolds de un flujo turbulento es necesariamente grane. Esta propiedad física fundamental del flujo turbulento hace que sea extremadamente difícil describir por completo un flujo turbulento, incluso utilizando las computadoras más grandes y rápidos que existen actualmente. En lugar de eso hay que ingeniárselas con mucho menos información como $\overline{ | \mathbf{v'} |^2 }$ y $\epsilon$, para caracterizar los efectos de la turbulencia y aceptar obtener soluciones aproximadas al campo del flujo medio.
 
 ---
 # 3 The correlation tensors and representation of the flows
