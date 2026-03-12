@@ -3,7 +3,7 @@
 from pathlib import Path
 
 # Absolute path to the base folder
-BASE_DIR = Path(r"C:\Users\ZAINTEL2\Dropbox\GitHub\30dor_MUSE")
+BASE_DIR = Path(r"C:\Users\javas\Dropbox\GitHub\VIENTO\multiple_lines_phd\MUSE_N346")
 
 # Specific folders
 CONFIDENCE_DIR   = BASE_DIR / 'results_fit'

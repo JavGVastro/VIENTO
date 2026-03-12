@@ -97,6 +97,10 @@ def load_line_bundle_mat(
         Either bundle_dict or {bundle_name: bundle_dict} depending on return_wrapped.
     """
     fits_path = maps_dir / f"{name}.fits"
+    hdul = fits.open(fits_path)
+    sb = hdul['MOM0'].data.astype(float)
+    vv= hdul['MOM1'].data.astype(float)
+    mask= hdul['MASK'].data.astype(float)
 
     # --- Load main table (obs) from HDU named exactly `name` ---
     #obs_tbl = Table.read(fits_path, hdu=name)
@@ -112,9 +116,11 @@ def load_line_bundle_mat(
     bundle = {
         "bundle_name": bundle_name,  # carries your desired "variable name"
         "data": name,
- #       "obs": obs_df,
-        "Br": br_df,
-        "fit": fit_df,
+        "sb":   sb,
+        "vv":   vv,
+        "mask": mask,
+        "Br":   br_df,
+        "fit":  fit_df,
     }
 
     if read_header:

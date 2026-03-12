@@ -4,8 +4,8 @@
 PYTHON := python
 
 # Notebooks (templates)
-NOTEBOOK_SF := list_02_correlation_computation.ipynb
-NOTEBOOK_FIT := list_03_fit_parameters.ipynb
+NOTEBOOK_SF := matrix_02_correlation_computations.ipynb
+NOTEBOOK_FIT := matrix_03_fit_parameters.ipynb
 
 # File lists (one ID per line; blank lines and #comments allowed)
 LIST := fits_ready/filelist.txt
