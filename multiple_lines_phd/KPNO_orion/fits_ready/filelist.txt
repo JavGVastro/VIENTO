@@ -1,0 +1,5 @@
+KPNO-M42-H-bin0
+KPNO-M42-N-bin0
+KPNO-M42-O-bin0
+KPNO-M42-S-bin0
+
