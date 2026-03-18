@@ -1,0 +1,99 @@
+# ----------------------------
+# Core config
+# ----------------------------
+PYTHON := python
+
+# Notebooks (templates)
+NOTEBOOK_SF := list_02_correlation_computation.ipynb
+NOTEBOOK_FIT := list_03_fit_parameters.ipynb
+
+# File lists (one ID per line; blank lines and #comments allowed)
+LIST := fits_ready/filelist.txt
+
+
+# Output root for executed notebooks
+EXEC_ROOT := executed_notebooks
+
+# ----------------------------
+# Helper: read list file -> space-separated IDs
+# ----------------------------
+
+define read_list
+$(shell $(PYTHON) -c "import pathlib; p=pathlib.Path('$(1)'); \
+t=p.read_text(encoding='utf-8').splitlines(); \
+ids=[l.strip() for l in t if l.strip() and not l.strip().startswith('#')]; \
+print(' '.join(ids))")
+endef
+
+FILE_IDS_SF  := $(call read_list,$(LIST))
+FILE_IDS_FIT := $(call read_list,$(LIST))
+
+EXEC_NBS_SF  := $(addprefix $(EXEC_ROOT)/sf/,$(addsuffix _exec.ipynb,$(FILE_IDS_SF)))
+EXEC_NBS_FIT := $(addprefix $(EXEC_ROOT)/fit/,$(addsuffix _exec.ipynb,$(FILE_IDS_FIT)))
+
+# ----------------------------
+# Targets
+# ----------------------------
+.PHONY: help list_mod list_non mod non all one_mod one_non clean
+
+help:
+	@echo Targets:
+	@echo "  make list                   # show IDs from $(LIST)"
+	@echo "  make sf                      # run SF list through $(NOTEBOOK_SF)"
+	@echo "  make fit                     # run FIT list through $(NOTEBOOK_FIT)"
+	@echo "  make all                     # run both"
+	@echo "  make one_sf NAME=<ID>        # run a single MOD ID"
+	@echo "  make one_fit NAME=<ID>       # run a single NON ID"
+	@echo "  make clean                   # delete executed notebooks"
+
+list_sf:
+	@echo $(FILE_IDS_SF)
+
+list_fit:
+	@echo $(FILE_IDS_FIT)
+
+sf: $(EXEC_NBS_SF)
+	@echo "Done SF. Outputs in: $(EXEC_ROOT)/sf"
+
+fit: $(EXEC_NBS_FIT)
+	@echo "Done FIT. Outputs in: $(EXEC_ROOT)/fit"
+
+all: sf fit
+
+# Pattern rule: SF
+$(EXEC_ROOT)/sf/%_exec.ipynb: $(NOTEBOOK_SF) $(LIST) pipeline_config.py
+	@$(PYTHON) -c "import os; os.makedirs('$(EXEC_ROOT)/sf', exist_ok=True)"
+	@echo "Running SF notebook for ID: $*"
+	@$(PYTHON) -m papermill "$(NOTEBOOK_SF)" "$@" \
+		-p name "$*" \
+		-p fits_path "fits_ready/$*.fits"
+
+# Pattern rule: FIT
+$(EXEC_ROOT)/fit/%_exec.ipynb: $(NOTEBOOK_FIT) $(LIST) pipeline_config.py
+	@$(PYTHON) -c "import os; os.makedirs('$(EXEC_ROOT)/fit', exist_ok=True)"
+	@echo "Running FIT notebook for ID: $*"
+	@$(PYTHON) -m papermill "$(NOTEBOOK_FIT)" "$@" \
+		-p name "$*" \
+		-p fits_path "fits_ready/$*.fits"
+
+# Single-run SF (no bash needed; works well on Windows)
+one_sf:
+	$(if $(NAME),,$(error Provide NAME=<ID>))
+	@$(PYTHON) -c "import os; os.makedirs('$(EXEC_ROOT)/sf', exist_ok=True)"
+	@echo "Running SF notebook for ID: $(NAME)"
+	@$(PYTHON) -m papermill "$(NOTEBOOK_SF)" "$(EXEC_ROOT)/sf/$(NAME)_exec.ipynb" \
+		-p name "$(NAME)" \
+		-p fits_path "fits_ready/$(NAME).fits"
+
+# Single-run FIT
+one_fit:
+	$(if $(NAME),,$(error Provide NAME=<ID>))
+	@$(PYTHON) -c "import os; os.makedirs('$(EXEC_ROOT)/fit', exist_ok=True)"
+	@echo "Running FIT notebook for ID: $(NAME)"
+	@$(PYTHON) -m papermill "$(NOTEBOOK_FIT)" "$(EXEC_ROOT)/fit/$(NAME)_exec.ipynb" \
+		-p name "$(NAME)" \
+		-p fits_path "fits_ready/$(NAME).fits"
+
+clean:
+	@$(PYTHON) -c "import shutil, pathlib; p=pathlib.Path('$(EXEC_ROOT)'); \
+shutil.rmtree(p, ignore_errors=True); print('Removed', p)"
