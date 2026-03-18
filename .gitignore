@@ -23,6 +23,8 @@ Thumbs.db
 fake_cube_sigE1_finite_m330_r32_N512.fits
 fake_cube_sigE2_finite_m355_r32_N512.fits
 
+#Ignore pass
+structure_function_analysis/lvm_pass.txt
 
 # =========================
 # Obsidian-specific files
