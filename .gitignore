@@ -8,6 +8,9 @@
 # Ignore all observations folders
 **/observations/
 
+# Ignore LVM products
+**/dap-120-tarantula/
+
 # Ignore Python cache files
 __pycache__/
 *.pyc
