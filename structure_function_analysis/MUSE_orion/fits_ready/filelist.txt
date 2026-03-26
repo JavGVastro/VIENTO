@@ -4,8 +4,9 @@
 #MUSE-M42-H-bin3
 #MUSE-M42-H-bin4
 #MUSE-M42-H-nomask
-MUSE-M42-H-sbmask
+#MUSE-M42-H-sbmask
 #MUSE-M42-N-bin0
+MUSE-M42-N-bin0_trim
 #MUSE-M42-N-bin1
 #MUSE-M42-N-bin2
 #MUSE-M42-N-bin3

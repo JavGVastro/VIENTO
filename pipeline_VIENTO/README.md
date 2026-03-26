@@ -4,10 +4,10 @@
 - [x] Integrate $B(r)$ table with .fits file (now it exported as an numpy array into a .json file) ✅ 2026-01-24
 - [x] Elaborate on Papermill on make_file inject parameters and run stuff ✅ 2026-01-24
 - [ ] Review pipeline notebooks
-	- [ ] `pipeline_template_master/results_compiler.py` #ASAP #Pipeline 🔺
-	- [ ] noise
-	- [ ] list
-	- [ ] matrix
+	- [x] `pipeline_template_master/results_compiler.py` #ASAP #Pipeline 🔺 ✅ 2026-03-24
+	- [ ] Possion noise un synthetic maps ⏳ 2026-03-26
+	- [x] list ✅ 2026-03-24
+	- [x] matrix ✅ 2026-03-24
 
 ```
 Matrix: True / False # Velocity field is in a matrix array or scatter array
