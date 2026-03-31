@@ -46,7 +46,12 @@
 
 # Appendix
 
-## Fit parameters
+## Appendix A: Degradation of the structure function due to observational limitations
+
+## Appendix D: Additional covariance corner plots for model fits
+
+
+### Fit parameters
 
 | Region   | No. puntos | Incertidumbre | Peso / No. puntos Escalas pequeñas | Peso / No. puntos Escalas grandes | Separación. | $χ^2$ reducido | Tiempo de autocorrelación [s] | Tasa de aceptación |
 | -------- | ---------- | ------------- | ---------------------------------- | --------------------------------- | ----------- | -------------- | ----------------------------- | ------------------ |

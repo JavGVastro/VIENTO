@@ -199,3 +199,130 @@ def plot_panels(line_df, *, mark_func=None, s=25,
         fig.colorbar(sc2, ax=ax[1], label=cbar_labels[1])
 
     return fig, ax
+
+def plot_panels_log(line_df, *, mark_func=None, s=25,
+                     xcol="RAdeg", ycol="DEdeg",
+                     flux_col="log_F", vcol="V_mean",
+                     flux_cmap="magma", v_cmap="RdBu_r",
+                     invert_ra=True, figsize=(14, 7),
+                     titles=("Log Flux", "V_mean - <V_mean>"),
+                     cbar_labels=("Flux", "V_mean - mean")):
+    """
+    Plot two panels for a given line DataFrame:
+      (1) flux_col map
+      (2) mean-subtracted vcol map
+
+    Parameters
+    ----------
+    line_df : pandas.DataFrame
+        Must contain xcol, ycol, flux_col, vcol.
+    mark_func : callable or None
+        Function like mark_points(ax) to annotate points on each axis.
+    s : float
+        Marker size for scatter.
+    invert_ra : bool
+        If True, invert x-axis (RA convention).
+    """
+
+    required = [xcol, ycol, flux_col, vcol]
+    missing = [c for c in required if c not in line_df.columns]
+    if missing:
+        raise ValueError(f"Missing columns in line_df: {missing}")
+
+    with sns.axes_style("darkgrid"):
+        fig, ax = plt.subplots(1, 2, figsize=figsize, constrained_layout=True)
+
+        # Panel 1: log flux
+        sc1 = ax[0].scatter(line_df[xcol], line_df[ycol], s=s, c=line_df[flux_col], cmap=flux_cmap, norm="log")
+        if invert_ra:
+            ax[0].invert_xaxis()
+        ax[0].set_xlabel("RA (deg)")
+        ax[0].set_ylabel("Dec (deg)")
+        ax[0].set_title(titles[0])
+        if callable(mark_func):
+            mark_func(ax[0])
+        fig.colorbar(sc1, ax=ax[0], label=cbar_labels[0])
+
+        # Panel 2: mean-subtracted velocity
+        v1 = line_df[vcol] - line_df[vcol].mean()
+        sc2 = ax[1].scatter(line_df[xcol], line_df[ycol], s=s, c=v1, cmap=v_cmap)
+        if invert_ra:
+            ax[1].invert_xaxis()
+        ax[1].set_xlabel("RA (deg)")
+        ax[1].set_ylabel("Dec (deg)")
+        ax[1].set_title(titles[1])
+        if callable(mark_func):
+            mark_func(ax[1])
+        fig.colorbar(sc2, ax=ax[1], label=cbar_labels[1])
+
+    return fig, ax
+
+def plot_panels_log_title(line_df, *, mark_func=None, s=25,
+                     xcol="RAdeg", ycol="DEdeg",
+                     flux_col="log_F", vcol="V_mean",
+                     flux_cmap="magma", v_cmap="RdBu_r",
+                     invert_ra=True, figsize=(14, 7),
+                     titles=("Log Flux", "V_mean - <V_mean>"),
+                     cbar_labels=("Flux", "V_mean - mean"),
+                     figure_title=None):
+    """
+    Plot two panels for a given line DataFrame:
+      (1) flux_col map
+      (2) mean-subtracted vcol map
+
+    Parameters
+    ----------
+    line_df : pandas.DataFrame
+        Must contain xcol, ycol, flux_col, vcol.
+    mark_func : callable or None
+        Function like mark_points(ax) to annotate points on each axis.
+    s : float
+        Marker size for scatter.
+    invert_ra : bool
+        If True, invert x-axis (RA convention).
+    figure_title : str or None
+        General title for the whole figure.
+    """
+
+    required = [xcol, ycol, flux_col, vcol]
+    missing = [c for c in required if c not in line_df.columns]
+    if missing:
+        raise ValueError(f"Missing columns in line_df: {missing}")
+
+    with sns.axes_style("darkgrid"):
+        fig, ax = plt.subplots(1, 2, figsize=figsize, constrained_layout=True)
+
+        # General title
+        if figure_title is not None:
+            fig.suptitle(figure_title, fontsize=16)
+
+        # Panel 1: log flux
+        sc1 = ax[0].scatter(
+            line_df[xcol],
+            line_df[ycol],
+            s=s,
+            c=line_df[flux_col],
+            cmap=flux_cmap,  norm="log"
+        )
+        if invert_ra:
+            ax[0].invert_xaxis()
+        ax[0].set_xlabel("RA (deg)")
+        ax[0].set_ylabel("Dec (deg)")
+        ax[0].set_title(titles[0])
+        if callable(mark_func):
+            mark_func(ax[0])
+        fig.colorbar(sc1, ax=ax[0], label=cbar_labels[0])
+
+        # Panel 2: mean-subtracted velocity
+        v1 = line_df[vcol] - line_df[vcol].mean()
+        sc2 = ax[1].scatter(line_df[xcol], line_df[ycol], s=s, c=v1, cmap=v_cmap)
+        if invert_ra:
+            ax[1].invert_xaxis()
+        ax[1].set_xlabel("RA (deg)")
+        ax[1].set_ylabel("Dec (deg)")
+        ax[1].set_title(titles[1])
+        if callable(mark_func):
+            mark_func(ax[1])
+        fig.colorbar(sc2, ax=ax[1], label=cbar_labels[1])
+
+    return fig, ax

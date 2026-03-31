@@ -10,6 +10,8 @@
 
 # Ignore LVM products
 **/dap-120-tarantula/
+/structure_function_analysis/LVM_30dor/fits_ready
+
 
 # Ignore Python cache files
 __pycache__/
