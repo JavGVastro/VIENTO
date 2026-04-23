@@ -8,6 +8,7 @@
 	- [ ] Possion noise un synthetic maps ⏳ 2026-03-26
 	- [x] list ✅ 2026-03-24
 	- [x] matrix ✅ 2026-03-24
+	- [ ] Change inputs names for list analysis correlations
 
 ```
 Matrix: True / False # Velocity field is in a matrix array or scatter array
@@ -358,15 +359,20 @@ From the inputs of Stages 1 and 2, Stage 3 produces:
 - Personal Python packages created specifically for the VIENTO project.
 
 ``` python
-
-
-from turb_utils import make_extended, make_3dfield # Modification on Turbustat synthethic velocity fields
-import strucfunc # Structure Function Libray
-import bfunc     # Structure Function Models
-import bplot     # Plotting Utilities
-import ci_results_compiler
-
+astronomical_objects.py
+spectral_lines.py
+telescopes_instruments.py
 ```
+
+- Importing VIENTO `.py` modules
+	
+	``` python
+	from turb_utils import make_extended, make_3dfield # Modification on Turbustat synthethic velocity fields
+	import strucfunc # Structure Function Libray
+	import bfunc     # Structure Function Models
+	import bplot     # Plotting Utilities
+	import ci_results_compiler
+	```
 
 ## 7.1 `strucfunc` (Structure Function Library)
 
@@ -421,6 +427,8 @@ To-do:
 	- ~~ci_results_compiler.py~~ `lmfit_results_compiler.py`
 		- ~~def ci_results_compiler():~~ `def lmfit_results_compiler ():`
 		- ~~def ci_results_compiler_ideal():~~ `def lmfit_results_compiler_ideal ():`
+
+## 7.X
 ## 7.X Utility Functions (Planned)
 
 Suggested utility functions to centralize repeated tasks:
