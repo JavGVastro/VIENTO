@@ -1,0 +1,2 @@
+name,quality_class,quality_score,redchi,r0_over_rfitmax,s0_arcsec,noise_fraction,max_residual_run,n_active_flags,active_flags
+LVM-30Dor-6563_A,D,10,0.805786653322063,0.162612103704134,0.1000000042081589,0.1705290944135857,8,6,m_near_bound; s0_near_bound; large_s0_uncertainty; large_noise_uncertainty; large_m_uncertainty; systematic_residuals

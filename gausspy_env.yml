@@ -1,0 +1,15 @@
+name: gausspy
+channels:
+  - defaults
+dependencies:
+  - python=3.8
+  - scipy
+  - h5py
+  - matplotlib
+  - numpy
+  - tqdm
+  - lmfit
+  - astropy
+  - ipykernel
+  - pandas
+prefix: C:\Users\javas\anaconda3\envs\gausspy

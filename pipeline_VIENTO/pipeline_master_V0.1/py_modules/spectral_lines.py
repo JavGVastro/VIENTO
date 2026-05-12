@@ -19,7 +19,7 @@ LINES = {
         rest_wavelength=6562.8,
         wavelength_id=6563,
         element="H",
-        ion="H_I",
+        ion="Ha",
         transition_id="H_I-6563",
     ),
 

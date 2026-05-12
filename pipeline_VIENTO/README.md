@@ -9,6 +9,9 @@
 	- [x] list ✅ 2026-03-24
 	- [x] matrix ✅ 2026-03-24
 	- [ ] Change inputs names for list analysis correlations
+- [ ] Update
+	- [ ] `pipeline_config.py` recent file: MUSE_orion_global_mask
+	- [ ] `04_results_file.ipynb` recent file: LVM 30 dor
 
 ```
 Matrix: True / False # Velocity field is in a matrix array or scatter array

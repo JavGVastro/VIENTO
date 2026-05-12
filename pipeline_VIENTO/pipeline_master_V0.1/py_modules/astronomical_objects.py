@@ -180,6 +180,24 @@ OBJECTS = {
         distance_pc=202,
         points_of_interest={},
     ),
+    "N6778": AstronomicalObject(
+        key="N6778",
+        catalog_name="NGC 6778",
+        common_name="NGC 6778",
+        object_id="N6778",
+        object_type="Planetary nebula",
+        distance_pc=3150,
+        points_of_interest={},
+    ),
+     "M1_42": AstronomicalObject(
+        key="M1_42",
+        catalog_name="M 1-42",
+        common_name="M 1-42",
+        object_id="M1-42",
+        object_type="Planetary nebula",
+        distance_pc=3066,
+        points_of_interest={},
+    ),
 }
 
 

@@ -1,0 +1,12 @@
+LVM-30Dor-6563_subrot
+LVM-30Dor-6563_rot
+LVM-30Dor-6583_subrot
+LVM-30Dor-6583_rot
+LVM-30Dor-3729_subrot
+LVM-30Dor-3729_rot
+LVM-30Dor-5007_subrot
+LVM-30Dor-5007_rot
+LVM-30Dor-6731_subrot
+LVM-30Dor-6731_rot
+LVM-30Dor-9069_subrot
+LVM-30Dor-9069_rot

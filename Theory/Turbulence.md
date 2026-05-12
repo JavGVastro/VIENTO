@@ -170,7 +170,11 @@ $$u_k = \left( \nu \varepsilon \right)^{\frac{1}{4}}\sim \dfrac{u}{\text{Re}^{1/
 
 # On turbulence
 
-
+"Big whirls have little whirls
+which feed on their velocity.
+And little whirls have lesser whirls,
+and so on to viscosity."
+> Lewis Fry Richardson
 
 >[!quote] [Turbulence: Kolmogorov, Nabukov, Heisenberg, Weizsäcker and Onsage](https://www.webofstories.com/play/benoit.mandelbrot/26)
 >One thing I learned then, which was very important for later, was about turbulence. Kolmogorov's work- well it's a co-op between Kolmogorov, Nabukov, Heisenberg, Weizsäcker and Onsager- had done this work during the war, was now becoming known. It was totally disbelieved. Nobody thought it was right, but the quality of those men and the simplicity of the result and the strange nature of the arguments were very, very attractive, and so we had a number of lectures about turbulence which later on were essential to my life, because I both saw what had been done and I saw how difficult it was to verify, to believe it, and how beautiful it was. And let me say a few words about that. In the most extreme form of this argument, which I think is due to Onsager and not to Kolmogorov, the spectrum of turbulence, which is a great monument of human understanding, came out of pure thought; not out of the equation of flow motion, no relation whatsoever; not out of experience with flow motion, no relation whatsoever; just, if the spectrum were K-5/3 so many things would be nice and simple and convenient. It was a totally ridiculous kind of science, but at the same time extremely mystifying and also very attractive. How come that the human mind can, starting with principles so devoid of content, make predictions so full of content which one could try to verify and at that time one could not verify? So, I emphasise, it was very much a limbo, a world in which interesting things were being said but very little belief was attracted to it.

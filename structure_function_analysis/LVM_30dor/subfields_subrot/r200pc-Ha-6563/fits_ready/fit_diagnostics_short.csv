@@ -1,0 +1,8 @@
+name,quality_class,quality_score,redchi,r0_over_rfitmax,s0_arcsec,noise_fraction,max_residual_run,n_active_flags,active_flags
+LVM-30Dor-6563_B2,D,14,0.9916967847754052,0.3080560712615509,1.499997838409962,4.581516925076197e-11,13,9,m_near_bound; s0_near_bound; noise_near_bound; large_r0_uncertainty; large_sig2_uncertainty; large_s0_uncertainty; large_noise_uncertainty; large_s0_arcsec; systematic_residuals
+LVM-30Dor-6563_B3,D,13,0.8341751130172202,0.0879790732505428,1.4999998308592497,0.3628828474284731,8,8,sig2_near_bound; s0_near_bound; large_r0_uncertainty; large_sig2_uncertainty; large_s0_uncertainty; large_m_uncertainty; large_s0_arcsec; systematic_residuals
+LVM-30Dor-6563_B1,D,9,0.826536854786777,0.078807273403444,1.4999998800959156,4.0506968058785764e-08,15,6,s0_near_bound; noise_near_bound; large_s0_uncertainty; large_noise_uncertainty; large_s0_arcsec; systematic_residuals
+LVM-30Dor-6563_B5,D,9,0.9351123869992825,0.057361081110442,1.499999930484741,1.1162004441893509e-07,10,6,s0_near_bound; noise_near_bound; large_s0_uncertainty; large_noise_uncertainty; large_s0_arcsec; systematic_residuals
+LVM-30Dor-6563_B6,D,9,0.798843554941446,0.0546193502612773,1.4999999880908812,1.501908104824118e-09,10,6,s0_near_bound; noise_near_bound; large_s0_uncertainty; large_noise_uncertainty; large_s0_arcsec; systematic_residuals
+LVM-30Dor-6563_B7,D,9,0.9868157125224456,0.0516238976323094,1.499999987403512,2.8575785664512627e-11,15,6,s0_near_bound; noise_near_bound; large_s0_uncertainty; large_noise_uncertainty; large_s0_arcsec; systematic_residuals
+LVM-30Dor-6563_A,D,8,0.8157872497876419,0.0439209826062489,0.1000000251327658,0.1029433307245199,9,5,s0_near_bound; large_s0_uncertainty; large_noise_uncertainty; large_m_uncertainty; systematic_residuals
