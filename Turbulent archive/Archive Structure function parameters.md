@@ -16,7 +16,7 @@
 | Castañeda 1988                                                                       |            | $\text{[OIII]}$                   |                            |                          |               |       |
 | Munch 1958                                                                           |            | $\text{[OIII]}$                   | $7.4$                      |                          | 2/3           |       |
 | von Hoerner 1951                                                                     |            | $\text{[OIII]}$                   | -                          | -                        | 2/3           |       |
-|                                                                                      |            |                                   |                            |                          |               |       |
+| Courtes                                                                              |            |                                   |                            |                          |               |       |
 
 <img src="state_of_the_art/plots/functions_orion.png" alt="Image one" width="800">
 

@@ -30,6 +30,7 @@ STYLE = {
     "data label offset": (40, -20),
     "model label offset": (20, -40),
     "true model label offset": (-30, 60),
+    "s0 label offset": (-40, 0),
 }
 
 sns.set_color_codes()
@@ -231,7 +232,7 @@ def strucfunc_plot(
         ax.annotate(
             r"$s_0$",
             (best["s0"], 1.5 * ymin),
-            xytext=(-40, 0),
+            xytext=STYLE["s0 label"],
             textcoords="offset points",
             color="k",
             arrowprops=dict(arrowstyle="->", color="k", shrinkB=2),

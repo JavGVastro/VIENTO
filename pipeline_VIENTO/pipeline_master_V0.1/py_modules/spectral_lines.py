@@ -16,11 +16,21 @@ LINES = {
     "Halpha": SpectralLine(
         key="Halpha",
         plot_label=r'H$\alpha$',
-        rest_wavelength=6562.8,
+        rest_wavelength=6562.79,
         wavelength_id=6563,
         element="H",
         ion="Ha",
         transition_id="H_I-6563",
+    ),
+
+    "Hbeta": SpectralLine(
+        key="Hbeta",
+        plot_label=r'H$\beta$',
+        rest_wavelength=4861.3,
+        wavelength_id=4861,
+        element="H",
+        ion="Hb",
+        transition_id="H_I-4861",
     ),
 
     "NII_6583": SpectralLine(

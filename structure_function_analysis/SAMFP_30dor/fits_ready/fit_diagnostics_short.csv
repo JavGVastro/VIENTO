@@ -1,0 +1,2 @@
+name,quality_class,quality_score,redchi,r0_over_rfitmax,s0_arcsec,noise_fraction,max_residual_run,n_active_flags,active_flags
+SAMFP-30Dor-Ha-bin0,D,8,0.6730559492021625,1.0011212731238897,0.4261568538862576,0.6896642813073103,13,5,large_r0_uncertainty; large_sig2_uncertainty; r0_larger_than_fit_range; large_noise_fraction; systematic_residuals

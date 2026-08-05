@@ -18,4 +18,4 @@
 
 # To-Do
 
-- [ ] [2017arXiv171006901C](https://ui.adsabs.harvard.edu/abs/2017arXiv171006901C) presents an interesting way to apply the structure function that may be worth investigating. #WaitingList 
+- [ ] [2017arXiv171006901C](https://ui.adsabs.harvard.edu/abs/2017arXiv171006901C) presents an interesting way to apply the structure function that may be worth investigating. #Someday 

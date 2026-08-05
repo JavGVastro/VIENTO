@@ -136,8 +136,8 @@ def strucfunc_plot(
     label_kwds2 = dict(ha="left", va="center", bbox=whitebox, zorder=100)
 
     xmin, xmax = 5e-4 * box_size, 8 * box_size
-#    ymin, ymax = 5e-4 * B.max(), 8 * B.max()
-    ymin, ymax = 5e-3 * B.max(), 5 * B.max() # Orion MUSE
+    ymin, ymax = 5e-4 * B.max(), 8 * B.max()
+#    ymin, ymax = 5e-3 * B.max(), 5 * B.max() # Orion MUSE
     xarr = np.logspace(np.log10(xmin), np.log10(xmax))
 
     fig, ax = plt.subplots(figsize=(10, 10))

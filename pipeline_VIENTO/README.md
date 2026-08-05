@@ -3,8 +3,8 @@
 
 - [x] Integrate $B(r)$ table with .fits file (now it exported as an numpy array into a .json file) ✅ 2026-01-24
 - [x] Elaborate on Papermill on make_file inject parameters and run stuff ✅ 2026-01-24
-- [ ] Review pipeline notebooks
-	- [x] `pipeline_template_master/results_compiler.py` #ASAP #Pipeline 🔺 ✅ 2026-03-24
+- [ ] Review pipeline notebooks #ASAP #Review
+	- [x] `pipeline_template_master/results_compiler.py` 
 	- [ ] Possion noise un synthetic maps ⏳ 2026-03-26
 	- [x] list ✅ 2026-03-24
 	- [x] matrix ✅ 2026-03-24
@@ -13,11 +13,14 @@
 	- [ ] `pipeline_config.py` recent file: MUSE_orion_global_mask
 	- [ ] `04_results_file.ipynb` recent file: LVM 30 dor
 
-```
-Matrix: True / False # Velocity field is in a matrix array or scatter array
-SB:     True / False # We want to considere the instensity / surface brightness map for weighted analysis
-ideal:  True / False # We use the 3-model (ideal) or 5-model (real) parameter for the fit
-```
+
+# Ideas
+
+- Maybe the pipeline can be optimize with the following options
+	- Matrix: True / False # Velocity field is in a matrix array or scatter array
+	- SB:     True / False # We want to considere the instensity / surface brightness map for weighted analysis
+	- ideal:  True / False # We use the 3-model (ideal) or 5-model (real) parameter for the fit
+
 
 # 1. Purpose and Scope
 

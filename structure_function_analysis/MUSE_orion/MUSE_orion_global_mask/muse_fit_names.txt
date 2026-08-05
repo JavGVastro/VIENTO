@@ -1,0 +1,3 @@
+MUSE-M42-H-bin2_trim
+MUSE-M42-N-bin2_trim
+MUSE-M42-O-bin2_trim
