@@ -8,7 +8,7 @@ FIT_NAMES := \
 	MUSE-M42-N-bin2_trim \
 	MUSE-M42-O-bin2_trim
 
-FIT_STEPS := 3 4 5 6 7
+FIT_STEPS := 3 4 5 6 7 8
 
 FIT_OUTPUTS := $(foreach name,$(FIT_NAMES),$(foreach step,$(FIT_STEPS),$(FIT_DIR)/$(name)_0$(step).fits))
 

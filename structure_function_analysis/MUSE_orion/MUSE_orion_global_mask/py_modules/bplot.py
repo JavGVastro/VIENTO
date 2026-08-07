@@ -232,7 +232,7 @@ def strucfunc_plot(
         ax.annotate(
             r"$s_0$",
             (best["s0"], 1.5 * ymin),
-            xytext=STYLE["s0 label"],
+            xytext=STYLE["s0 label offset"],
             textcoords="offset points",
             color="k",
             arrowprops=dict(arrowstyle="->", color="k", shrinkB=2),
