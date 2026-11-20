@@ -1,0 +1,51 @@
+# ---------------------------------
+# Config
+# ---------------------------------
+
+PYTHON  := python
+JUPYTER := jupyter nbconvert --to notebook --execute --inplace
+
+LINE    := H
+BINS    := 1 2 3 4 5
+
+PREFIX  := matrix_01_fits_create
+SUFFIX  := -ivsv
+
+TEMPLATE := $(PREFIX)_$(LINE)_bin0$(SUFFIX).ipynb
+
+NOTEBOOKS := $(foreach bin,$(BINS),$(PREFIX)_$(LINE)_bin$(bin)$(SUFFIX).ipynb)
+
+
+# ---------------------------------
+# Targets
+# ---------------------------------
+
+.PHONY: all list generate run
+
+all: run
+
+
+# ---------------------------------
+# Show expected notebooks
+# ---------------------------------
+
+list:
+	@$(PYTHON) -c "print('\n'.join('$(NOTEBOOKS)'.split()))"
+
+
+# ---------------------------------
+# Generate missing notebooks
+# ---------------------------------
+
+generate:
+	@$(PYTHON) -c "import json,re,pathlib; template=pathlib.Path('$(TEMPLATE)'); bins='$(BINS)'.split(); prefix='$(PREFIX)'; line='$(LINE)'; suffix='$(SUFFIX)'; \
+[(lambda target,b: (print('Exists: '+str(target)) if target.exists() else (lambda nb: ([(cell.update({'source': [re.sub(r'^(\s*)bins\s*=\s*\d+', r'\1bins = '+b, x) for x in cell.get('source', [])], 'outputs': [], 'execution_count': None}) if cell.get('cell_type')=='code' else None) for cell in nb['cells']], target.write_text(json.dumps(nb,indent=1,ensure_ascii=False),encoding='utf-8'), print('Created: '+str(target)+' (bins = '+b+')')))(json.loads(template.read_text(encoding='utf-8')))))(pathlib.Path(f'{prefix}_{line}_bin{b}{suffix}.ipynb'),b) for b in bins]"
+
+
+# ---------------------------------
+# Execute notebooks
+# ---------------------------------
+
+run: generate
+	@$(PYTHON) -c "import subprocess; nbs='$(NOTEBOOKS)'.split(); print('Notebooks to execute:'); print('\n'.join(nbs)); [subprocess.run(['jupyter','nbconvert','--to','notebook','--execute','--inplace', nb], check=True) for nb in [print('Executing ' + x) or x for x in nbs]]"
+	@echo All notebooks executed.
