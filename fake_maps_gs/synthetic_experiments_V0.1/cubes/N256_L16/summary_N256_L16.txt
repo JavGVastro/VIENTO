@@ -1,0 +1,49 @@
+[1] exponential_3d_density_N256_L16.fits
+    Model: exponential | Field: density | M3D: 1.0 | Seed: 19970221
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: -0.141345 | Std: 1.026633 | Variance: 1.053976
+
+[2] exponential_3d_velocity_N256_L16.fits
+    Model: exponential | Field: velocity | M3D: 1.0 | Seed: 19880127
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: -0.024032 | Std: 0.967762 | Variance: 0.936563
+
+[3] gaussian_3d_density_N256_L16.fits
+    Model: gaussian | Field: density | M3D: 2.0 | Seed: 19970221
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: -0.019912 | Std: 1.006738 | Variance: 1.013522
+
+[4] gaussian_3d_velocity_N256_L16.fits
+    Model: gaussian | Field: velocity | M3D: 2.0 | Seed: 19880127
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: -0.093951 | Std: 0.942278 | Variance: 0.887889
+
+[5] stable_alpha1.5_3d_density_N256_L16.fits
+    Model: stable | Field: density | M3D: 1.5 | Seed: 19970221
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: -0.028966 | Std: 1.030728 | Variance: 1.062400
+
+[6] stable_alpha1.5_3d_velocity_N256_L16.fits
+    Model: stable | Field: velocity | M3D: 1.5 | Seed: 19880127
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: 0.002890 | Std: 0.961881 | Variance: 0.925214
+
+[7] stable_alpha1_3d_density_N256_L16.fits
+    Model: stable | Field: density | M3D: 1.0 | Seed: 19970221
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: -0.018919 | Std: 1.007839 | Variance: 1.015740
+
+[8] stable_alpha1_3d_velocity_N256_L16.fits
+    Model: stable | Field: velocity | M3D: 1.0 | Seed: 19880127
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: -0.016285 | Std: 0.951703 | Variance: 0.905738
+
+[9] stable_alpha2_3d_density_N256_L16.fits
+    Model: stable | Field: density | M3D: 2.0 | Seed: 19970221
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: -0.014681 | Std: 1.003797 | Variance: 1.007609
+
+[10] stable_alpha2_3d_velocity_N256_L16.fits
+    Model: stable | Field: velocity | M3D: 2.0 | Seed: 19880127
+    Shape: (256, 256, 256) | Length scales: (16.0, 16.0, 16.0)
+    Mean: -0.058863 | Std: 0.957511 | Variance: 0.916828

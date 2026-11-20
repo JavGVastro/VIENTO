@@ -1,0 +1,168 @@
+Run started (UTC): 2026-10-08T20:56:16.697446+00:00
+Working directory: /Users/javier/fake_maps_gs/synthetic_expeirments_v0.1
+Input configuration: {'input_dir': PosixPath('cubes/N64_L16'), 'model_gs': 'stable', 'alpha': 1.5, 'los_axis': 0}
+Physical configuration: {'velocity_scale_kms': 1.0, 'sig_E_values': [0.0, 1.0, 2.0], 'mean_density_cm3': 1.0}
+Spectral configuration: {'temperature_K': 10000.0, 'particle_mass_mp': 1.0, 'los_length_pc': 1.0, 'channel_width_kms': 0.5, 'v_min_kms': -60.0, 'v_max_kms': 60.0}
+Report: /Users/javier/fake_maps_gs/synthetic_expeirments_v0.1/cubes/N64_L16/stable_alpha1.5_moments_N64_L16_sanity_checks.txt
+Shape (x,y,z): (64, 64, 64)
+LOS axis: 0; remaining NumPy axes: (1, 2)
+
+velocity: stable_alpha1.5_3d_velocity_N64_L16.fits
+  Model=stable, M3D=1.5, seed=19880127
+  Min=-3.781146, max=3.560000
+  Mean=0.144235, std=1.004966, variance=1.009956
+
+density: stable_alpha1.5_3d_density_N64_L16.fits
+  Model=stable, M3D=1.5, seed=19970221
+  Min=-3.670639, max=3.757751
+  Mean=-0.023122, std=0.870668, variance=0.758062
+
+Raw base fields only: physical quantities have not yet been assigned.
+
+
+Input covariance scale
+  Model: stable
+  Length scale: 16.000000
+  Rescale: 1.000000
+  R0: 12.531516
+  Definition: input correlation equals 0.5
+  Units: same as input grid spacing
+Velocity
+  Mean: 0.144235 km / s
+  Std: 1.004966 km / s
+  Variance: 1.009956 km2 / s2
+  All finite: True
+Standardized density-base field
+  Mean: -0.000000
+  Std: 1.000000
+  All finite: True
+Thermal dispersion: 9.085373 km / s
+
+sig_E = 0
+  Emissivity mean: 1.000000
+  Std(log emissivity): 0.000000
+  All positive: True
+  All finite: True
+  Emissivity input mean: 1.000000 1 / cm3
+  Emissivity input unit: 1 / cm3
+  PPV shape: (240, 64, 64) (spectral, spatial, spatial)
+  Intensity unit: K
+  First channel center: -59.7499999999968 km / s
+  Last channel center: 59.750000000003205 km / s
+  Channel spacing: 0.5 km / s
+  Moment 0 shape: (64, 64)
+  Moment 1 shape: (64, 64)
+  Moment 0 finite: True
+  Moment 0 positive: True
+  Moment 1 finite: True
+Compared pixels: 4096 / 4096
+
+Quantity                    Mean difference           RMS   Max absolute
+Moment 0 (normalized)         -8.375462e-18  8.558119e-12   2.833933e-11
+Moment 1 (km/s)               -2.927065e-10  1.411296e-09   4.079524e-09
+  Completed in 4.19 s
+  Mean relative emissivity: 1.000000
+  Mean moment 0:            1.692637
+  Centroid-map std:         0.613109
+  Centroid-map variance:    0.375902
+  Saved: stable_alpha1.5_3d_velocity_N64_L16_sigE0_moments.jpg
+
+sig_E = 1
+  Emissivity mean: 1.000000
+  Std(log emissivity): 1.000000
+  All positive: True
+  All finite: True
+  Emissivity input mean: 1.000000 1 / cm3
+  Emissivity input unit: 1 / cm3
+  PPV shape: (240, 64, 64) (spectral, spatial, spatial)
+  Intensity unit: K
+  First channel center: -59.7499999999968 km / s
+  Last channel center: 59.750000000003205 km / s
+  Channel spacing: 0.5 km / s
+  Moment 0 shape: (64, 64)
+  Moment 1 shape: (64, 64)
+  Moment 0 finite: True
+  Moment 0 positive: True
+  Moment 1 finite: True
+Compared pixels: 4096 / 4096
+
+Quantity                    Mean difference           RMS   Max absolute
+Moment 0 (normalized)          1.279494e-16  8.178925e-12   4.739187e-11
+Moment 1 (km/s)               -4.708984e-10  1.399770e-09   4.508800e-09
+  Completed in 4.12 s
+  Mean relative emissivity: 1.000000
+  Mean moment 0:            1.692637
+  Centroid-map std:         0.596878
+  Centroid-map variance:    0.356263
+  Saved: stable_alpha1.5_3d_velocity_N64_L16_sigE1_moments.jpg
+
+sig_E = 2
+  Emissivity mean: 1.000000
+  Std(log emissivity): 2.000000
+  All positive: True
+  All finite: True
+  Emissivity input mean: 1.000000 1 / cm3
+  Emissivity input unit: 1 / cm3
+  PPV shape: (240, 64, 64) (spectral, spatial, spatial)
+  Intensity unit: K
+  First channel center: -59.7499999999968 km / s
+  Last channel center: 59.750000000003205 km / s
+  Channel spacing: 0.5 km / s
+  Moment 0 shape: (64, 64)
+  Moment 1 shape: (64, 64)
+  Moment 0 finite: True
+  Moment 0 positive: True
+  Moment 1 finite: True
+Compared pixels: 4096 / 4096
+
+Quantity                    Mean difference           RMS   Max absolute
+Moment 0 (normalized)          5.382725e-17  1.704767e-11   2.278151e-10
+Moment 1 (km/s)               -5.681952e-10  1.530334e-09   5.653792e-09
+  Completed in 4.16 s
+  Mean relative emissivity: 1.000000
+  Mean moment 0:            1.692637
+  Centroid-map std:         0.646573
+  Centroid-map variance:    0.418056
+  Saved: stable_alpha1.5_3d_velocity_N64_L16_sigE2_moments.jpg
+Saved: stable_alpha1.5_moments_N64_L16_sigE0.fits
+Saved: stable_alpha1.5_moments_N64_L16_sigE1.fits
+Saved: stable_alpha1.5_moments_N64_L16_sigE2.fits
+
+Export verification: stable_alpha1.5_moments_N64_L16_sigE0.fits
+Filename: cubes/N64_L16/stable_alpha1.5_moments_N64_L16_sigE0.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      46   ()      
+  1  MOM0          1 ImageHDU        35   (64, 64)   float64   
+  2  MOM1          1 ImageHDU        33   (64, 64)   float64   
+
+  sig_E: 0.0
+  SIG2: 0.375902486717481
+  MOM0: shape=(64, 64), unit=1, matches in-memory map=True
+  MOM1: shape=(64, 64), unit=km s-1, matches in-memory map=True
+
+Export verification: stable_alpha1.5_moments_N64_L16_sigE1.fits
+Filename: cubes/N64_L16/stable_alpha1.5_moments_N64_L16_sigE1.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      46   ()      
+  1  MOM0          1 ImageHDU        35   (64, 64)   float64   
+  2  MOM1          1 ImageHDU        33   (64, 64)   float64   
+
+  sig_E: 1.0
+  SIG2: 0.35626307093274606
+  MOM0: shape=(64, 64), unit=1, matches in-memory map=True
+  MOM1: shape=(64, 64), unit=km s-1, matches in-memory map=True
+
+Export verification: stable_alpha1.5_moments_N64_L16_sigE2.fits
+Filename: cubes/N64_L16/stable_alpha1.5_moments_N64_L16_sigE2.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      46   ()      
+  1  MOM0          1 ImageHDU        35   (64, 64)   float64   
+  2  MOM1          1 ImageHDU        33   (64, 64)   float64   
+
+  sig_E: 2.0
+  SIG2: 0.41805612597248154
+  MOM0: shape=(64, 64), unit=1, matches in-memory map=True
+  MOM1: shape=(64, 64), unit=km s-1, matches in-memory map=True
+
+Run complete. Exported FITS files: 3
+Sanity-check report saved: /Users/javier/fake_maps_gs/synthetic_expeirments_v0.1/cubes/N64_L16/stable_alpha1.5_moments_N64_L16_sanity_checks.txt

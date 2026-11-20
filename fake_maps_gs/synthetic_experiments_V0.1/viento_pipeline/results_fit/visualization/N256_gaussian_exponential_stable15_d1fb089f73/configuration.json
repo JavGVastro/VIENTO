@@ -1,0 +1,32 @@
+{
+  "grid": 256,
+  "models": [
+    "exponential",
+    "stable (alpha=1.5)",
+    "gaussian"
+  ],
+  "sigE": [
+    0,
+    1,
+    2
+  ],
+  "length": null,
+  "bin": null,
+  "seed": null,
+  "source": null,
+  "fits_dir": "C:\\Users\\javas\\Dropbox\\GitHub\\VIENTO\\fake_maps_gs\\synthetic_experiments_V0.1\\viento_pipeline\\fits_ready\\tuned",
+  "fractions": [
+    0.4,
+    0.5,
+    0.6
+  ],
+  "overrides": {},
+  "require_all": true,
+  "references": true,
+  "reference_keys": {
+    "sig2": "SIG2",
+    "r0": "R0",
+    "m": "M2D"
+  },
+  "ylims": null
+}

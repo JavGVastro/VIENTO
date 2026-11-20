@@ -1,0 +1,60 @@
+# Run from the GSTools project root.
+# Set FIT_NAMES to input FITS stems (without directory or .fits).
+# Example:
+# make -f Makefile_fit_fractions_ideal FIT_NAMES="cube1 cube2" fit-fractions
+
+.DEFAULT_GOAL := fit-fractions
+PYTHON ?= python
+PAPERMILL ?= papermill
+FIT_NOTEBOOK ?= fake3D_matrix_03_fit_parameters_fraccL_ideal.ipynb
+FIT_DIR ?= fits_ready
+EXEC_DIR ?= .
+
+# Replace this example with your input FITS name(s).
+FIT_NAMES ?= stable_alpha1.5_moments_N64_L16_sigE2
+FIT_STEPS ?= 20 30 40 50 60 70 80 90 99
+
+RELATIVE_UNCERTAINTY ?= 0.05
+MCMC_STEPS ?= 50000
+MCMC_BURN ?= 1000
+MCMC_THIN ?= 50
+MCMC_WORKERS ?= 16
+
+# Percentages 01..99, optionally 100. Keep two digits below 100.
+VALID_STEPS := $(foreach tens,0 1 2 3 4 5 6 7 8 9,$(foreach ones,0 1 2 3 4 5 6 7 8 9,$(tens)$(ones))) 100
+VALID_STEPS := $(filter-out 00,$(VALID_STEPS))
+ifneq ($(strip $(filter-out $(VALID_STEPS),$(FIT_STEPS))),)
+$(error FIT_STEPS must contain two-digit percentages 01..99, or 100)
+endif
+ifeq ($(strip $(FIT_NAMES)),)
+$(error Set FIT_NAMES to at least one input FITS stem)
+endif
+ifeq ($(strip $(FIT_STEPS)),)
+$(error FIT_STEPS cannot be empty)
+endif
+
+fit_tag = $(if $(filter 100,$(1)),L100,L0$(1))
+fit_fraction = $(if $(filter 100,$(1)),1.00,0.$(1))
+FIT_OUTPUTS := $(foreach name,$(FIT_NAMES),$(foreach step,$(FIT_STEPS),$(FIT_DIR)/$(name)_$(call fit_tag,$(step)).fits))
+THIS_MAKEFILE := $(lastword $(MAKEFILE_LIST))
+MODULE_DEPS := $(wildcard py_modules/bfunc.py py_modules/bplot_ideal.py)
+
+.PHONY: fit-fractions show-fit-fractions
+# Each MCMC run already uses workers; serialize fraction runs even with make -j.
+.NOTPARALLEL:
+
+fit-fractions: $(FIT_OUTPUTS)
+
+show-fit-fractions:
+	@$(PYTHON) -c "import sys; print(chr(10).join(sys.argv[1:]))" $(foreach target,$(FIT_OUTPUTS),"$(target)")
+
+# Changing command-line settings does not invalidate existing Make targets.
+# Use make -B -f Makefile_fit_fractions_ideal ... to recompute them.
+define FIT_RULE
+$(FIT_DIR)/$(1)_$(call fit_tag,$(2)).fits: $(FIT_DIR)/$(1).fits $(FIT_NOTEBOOK) $(THIS_MAKEFILE) $(MODULE_DEPS)
+	@$(PYTHON) -c "from pathlib import Path; import sys; Path(sys.argv[1]).mkdir(parents=True, exist_ok=True)" "$(EXEC_DIR)"
+	$(PAPERMILL) "$(FIT_NOTEBOOK)" "$(EXEC_DIR)/exec_fit_$(1)_$(call fit_tag,$(2)).ipynb" -p name "$(1)" -p fits_path "$(FIT_DIR)/$(1).fits" -p fit_limit $(call fit_fraction,$(2)) -p relative_uncertainty $(RELATIVE_UNCERTAINTY) -p mcmc_steps $(MCMC_STEPS) -p mcmc_burn $(MCMC_BURN) -p mcmc_thin $(MCMC_THIN) -p mcmc_workers $(MCMC_WORKERS)
+	@$(PYTHON) -c "from pathlib import Path; import sys; p = Path(sys.argv[1]); sys.exit(0 if p.is_file() else 'Expected FITS output missing: ' + str(p))" "$$@"
+endef
+
+$(foreach name,$(FIT_NAMES),$(foreach step,$(FIT_STEPS),$(eval $(call FIT_RULE,$(name),$(step)))))

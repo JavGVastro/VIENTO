@@ -1,0 +1,4 @@
+sample_id,L020,L030,L040,L050,L060,L070,L080,L090,L099
+gaussian_moments_N256_L16_sigE0,True,True,True,True,True,True,True,True,True
+gaussian_moments_N256_L16_sigE1,True,True,True,True,True,True,True,True,True
+gaussian_moments_N256_L16_sigE2,True,True,True,True,True,True,True,True,True

@@ -1,0 +1,13 @@
+file_name,severity,detail
+stable_alpha1.5_moments_N128_L16_sigE0_L080.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N128_L16_sigE0_L090.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N128_L16_sigE0_L099.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N128_L16_sigE1_L080.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N128_L16_sigE1_L090.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N128_L16_sigE1_L099.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N128_L16_sigE2_L080.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N128_L16_sigE2_L090.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N128_L16_sigE2_L099.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N64_L16_sigE1_L020.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N64_L16_sigE2_L020.fits,warning,sig2: LM value outside posterior interval; preserve endpoints
+stable_alpha1.5_moments_N64_L16_sigE2_L030.fits,warning,sig2: LM value outside posterior interval; preserve endpoints

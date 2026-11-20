@@ -1,0 +1,84 @@
+# Run from the GSTools project root.
+# Read one input FITS stem per line from LIST (no directory or .fits extension).
+# Blank lines and full-line/inline # comments are allowed.
+# Examples:
+# make -f Makefile_fit_fractions_ideal_tuned
+# make -f Makefile_fit_fractions_ideal_tuned LIST=fits_ready/my_list.txt
+# make -f Makefile_fit_fractions_ideal_tuned FIT_NAMES="cube1 cube2"
+# An explicit FIT_NAMES value bypasses the list file.
+
+.DEFAULT_GOAL := fit-fractions
+PYTHON ?= python
+PAPERMILL ?= $(PYTHON) -m papermill
+FIT_NOTEBOOK ?= fake3D_matrix_03_fit_parameters_fraccL_ideal_tuned.ipynb
+FIT_DIR ?= fits_ready
+EXEC_DIR ?= .
+OUTPUT_DIR ?= $(FIT_DIR)/tuned
+
+# Same LIST convention as Makefile_pipeline_fake3D.
+LIST ?= $(FIT_DIR)/filelist.txt
+
+# Use Python for portability to Windows Anaconda Prompt and Unix shells.
+# utf-8-sig accepts both regular UTF-8 and a Windows UTF-8 BOM.
+# Validate before expanding IDs into Make targets; preserve order, remove duplicates.
+define read_list
+$(shell $(PYTHON) -c "import pathlib, re, sys; p=pathlib.Path(sys.argv[1]); lines=p.read_text(encoding='utf-8-sig').splitlines(); ids=[line.split(chr(35), 1)[0].strip() for line in lines]; ids=list(dict.fromkeys(x for x in ids if x)); bad=[x for x in ids if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9_.-]*', x) or x.lower().endswith(('.fits', '.fits.gz'))]; sys.exit('Invalid FITS stems (use one ID per line, without directory or extension): '+str(bad)) if bad else print(' '.join(ids))" "$(1)")
+endef
+
+ifeq ($(origin FIT_NAMES),undefined)
+FIT_NAMES := $(call read_list,$(LIST))
+endif
+FIT_STEPS ?= 20 30 40 50 60 70 80 90 99
+
+INITIAL_RELATIVE_UNCERTAINTY ?= 0.015
+TARGET_REDCHI_MIN ?= 0.5
+TARGET_REDCHI_MAX ?= 0.99
+STEP_FACTOR ?= 1.15
+MCMC_STEPS ?= 25000
+MCMC_BURN ?= 1000
+MCMC_THIN ?= 50
+MCMC_WALKERS ?= 100
+MCMC_WORKERS ?= 1
+
+# Percentages 01..99, optionally 100. Keep two digits below 100.
+VALID_STEPS := $(foreach tens,0 1 2 3 4 5 6 7 8 9,$(foreach ones,0 1 2 3 4 5 6 7 8 9,$(tens)$(ones))) 100
+VALID_STEPS := $(filter-out 00,$(VALID_STEPS))
+ifneq ($(strip $(filter-out $(VALID_STEPS),$(FIT_STEPS))),)
+$(error FIT_STEPS must contain two-digit percentages 01..99, or 100)
+endif
+ifeq ($(strip $(FIT_NAMES)),)
+$(error No input FITS IDs. Check LIST=$(LIST) for a readable nonempty list, or supply FIT_NAMES="ID1 ID2")
+endif
+ifeq ($(strip $(FIT_STEPS)),)
+$(error FIT_STEPS cannot be empty)
+endif
+
+fit_tag = $(if $(filter 100,$(1)),L100,L0$(1))
+fit_fraction = $(if $(filter 100,$(1)),1.00,0.$(1))
+FIT_OUTPUTS := $(foreach name,$(FIT_NAMES),$(foreach step,$(FIT_STEPS),$(OUTPUT_DIR)/$(name)_$(call fit_tag,$(step)).fits))
+THIS_MAKEFILE := $(lastword $(MAKEFILE_LIST))
+MODULE_DEPS := $(wildcard py_modules/bfunc.py py_modules/bplot_ideal.py py_modules/reduced_chi2.py)
+
+.PHONY: fit-fractions show-fit-fractions show-fit-names list_fit
+# Each MCMC run already uses workers; serialize fraction runs even with make -j.
+.NOTPARALLEL:
+
+fit-fractions: $(FIT_OUTPUTS)
+
+# Preview only: no notebook execution.
+show-fit-names list_fit:
+	@$(PYTHON) -c "import sys; print(chr(10).join(sys.argv[1:]))" $(foreach name,$(FIT_NAMES),"$(name)")
+
+show-fit-fractions:
+	@$(PYTHON) -c "import sys; print(chr(10).join(sys.argv[1:]))" $(foreach target,$(FIT_OUTPUTS),"$(target)")
+
+# Changing command-line settings does not invalidate existing Make targets.
+# Use make -B -f Makefile_fit_fractions_ideal_tuned ... to recompute them.
+define FIT_RULE
+$(OUTPUT_DIR)/$(1)_$(call fit_tag,$(2)).fits: $(FIT_DIR)/$(1).fits $(FIT_NOTEBOOK) $(THIS_MAKEFILE) $(MODULE_DEPS)
+	@$(PYTHON) -c "from pathlib import Path; import sys; Path(sys.argv[1]).mkdir(parents=True, exist_ok=True)" "$(EXEC_DIR)"
+	$(PAPERMILL) "$(FIT_NOTEBOOK)" "$(EXEC_DIR)/exec_fit_tuned_$(1)_$(call fit_tag,$(2)).ipynb" -p name "$(1)" -p fits_path "$(FIT_DIR)/$(1).fits" -p fit_limit $(call fit_fraction,$(2)) -p output_dir "$(OUTPUT_DIR)" -p initial_relative_uncertainty $(INITIAL_RELATIVE_UNCERTAINTY) -p target_redchi_min $(TARGET_REDCHI_MIN) -p target_redchi_max $(TARGET_REDCHI_MAX) -p step_factor $(STEP_FACTOR) -p mcmc_steps $(MCMC_STEPS) -p mcmc_burn $(MCMC_BURN) -p mcmc_thin $(MCMC_THIN) -p mcmc_walkers $(MCMC_WALKERS) -p mcmc_workers $(MCMC_WORKERS)
+	@$(PYTHON) -c "from pathlib import Path; import sys; p = Path(sys.argv[1]); sys.exit(0 if p.is_file() else 'Expected FITS output missing: ' + str(p))" "$$@"
+endef
+
+$(foreach name,$(FIT_NAMES),$(foreach step,$(FIT_STEPS),$(eval $(call FIT_RULE,$(name),$(step)))))

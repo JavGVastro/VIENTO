@@ -1,0 +1,15 @@
+#stable_alpha1.5_moments_N64_L16_sigE0
+#stable_alpha1.5_moments_N64_L16_sigE1
+#stable_alpha1.5_moments_N64_L16_sigE2
+#stable_alpha1.5_moments_N128_L16_sigE0
+#stable_alpha1.5_moments_N128_L16_sigE1
+#stable_alpha1.5_moments_N128_L16_sigE2
+#stable_alpha1.5_moments_N256_L16_sigE0
+#stable_alpha1.5_moments_N256_L16_sigE1
+#stable_alpha1.5_moments_N256_L16_sigE2
+gaussian_moments_N256_L16_sigE0
+gaussian_moments_N256_L16_sigE1
+gaussian_moments_N256_L16_sigE2
+exponential_moments_N256_L16_sigE0
+exponential_moments_N256_L16_sigE1
+exponential_moments_N256_L16_sigE2

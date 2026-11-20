@@ -1,0 +1,168 @@
+Run started (UTC): 2026-10-09T16:46:25.749100+00:00
+Working directory: C:\Users\javas\Dropbox\GitHub\VIENTO\fake_maps_gs\synthetic_experiments_V0.1
+Input configuration: {'input_dir': WindowsPath('cubes/N128_L16'), 'model_gs': 'stable', 'alpha': 1.5, 'los_axis': 0}
+Physical configuration: {'velocity_scale_kms': 1.0, 'sig_E_values': [0.0, 1.0, 2.0], 'mean_density_cm3': 1.0}
+Spectral configuration: {'temperature_K': 10000.0, 'particle_mass_mp': 1.0, 'los_length_pc': 1.0, 'channel_width_kms': 0.5, 'v_min_kms': -60.0, 'v_max_kms': 60.0}
+Report: C:\Users\javas\Dropbox\GitHub\VIENTO\fake_maps_gs\synthetic_experiments_V0.1\cubes\N128_L16\stable_alpha1.5_moments_N128_L16_sanity_checks.txt
+Shape (x,y,z): (128, 128, 128)
+LOS axis: 0; remaining NumPy axes: (1, 2)
+
+velocity: stable_alpha1.5_3d_velocity_N128_L16.fits
+  Model=stable, M3D=1.5, seed=19880127
+  Min=-3.986249, max=4.281792
+  Mean=-0.032391, std=0.983934, variance=0.968126
+
+density: stable_alpha1.5_3d_density_N128_L16.fits
+  Model=stable, M3D=1.5, seed=19970221
+  Min=-5.410301, max=5.158870
+  Mean=0.063211, std=1.088334, variance=1.184471
+
+Raw base fields only: physical quantities have not yet been assigned.
+
+
+Input covariance scale
+  Model: stable
+  Length scale: 16.000000
+  Rescale: 1.000000
+  R0: 12.531516
+  Definition: input correlation equals 0.5
+  Units: same as input grid spacing
+Velocity
+  Mean: -0.032391 km / s
+  Std: 0.983934 km / s
+  Variance: 0.968126 km2 / s2
+  All finite: True
+Standardized density-base field
+  Mean: 0.000000
+  Std: 1.000000
+  All finite: True
+Thermal dispersion: 9.085373 km / s
+
+sig_E = 0
+  Emissivity mean: 1.000000
+  Std(log emissivity): 0.000000
+  All positive: True
+  All finite: True
+  Emissivity input mean: 1.000000 1 / cm3
+  Emissivity input unit: 1 / cm3
+  PPV shape: (240, 128, 128) (spectral, spatial, spatial)
+  Intensity unit: K
+  First channel center: -59.7499999999968 km / s
+  Last channel center: 59.750000000003205 km / s
+  Channel spacing: 0.5 km / s
+  Moment 0 shape: (128, 128)
+  Moment 1 shape: (128, 128)
+  Moment 0 finite: True
+  Moment 0 positive: True
+  Moment 1 finite: True
+Compared pixels: 16384 / 16384
+
+Quantity                    Mean difference           RMS   Max absolute
+Moment 0 (normalized)         -5.715101e-17  6.497542e-12   2.795775e-11
+Moment 1 (km/s)                7.631309e-11  1.063944e-09   3.376201e-09
+  Completed in 75.81 s
+  Mean relative emissivity: 1.000000
+  Mean moment 0:            1.692637
+  Centroid-map std:         0.469217
+  Centroid-map variance:    0.220164
+  Saved: stable_alpha1.5_3d_velocity_N128_L16_sigE0_moments.jpg
+
+sig_E = 1
+  Emissivity mean: 1.000000
+  Std(log emissivity): 1.000000
+  All positive: True
+  All finite: True
+  Emissivity input mean: 1.000000 1 / cm3
+  Emissivity input unit: 1 / cm3
+  PPV shape: (240, 128, 128) (spectral, spatial, spatial)
+  Intensity unit: K
+  First channel center: -59.7499999999968 km / s
+  Last channel center: 59.750000000003205 km / s
+  Channel spacing: 0.5 km / s
+  Moment 0 shape: (128, 128)
+  Moment 1 shape: (128, 128)
+  Moment 0 finite: True
+  Moment 0 positive: True
+  Moment 1 finite: True
+Compared pixels: 16384 / 16384
+
+Quantity                    Mean difference           RMS   Max absolute
+Moment 0 (normalized)         -2.526869e-17  1.150337e-11   1.150697e-10
+Moment 1 (km/s)                1.549919e-10  1.373208e-09   5.970052e-09
+  Completed in 75.11 s
+  Mean relative emissivity: 1.000000
+  Mean moment 0:            1.692637
+  Centroid-map std:         0.587759
+  Centroid-map variance:    0.345461
+  Saved: stable_alpha1.5_3d_velocity_N128_L16_sigE1_moments.jpg
+
+sig_E = 2
+  Emissivity mean: 1.000000
+  Std(log emissivity): 2.000000
+  All positive: True
+  All finite: True
+  Emissivity input mean: 1.000000 1 / cm3
+  Emissivity input unit: 1 / cm3
+  PPV shape: (240, 128, 128) (spectral, spatial, spatial)
+  Intensity unit: K
+  First channel center: -59.7499999999968 km / s
+  Last channel center: 59.750000000003205 km / s
+  Channel spacing: 0.5 km / s
+  Moment 0 shape: (128, 128)
+  Moment 1 shape: (128, 128)
+  Moment 0 finite: True
+  Moment 0 positive: True
+  Moment 1 finite: True
+Compared pixels: 16384 / 16384
+
+Quantity                    Mean difference           RMS   Max absolute
+Moment 0 (normalized)         -6.610160e-17  2.626842e-11   6.546870e-10
+Moment 1 (km/s)                1.929266e-10  1.698743e-09   8.557721e-09
+  Completed in 72.90 s
+  Mean relative emissivity: 1.000000
+  Mean moment 0:            1.692637
+  Centroid-map std:         0.721585
+  Centroid-map variance:    0.520685
+  Saved: stable_alpha1.5_3d_velocity_N128_L16_sigE2_moments.jpg
+Saved: stable_alpha1.5_moments_N128_L16_sigE0.fits
+Saved: stable_alpha1.5_moments_N128_L16_sigE1.fits
+Saved: stable_alpha1.5_moments_N128_L16_sigE2.fits
+
+Export verification: stable_alpha1.5_moments_N128_L16_sigE0.fits
+Filename: cubes\N128_L16\stable_alpha1.5_moments_N128_L16_sigE0.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      46   ()      
+  1  MOM0          1 ImageHDU        35   (128, 128)   float64   
+  2  MOM1          1 ImageHDU        33   (128, 128)   float64   
+
+  sig_E: 0.0
+  SIG2: 0.22016436807967937
+  MOM0: shape=(128, 128), unit=1, matches in-memory map=True
+  MOM1: shape=(128, 128), unit=km s-1, matches in-memory map=True
+
+Export verification: stable_alpha1.5_moments_N128_L16_sigE1.fits
+Filename: cubes\N128_L16\stable_alpha1.5_moments_N128_L16_sigE1.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      46   ()      
+  1  MOM0          1 ImageHDU        35   (128, 128)   float64   
+  2  MOM1          1 ImageHDU        33   (128, 128)   float64   
+
+  sig_E: 1.0
+  SIG2: 0.34546069620453423
+  MOM0: shape=(128, 128), unit=1, matches in-memory map=True
+  MOM1: shape=(128, 128), unit=km s-1, matches in-memory map=True
+
+Export verification: stable_alpha1.5_moments_N128_L16_sigE2.fits
+Filename: cubes\N128_L16\stable_alpha1.5_moments_N128_L16_sigE2.fits
+No.    Name      Ver    Type      Cards   Dimensions   Format
+  0  PRIMARY       1 PrimaryHDU      46   ()      
+  1  MOM0          1 ImageHDU        35   (128, 128)   float64   
+  2  MOM1          1 ImageHDU        33   (128, 128)   float64   
+
+  sig_E: 2.0
+  SIG2: 0.52068542766035
+  MOM0: shape=(128, 128), unit=1, matches in-memory map=True
+  MOM1: shape=(128, 128), unit=km s-1, matches in-memory map=True
+
+Run complete. Exported FITS files: 3
+Sanity-check report saved: C:\Users\javas\Dropbox\GitHub\VIENTO\fake_maps_gs\synthetic_experiments_V0.1\cubes\N128_L16\stable_alpha1.5_moments_N128_L16_sanity_checks.txt
