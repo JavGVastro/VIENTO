@@ -15,11 +15,11 @@
 # To-Do
 
 
-- [ ] Structure function numerical #Someday #TurbulenceTools
+- [ ] Structure function numerical #WaitingList 
 	- [ ] Matrix 
 	- [ ] Scatter
-- [ ] Power spectra numerical [2004ApJ...616..943L](https://ui.adsabs.harvard.edu/abs/2004ApJ...616..943L/abstract)  #Someday #TurbulenceTools
-- [ ]  **Delta-variance** [2008A&A...485..917O](https://ui.adsabs.harvard.edu/abs/2008A%26A...485..917O/abstract) #Someday  #TurbulenceTools
-- [ ] Wavelets #Someday #TurbulenceTools
+- [ ] Power spectra numerical [2004ApJ...616..943L](https://ui.adsabs.harvard.edu/abs/2004ApJ...616..943L/abstract)  #Someday #GTD
+- [ ]  **Delta-variance** [2008A&A...485..917O](https://ui.adsabs.harvard.edu/abs/2008A%26A...485..917O/abstract) #Someday  #GTD
+- [ ] Wavelets #Someday #GTD
 	- [ ] Wavelets - analizar estructura a diferentes escalas y como varían con la posición. principio de incertidumbre espacial
-- [ ] Turbustat #Someday #TurbulenceTools
+- [ ] Turbustat #Someday #GTD

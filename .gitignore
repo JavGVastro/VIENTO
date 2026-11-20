@@ -27,6 +27,7 @@ Thumbs.db
 #*.json
 fake_cube_sigE1_finite_m330_r32_N512.fits
 fake_cube_sigE2_finite_m355_r32_N512.fits
+30Dor_ESO1033a_WCS.fits
 
 #Ignore pass
 .rsync-password

@@ -3,7 +3,7 @@
 
 - [x] Integrate $B(r)$ table with .fits file (now it exported as an numpy array into a .json file) ✅ 2026-01-24
 - [x] Elaborate on Papermill on make_file inject parameters and run stuff ✅ 2026-01-24
-- [ ] Review pipeline notebooks #ASAP #Review
+- [ ] Review pipeline notebooks + Git #WaitingList  #GTD
 	- [x] `pipeline_template_master/results_compiler.py` 
 	- [ ] Possion noise un synthetic maps ⏳ 2026-03-26
 	- [x] list ✅ 2026-03-24
@@ -13,7 +13,10 @@
 	- [ ] `pipeline_config.py` recent file: MUSE_orion_global_mask
 	- [ ] `04_results_file.ipynb` recent file: LVM 30 dor
 
+---
 
+
+- pipeline_files
 # Ideas
 
 - Maybe the pipeline can be optimize with the following options

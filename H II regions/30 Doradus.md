@@ -1,0 +1,1 @@
+- $1 \ \text{arcsec} = 0.24 \ \text{pc}$ @ $49.9 \ \text{kpc}$ 
