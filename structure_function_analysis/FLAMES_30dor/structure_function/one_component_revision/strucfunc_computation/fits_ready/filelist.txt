@@ -1,0 +1,6 @@
+FLAMES-30Dor-6563-air
+FLAMES-30Dor-6563-complete
+FLAMES-30Dor-6563-irr
+FLAMES-30Dor-6563-reg
+FLAMES-30Dor-6563-stellar
+

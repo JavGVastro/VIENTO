@@ -1,0 +1,34 @@
+PAPERMILL := papermill
+
+FIT_NOTEBOOK := matrix_03_fit_parameters_fraccL_mod.ipynb
+FIT_DIR := fits_ready
+
+FIT_NAMES := \
+	SAMFP-30Dor-Ha-bin0
+
+FIT_STEPS := 2 3 4 5 6 7 8 9 99
+
+FIT_OUTPUTS := $(foreach name,$(FIT_NAMES),$(foreach step,$(FIT_STEPS),$(FIT_DIR)/$(name)_0$(step).fits))
+
+
+.PHONY: fit-fractions show-fit-fractions
+
+.NOTPARALLEL: fit-fractions
+
+
+fit-fractions: $(FIT_OUTPUTS)
+
+
+show-fit-fractions:
+	@echo $(FIT_OUTPUTS)
+
+
+define FIT_RULE
+
+$(FIT_DIR)/$(1)_0$(2).fits: $(FIT_DIR)/$(1).fits $(FIT_NOTEBOOK)
+	$(PAPERMILL) "$(FIT_NOTEBOOK)" "exec_fit_$(1)_0$(2).ipynb" -p name "$(1)" -p fits_path "$(FIT_DIR)/$(1).fits" -p fit_limit "0.$(2)"
+
+endef
+
+
+$(foreach name,$(FIT_NAMES),$(foreach step,$(FIT_STEPS),$(eval $(call FIT_RULE,$(name),$(step)))))

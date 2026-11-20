@@ -1,0 +1,4 @@
+name,quality_class,quality_score,redchi,r0_over_rfitmax,s0_arcsec,noise_fraction,max_residual_run,n_active_flags,active_flags
+FLAMES-30Dor-6563-MUSE,D,16,0.6627922524903729,0.8156851803148855,1.4999995911886754,0.9300320521797552,4,9,m_near_bound; s0_near_bound; large_r0_uncertainty; large_sig2_uncertainty; large_s0_uncertainty; large_m_uncertainty; large_s0_arcsec; large_noise_fraction; systematic_residuals
+FLAMES-30Dor-6563-SAMFP,D,15,0.8260000009873916,0.5940777655172955,1.4999997643028655,0.873793944232747,4,9,sig2_near_bound; s0_near_bound; large_r0_uncertainty; large_sig2_uncertainty; large_s0_uncertainty; large_m_uncertainty; large_s0_arcsec; large_noise_fraction; systematic_residuals
+FLAMES-30Dor-6563,D,9,0.5511985643387108,0.1709444839651557,0.5212785534908749,0.8119958887583757,4,6,sig2_near_bound; large_sig2_uncertainty; large_s0_uncertainty; large_m_uncertainty; large_noise_fraction; systematic_residuals
