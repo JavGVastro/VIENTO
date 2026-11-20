@@ -1,0 +1,23 @@
+# ---------------------------------
+# Config
+# ---------------------------------
+PYTHON  := python
+JUPYTER := jupyter nbconvert --to notebook --execute --inplace
+
+LINES   := Ar H N1 O1 S
+BINS    := 0 1 2 3 4
+PREFIX  := matrix_01_fits_create
+
+NOTEBOOKS := $(foreach line,$(LINES),$(foreach bin,$(BINS),$(PREFIX)_$(line)_bin$(bin).ipynb))
+
+.PHONY: all list run
+
+all: run
+
+list:
+	@$(PYTHON) -c "print('\n'.join('$(NOTEBOOKS)'.split()))"
+
+run:
+	@$(PYTHON) -c "nbs='$(NOTEBOOKS)'.split(); print('Notebooks to execute:'); print('\n'.join(nbs))"
+	@$(PYTHON) -c "import subprocess; nbs='$(NOTEBOOKS)'.split(); [subprocess.run(['jupyter','nbconvert','--to','notebook','--execute','--inplace', nb], check=True) for nb in [print('Executing ' + x) or x for x in nbs]]"
+	@echo All notebooks executed.
